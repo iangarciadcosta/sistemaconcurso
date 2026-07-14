@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Cartão-Resposta · Simulados para Concursos</title>
+<meta name="description" content="Simulados rápidos para PMESP, GCM e Correios. Responda, veja o gabarito e revise os erros.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#17202B;        /* texto principal */
+    --tinta-2:#5A6673;      /* texto secundário */
+    --papel:#F4F6F9;        /* fundo da página */
+    --cartao:#FFFFFF;       /* superfícies */
+    --linha:#DDE3EA;        /* bordas */
+    --farda:#16283F;        /* navy PMESP — primário */
+    --farda-2:#0F1C2E;      /* navy escuro */
+    --insignia:#C9971C;     /* dourado — usado com parcimônia */
+    --certo:#1E8A4C;
+    --certo-bg:#E7F4EC;
+    --erro:#C43D3D;
+    --erro-bg:#FBEAEA;
+    --raio:14px;
+    --sombra:0 1px 2px rgba(23,32,43,.06), 0 4px 14px rgba(23,32,43,.07);
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0; padding:0;}
+  body{
+    background:var(--papel);
+    color:var(--tinta);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:16px; line-height:1.55;
+    min-height:100vh;
+  }
+  .shell{max-width:560px; margin:0 auto; padding:0 16px 96px;}
+
+  /* ---------- topo ---------- */
+  header.app{
+    background:var(--farda); color:#fff;
+    padding:18px 16px 16px;
+    border-bottom:3px solid var(--insignia);
+  }
+  header.app .inner{max-width:560px; margin:0 auto; display:flex; align-items:center; gap:12px;}
+  .logo-bubble{
+    width:38px; height:38px; border-radius:50%;
+    border:2.5px solid var(--insignia); flex:none;
+    display:grid; place-items:center;
+    font-family:'Archivo'; font-weight:900; font-size:17px; color:var(--insignia);
+  }
+  header.app h1{
+    font-family:'Archivo'; font-weight:800; font-size:19px; letter-spacing:.01em;
+    margin:0; line-height:1.15;
+  }
+  header.app small{display:block; font-family:'Inter'; font-weight:500; font-size:12px; color:#AEB9C7; letter-spacing:.04em; text-transform:uppercase; margin-top:2px;}
+
+  .eyebrow{
+    font-family:'Archivo'; font-weight:700; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--tinta-2); margin:28px 0 10px;
+  }
+
+  /* ---------- cards de concurso ---------- */
+  .concurso{
+    display:flex; align-items:center; gap:14px; width:100%; text-align:left;
+    background:var(--cartao); border:1px solid var(--linha); border-radius:var(--raio);
+    padding:16px; margin-bottom:12px; cursor:pointer; box-shadow:var(--sombra);
+    transition:transform .08s ease, border-color .12s ease;
+    font-family:inherit; color:inherit;
+  }
+  .concurso:active{transform:scale(.985);}
+  .concurso .sigla{
+    flex:none; width:52px; height:52px; border-radius:12px;
+    background:var(--farda); color:#fff;
+    display:grid; place-items:center;
+    font-family:'Archivo'; font-weight:900; font-size:15px;
+  }
+  .concurso.gcm .sigla{background:#25405B;}
+  .concurso.correios .sigla{background:#3A5573;}
+  .concurso h3{margin:0; font-family:'Archivo'; font-weight:800; font-size:17px;}
+  .concurso p{margin:3px 0 0; font-size:13px; color:var(--tinta-2);}
+  .concurso .n{margin-left:auto; flex:none; text-align:right; font-size:12px; color:var(--tinta-2);}
+  .concurso .n b{display:block; font-family:'Archivo'; font-weight:800; font-size:20px; color:var(--tinta); font-variant-numeric:tabular-nums;}
+
+  /* ---------- botões ---------- */
+  .btn{
+    display:block; width:100%; border:none; border-radius:var(--raio);
+    padding:16px; font-family:'Archivo'; font-weight:800; font-size:16px;
+    letter-spacing:.02em; cursor:pointer; text-align:center;
+    transition:transform .08s ease, opacity .12s ease;
+  }
+  .btn:active{transform:scale(.985);}
+  .btn-primario{background:var(--farda); color:#fff;}
+  .btn-primario:disabled{opacity:.4; cursor:not-allowed;}
+  .btn-claro{background:var(--cartao); color:var(--farda); border:1.5px solid var(--linha);}
+  .btn-linha{background:none; color:var(--tinta-2); font-family:'Inter'; font-weight:600; font-size:14px; padding:12px;}
+
+  /* ---------- setup ---------- */
+  .painel{background:var(--cartao); border:1px solid var(--linha); border-radius:var(--raio); padding:18px; box-shadow:var(--sombra); margin-bottom:14px;}
+  .painel h4{margin:0 0 12px; font-family:'Archivo'; font-weight:800; font-size:15px;}
+  .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    border:1.5px solid var(--linha); background:var(--papel); color:var(--tinta);
+    border-radius:999px; padding:9px 14px; font-family:'Inter'; font-weight:600; font-size:13.5px;
+    cursor:pointer; transition:all .1s ease;
+  }
+  .chip.on{background:var(--farda); border-color:var(--farda); color:#fff;}
+  .chip .qtd{opacity:.65; font-weight:500;}
+
+  /* ---------- quiz: faixa gabarito ---------- */
+  .faixa{
+    position:sticky; top:0; z-index:10;
+    background:var(--papel); padding:12px 0 10px;
+    border-bottom:1px solid var(--linha); margin-bottom:18px;
+  }
+  .faixa .meta{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;}
+  .faixa .meta b{font-family:'Archivo'; font-weight:800; font-size:14px;}
+  .faixa .meta span{font-size:12px; color:var(--tinta-2); font-variant-numeric:tabular-nums;}
+  .strip{display:flex; gap:4px;}
+  .strip i{
+    flex:1; height:7px; border-radius:4px; background:#E2E8EF; border:1px solid var(--linha);
+    transition:background .15s ease;
+  }
+  .strip i.feita{background:var(--farda); border-color:var(--farda);}
+  .strip i.atual{border-color:var(--insignia); box-shadow:0 0 0 1.5px var(--insignia);}
+
+  .q-materia{
+    display:inline-block; font-family:'Archivo'; font-weight:700; font-size:11.5px;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--farda);
+    background:#E8EDF4; border-radius:6px; padding:4px 9px; margin-bottom:12px;
+  }
+  .q-texto{font-size:16.5px; font-weight:500; line-height:1.6; margin:0 0 6px; white-space:pre-line;}
+  .q-fonte{font-size:12px; color:var(--tinta-2); margin:0 0 18px;}
+
+  /* ---------- alternativas estilo cartão-resposta ---------- */
+  .alts{display:flex; flex-direction:column; gap:10px;}
+  .alt{
+    display:flex; align-items:flex-start; gap:13px; width:100%; text-align:left;
+    background:var(--cartao); border:1.5px solid var(--linha); border-radius:var(--raio);
+    padding:14px; cursor:pointer; font-family:inherit; font-size:15.5px; color:inherit;
+    line-height:1.5; transition:border-color .1s ease, background .1s ease;
+  }
+  .alt .bolha{
+    flex:none; width:30px; height:30px; border-radius:50%;
+    border:2px solid #9AA6B4; display:grid; place-items:center;
+    font-family:'Archivo'; font-weight:800; font-size:14px; color:var(--tinta-2);
+    transition:all .1s ease; margin-top:1px;
+  }
+  .alt.sel{border-color:var(--farda); background:#F0F4F9;}
+  .alt.sel .bolha{background:var(--farda); border-color:var(--farda); color:#fff;}
+  .alt.certa{border-color:var(--certo); background:var(--certo-bg);}
+  .alt.certa .bolha{background:var(--certo); border-color:var(--certo); color:#fff;}
+  .alt.errada{border-color:var(--erro); background:var(--erro-bg);}
+  .alt.errada .bolha{background:var(--erro); border-color:var(--erro); color:#fff;}
+
+  .nav-quiz{display:flex; gap:10px; margin-top:22px;}
+  .nav-quiz .btn{flex:1;}
+
+  /* ---------- resultado ---------- */
+  .placar{
+    background:var(--farda); color:#fff; border-radius:var(--raio);
+    padding:26px 20px; text-align:center; margin-top:24px; box-shadow:var(--sombra);
+    border-bottom:3px solid var(--insignia);
+  }
+  .placar .nota{font-family:'Archivo'; font-weight:900; font-size:52px; line-height:1; font-variant-numeric:tabular-nums;}
+  .placar .nota small{font-size:22px; font-weight:700; color:#8FA0B5;}
+  .placar p{margin:8px 0 0; font-size:14px; color:#C4CFDC;}
+  .placar .selo{
+    display:inline-block; margin-top:14px; font-family:'Archivo'; font-weight:800; font-size:13px;
+    letter-spacing:.08em; text-transform:uppercase; border-radius:999px; padding:7px 16px;
+  }
+  .selo.ok{background:var(--certo); color:#fff;}
+  .selo.quase{background:var(--insignia); color:#fff;}
+  .selo.ruim{background:var(--erro); color:#fff;}
+
+  .barras{margin-top:14px;}
+  .barra-linha{margin-bottom:12px;}
+  .barra-linha .rot{display:flex; justify-content:space-between; font-size:13px; font-weight:600; margin-bottom:5px;}
+  .barra-linha .rot span:last-child{color:var(--tinta-2); font-variant-numeric:tabular-nums; font-weight:500;}
+  .barra-bg{height:9px; border-radius:5px; background:#E2E8EF; overflow:hidden;}
+  .barra-fill{height:100%; border-radius:5px; background:var(--farda);}
+  .barra-fill.baixa{background:var(--erro);}
+  .barra-fill.media{background:var(--insignia);}
+
+  /* ---------- revisão ---------- */
+  .rev{background:var(--cartao); border:1px solid var(--linha); border-left:4px solid var(--erro); border-radius:var(--raio); padding:16px; margin-bottom:14px; box-shadow:var(--sombra);}
+  .rev.acerto{border-left-color:var(--certo);}
+  .rev .num{font-family:'Archivo'; font-weight:800; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--tinta-2); margin-bottom:8px;}
+  .rev .enun{font-size:14.5px; font-weight:500; margin:0 0 12px; white-space:pre-line;}
+  .rev .linha-resp{display:flex; gap:10px; align-items:flex-start; font-size:14px; margin-bottom:6px;}
+  .rev .linha-resp .tag{flex:none; font-family:'Archivo'; font-weight:800; font-size:11px; letter-spacing:.06em; text-transform:uppercase; border-radius:6px; padding:3px 8px; margin-top:1px;}
+  .tag.sua{background:var(--erro-bg); color:var(--erro);}
+  .tag.gab{background:var(--certo-bg); color:var(--certo);}
+  .rev .explica{margin-top:10px; padding-top:10px; border-top:1px dashed var(--linha); font-size:13.5px; color:var(--tinta-2);}
+  .rev .explica b{color:var(--tinta);}
+
+  .filtros-rev{display:flex; gap:8px; margin:18px 0 14px;}
+
+  /* ---------- histórico ---------- */
+  .hist{display:flex; align-items:center; gap:12px; background:var(--cartao); border:1px solid var(--linha); border-radius:var(--raio); padding:13px 15px; margin-bottom:10px; font-size:13.5px;}
+  .hist .pct{flex:none; font-family:'Archivo'; font-weight:800; font-size:16px; width:52px; font-variant-numeric:tabular-nums;}
+  .hist .pct.ok{color:var(--certo);} .hist .pct.ruim{color:var(--erro);}
+  .hist .info b{display:block; font-weight:600;}
+  .hist .info span{color:var(--tinta-2); font-size:12px;}
+
+  .vazio{text-align:center; color:var(--tinta-2); font-size:14px; padding:24px 12px;}
+  .aviso{font-size:12.5px; color:var(--tinta-2); margin-top:18px; text-align:center;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="app">
+  <div class="inner">
+    <div class="logo-bubble">A</div>
+    <div>
+      <h1>Cartão-Resposta</h1>
+      <small>Simulados · Concursos Públicos</small>
+    </div>
+  </div>
+</header>
+
+<main class="shell" id="app"></main>
+
+<script>
+/* =====================================================================
+   BANCO DE QUESTÕES
+   ---------------------------------------------------------------------
+   Para adicionar questões, copie um objeto abaixo e edite. Campos:
+   c: id do concurso | m: matéria | q: enunciado | alts: alternativas
+   r: índice da correta (0 = A) | e: explicação | f: fonte/estilo
+   Peça ao Claude Code: "adicione 10 questões de crase estilo VUNESP
+   no banco de questões do concurso pmesp".
+   ===================================================================== */
+const CONCURSOS = [
+  {id:'pmesp', sigla:'PM', nome:'PM-ESP · Soldado 2ª Classe', banca:'Estilo VUNESP', desc:'Português, Matemática, C. Gerais, Informática e Adm. Pública',
+   prova:{'Língua Portuguesa':20,'Matemática':15,'Conhecimentos Gerais':15,'Noções de Informática':5,'Noções de Adm. Pública':5}, corte:30},
+  {id:'gcm', sigla:'GCM', nome:'GCM Sorocaba', banca:'Guarda Civil Municipal', desc:'Português, Matemática e Legislação das Guardas'},
+  {id:'correios', sigla:'ECT', nome:'Correios · Agente', banca:'Nível médio', desc:'Português, Matemática e Informática'},
+];
+
+const BANCO = [
+/* ---------------- PMESP · Língua Portuguesa ---------------- */
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · concordância verbal',
+ q:'Assinale a alternativa em que a concordância verbal está de acordo com a norma-padrão da língua portuguesa.',
+ alts:['Fazem dez anos que o policiamento comunitário foi implantado no bairro.',
+       'Haviam muitos candidatos inscritos no concurso da Polícia Militar.',
+       'Faz dez anos que o policiamento comunitário foi implantado no bairro.',
+       'Existe, na corporação, policiais com mais de vinte anos de serviço.',
+       'Devem haver novas turmas de formação no próximo semestre.'],
+ r:2,
+ e:'O verbo "fazer" indicando tempo decorrido é impessoal e fica no singular: "Faz dez anos". "Haver" no sentido de existir também é impessoal ("Havia muitos candidatos"; "Deve haver novas turmas"). Já "existir" é pessoal e concorda: "Existem policiais".'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · crase',
+ q:'Assinale a alternativa em que o sinal indicativo de crase está empregado corretamente.',
+ alts:['O soldado chegou à tempo para o início da ronda.',
+       'A ocorrência foi comunicada à autoridade competente.',
+       'O batalhão fica à duzentos metros da estação.',
+       'Ele se referiu à todos os presentes na reunião.',
+       'Começou à chover durante o patrulhamento.'],
+ r:1,
+ e:'Crase = preposição "a" + artigo "a". "Comunicar a + a autoridade" → "à autoridade". Não ocorre crase antes de palavras masculinas ("a tempo"), numerais ("a duzentos metros"), pronomes indefinidos ("a todos") nem verbos ("a chover").'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · regência',
+ q:'Considerando a regência verbal segundo a norma-padrão, assinale a alternativa correta.',
+ alts:['O policial assistiu o filme institucional durante o curso.',
+       'Todos aspiravam o cargo de oficial da corporação.',
+       'O comandante visava à melhoria dos índices de segurança.',
+       'Prefiro mais trabalhar de dia do que de noite.',
+       'O tenente obedeceu o regulamento sem questionar.'],
+ r:2,
+ e:'"Visar" no sentido de objetivar pede preposição "a": "visava à melhoria". "Assistir" (ver) pede "a" ("assistiu ao filme"); "aspirar" (desejar) pede "a" ("aspiravam ao cargo"); "preferir" não admite "mais... do que" ("prefiro X a Y"); "obedecer" pede "a" ("obedeceu ao regulamento").'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · interpretação',
+ q:'Leia o trecho:\n\n"A confiança da população na polícia não se constrói apenas com resultados operacionais; ela depende, sobretudo, da forma como cada agente trata o cidadão no contato cotidiano."\n\nDe acordo com o trecho, é correto afirmar que:',
+ alts:['os resultados operacionais são irrelevantes para a confiança da população.',
+       'o tratamento dispensado ao cidadão é o fator principal na construção da confiança.',
+       'a confiança da população já está consolidada e independe da conduta dos agentes.',
+       'o contato cotidiano com o cidadão deve ser evitado pelos agentes.',
+       'a polícia constrói confiança exclusivamente por meio de campanhas publicitárias.'],
+ r:1,
+ e:'"Sobretudo" indica que o tratamento ao cidadão é o fator principal — mas não o único: os resultados operacionais também contam ("não se constrói APENAS com..."). Por isso a alternativa que diz "irrelevantes" extrapola o texto.'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · colocação pronominal',
+ q:'Assinale a alternativa em que a colocação pronominal atende à norma-padrão.',
+ alts:['Me informaram sobre a alteração na escala de serviço.',
+       'Nunca desrespeitou-se a hierarquia naquele batalhão.',
+       'Informaram-me sobre a alteração na escala de serviço.',
+       'Quando apresentou-se ao quartel, já era noite.',
+       'Em se tratando de emergência, deve-se acionar-se o COPOM.'],
+ r:2,
+ e:'Não se inicia frase com pronome oblíquo átono: o correto é a ênclise "Informaram-me". Palavras atrativas como "nunca" e "quando" exigem próclise ("nunca se desrespeitou", "quando se apresentou").'},
+
+/* ---------------- PMESP · Matemática ---------------- */
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · regra de três',
+ q:'Uma equipe de 6 policiais realiza a vistoria de 90 veículos em 3 horas. Mantida a mesma produtividade individual, o número de veículos que 8 policiais vistoriam em 2 horas é:',
+ alts:['70','75','80','85','95'],
+ r:2,
+ e:'Cada policial vistoria 90 ÷ 6 ÷ 3 = 5 veículos por hora. Então 8 policiais × 2 horas × 5 = 80 veículos.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · porcentagem',
+ q:'Em um mês, foram registradas 250 ocorrências em um município. No mês seguinte, esse número caiu 12%. O total de ocorrências do segundo mês foi:',
+ alts:['200','210','215','220','230'],
+ r:3,
+ e:'12% de 250 = 30. Logo, 250 − 30 = 220 ocorrências.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · razão e proporção',
+ q:'Em um pelotão, a razão entre o número de soldados e o de cabos é de 7 para 2. Se o pelotão tem, ao todo, 45 militares entre soldados e cabos, o número de soldados é:',
+ alts:['28','30','32','35','36'],
+ r:3,
+ e:'7 + 2 = 9 partes. Cada parte vale 45 ÷ 9 = 5. Soldados: 7 × 5 = 35.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · velocidade média',
+ q:'Uma viatura percorre 180 km em 2 horas e 30 minutos. A velocidade média da viatura nesse percurso é de:',
+ alts:['60 km/h','66 km/h','72 km/h','75 km/h','80 km/h'],
+ r:2,
+ e:'2h30 = 2,5 h. Velocidade média = 180 ÷ 2,5 = 72 km/h.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · equação do 1º grau',
+ q:'A soma das idades de dois irmãos é 34 anos. O mais velho tem 6 anos a mais que o mais novo. A idade do irmão mais novo é:',
+ alts:['12 anos','13 anos','14 anos','15 anos','16 anos'],
+ r:2,
+ e:'x + (x + 6) = 34 → 2x = 28 → x = 14. O mais novo tem 14 anos (e o mais velho, 20).'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · interpretação',
+ q:'Leia o trecho:\n\n"O uso de câmeras corporais reduziu o número de reclamações contra agentes em diversas corporações. Contudo, especialistas alertam que a tecnologia, sozinha, não substitui o treinamento contínuo dos policiais."\n\nDe acordo com o texto, é correto afirmar que:',
+ alts:['as câmeras corporais aumentaram as reclamações contra agentes.',
+       'a tecnologia é suficiente para dispensar o treinamento dos policiais.',
+       'as câmeras trouxeram resultados positivos, mas não eliminam a necessidade de treinamento.',
+       'os especialistas são contrários ao uso de câmeras corporais.',
+       'o treinamento contínuo tornou-se desnecessário nas corporações.'],
+ r:2,
+ e:'O conectivo "contudo" introduz uma ressalva: as câmeras deram resultado (reduziram reclamações), mas o treinamento continua necessário. As demais alternativas contradizem ou extrapolam o texto.'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · sinonímia',
+ q:'Na frase "O policial agiu com cautela ao abordar o veículo suspeito", o termo destacado pode ser substituído, sem alteração de sentido, por:',
+ alts:['pressa','prudência','negligência','arrogância','indiferença'],
+ r:1,
+ e:'"Cautela" significa cuidado, precaução — sinônimo de "prudência". As demais opções alteram ou invertem o sentido da frase.'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · pontuação',
+ q:'Assinale a alternativa em que a pontuação está empregada conforme a norma-padrão.',
+ alts:['Os candidatos aprovados, iniciarão o curso em março.',
+       'O comandante disse, que a ronda começaria mais cedo.',
+       'O sargento, responsável pela equipe, orientou os novatos.',
+       'Compramos coletes capacetes e rádios para a equipe.',
+       'Após o treinamento os soldados, descansaram.'],
+ r:2,
+ e:'As vírgulas isolam corretamente o aposto explicativo "responsável pela equipe". Nas demais: não se separa sujeito do verbo nem verbo do complemento com vírgula, e enumerações exigem vírgulas ("coletes, capacetes e rádios").'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · acentuação',
+ q:'Assinale a alternativa em que todas as palavras estão acentuadas corretamente.',
+ alts:['orgão, política, saúde','órgão, politica, saúde','órgão, política, saúde','órgão, política, saude','orgão, politica, saude'],
+ r:2,
+ e:'"Órgão" é paroxítona terminada em -ão (acentuada); "política" é proparoxítona (todas as proparoxítonas são acentuadas); "saúde" tem hiato com "u" tônico.'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · mal/mau',
+ q:'Assinale a alternativa que preenche, correta e respectivamente, as lacunas:\n\n"Ele é um ___ exemplo para os colegas; comportou-se ___ durante toda a ocorrência."',
+ alts:['mau … mal','mal … mau','mau … mau','mal … mal','mal … mais'],
+ r:0,
+ e:'"Mau" é adjetivo (contrário de bom): "mau exemplo". "Mal" é advérbio (contrário de bem): "comportou-se mal".'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · uso dos porquês',
+ q:'Assinale a alternativa que preenche, correta e respectivamente, as lacunas:\n\n"Ninguém explicou o ___ da mudança na escala; você sabe ___ ela foi alterada?"',
+ alts:['porque … porquê','porquê … por que','por que … porque','porquê … por quê','por quê … porque'],
+ r:1,
+ e:'"O porquê" (com artigo) é substantivo e significa "o motivo". "Por que" (separado, sem acento) é usado em perguntas indiretas no meio da frase: "sabe por que ela foi alterada".'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · concordância nominal',
+ q:'Assinale a alternativa em que a concordância nominal está de acordo com a norma-padrão.',
+ alts:['Seguem anexos os relatórios solicitados.',
+       'Segue anexo as certidões exigidas no edital.',
+       'É proibido a entrada de pessoas não autorizadas.',
+       'Ela mesmo assinou o boletim de ocorrência.',
+       'Havia menas viaturas disponíveis naquele dia.'],
+ r:0,
+ e:'"Anexo" é adjetivo e concorda: "anexos os relatórios". Com artigo, seria "é proibida a entrada"; "mesma" concorda com "ela"; e "menos" é invariável — "menas" não existe.'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · valor das conjunções',
+ q:'Na frase "Embora estivesse cansado, o soldado completou a ronda", a oração destacada expressa ideia de:',
+ alts:['causa','condição','concessão','finalidade','conclusão'],
+ r:2,
+ e:'"Embora" é conjunção concessiva: indica um fato contrário que não impede a ação principal (estava cansado, mas mesmo assim completou a ronda).'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · vozes verbais',
+ q:'Transpondo a frase "Os policiais prenderam o suspeito" para a voz passiva, obtém-se:',
+ alts:['O suspeito prendeu os policiais.',
+       'O suspeito foi preso pelos policiais.',
+       'Os policiais foram presos pelo suspeito.',
+       'Prendeu-se os policiais.',
+       'O suspeito tinha prendido os policiais.'],
+ r:1,
+ e:'Na voz passiva, o objeto vira sujeito e o verbo assume a forma "ser + particípio" no mesmo tempo: "foi preso pelos policiais".'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · pronome relativo',
+ q:'Assinale a alternativa que preenche corretamente a lacuna:\n\n"O soldado ___ viatura apresentou defeito pediu apoio pelo rádio."',
+ alts:['que a','cuja','cujo a','onde a','a qual'],
+ r:1,
+ e:'"Cujo/cuja" indica posse (a viatura do soldado) e concorda com o substantivo seguinte: "cuja viatura". Não se usa artigo depois de "cujo".'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · denotação e conotação',
+ q:'Na frase "A cidade dormia quando a viatura iniciou o patrulhamento", o verbo "dormir" foi empregado em sentido:',
+ alts:['denotativo, pois indica o sono dos moradores.',
+       'conotativo, pois atribui uma ação humana à cidade.',
+       'técnico, próprio da linguagem policial.',
+       'literal, sem qualquer recurso expressivo.',
+       'ambíguo, pois impede a compreensão da frase.'],
+ r:1,
+ e:'Cidade não dorme literalmente: é personificação, uso figurado (conotativo) que sugere silêncio e tranquilidade.'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · tempos verbais',
+ q:'Na frase "Quando o telefone tocou, o soldado preenchia o relatório", a forma verbal "preenchia" indica:',
+ alts:['ação futura em relação ao toque do telefone.',
+       'ação concluída antes de o telefone tocar.',
+       'ação em andamento no momento em que o telefone tocou.',
+       'hipótese que não se realizou.',
+       'ordem dada ao soldado.'],
+ r:2,
+ e:'O pretérito imperfeito ("preenchia") expressa ação contínua no passado, em curso quando outra ação pontual ("tocou", pretérito perfeito) aconteceu.'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · coesão',
+ q:'Leia: "Os moradores procuraram a base comunitária. Eles queriam registrar uma reclamação."\n\nO pronome "Eles" retoma, no texto, a expressão:',
+ alts:['a base comunitária','uma reclamação','os moradores','a comunidade','os policiais da base'],
+ r:2,
+ e:'"Eles" é um pronome anafórico: refere-se ao termo já citado "os moradores", garantindo a coesão entre as frases.'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · há/a',
+ q:'Assinale a alternativa que preenche, correta e respectivamente, as lacunas:\n\n"___ dois anos ele ingressou na corporação; daqui ___ três meses, será promovido."',
+ alts:['Há … a','A … há','Há … há','A … a','A … à'],
+ r:0,
+ e:'"Há" (verbo haver) indica tempo passado/decorrido: "há dois anos". "A" (preposição) indica tempo futuro: "daqui a três meses".'},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · semântica',
+ q:'Na frase "O efetivo da companhia foi ampliado no último semestre", o termo destacado pode ser substituído, sem prejuízo de sentido, por:',
+ alts:['reduzido','aumentado','mantido','extinto','remanejado'],
+ r:1,
+ e:'"Ampliado" significa tornado maior — sinônimo de "aumentado". As demais alternativas modificam o sentido original.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · média aritmética',
+ q:'O número de ocorrências atendidas por uma equipe, de segunda a sexta-feira, foi: 12, 15, 9, 18 e 16. A média diária de ocorrências nessa semana foi:',
+ alts:['12','13','14','15','16'],
+ r:2,
+ e:'Soma: 12 + 15 + 9 + 18 + 16 = 70. Média: 70 ÷ 5 = 14 ocorrências por dia.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · MMC',
+ q:'Dois policiais tiraram serviço juntos hoje. Um deles retorna à escala a cada 6 dias e o outro, a cada 8 dias. Eles voltarão a tirar serviço juntos daqui a:',
+ alts:['12 dias','18 dias','24 dias','36 dias','48 dias'],
+ r:2,
+ e:'É o mínimo múltiplo comum: MMC(6, 8) = 24. Eles coincidem novamente em 24 dias.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · juros simples',
+ q:'Um capital de R$ 2.000,00 foi aplicado a juros simples, à taxa de 1,5% ao mês, durante 8 meses. Os juros obtidos nessa aplicação foram de:',
+ alts:['R$ 180,00','R$ 200,00','R$ 220,00','R$ 240,00','R$ 260,00'],
+ r:3,
+ e:'J = C × i × t = 2.000 × 0,015 × 8 = R$ 240,00.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · desconto',
+ q:'Um equipamento custa R$ 480,00. Na compra à vista, a loja oferece 15% de desconto. O valor pago à vista é de:',
+ alts:['R$ 396,00','R$ 400,00','R$ 408,00','R$ 412,00','R$ 420,00'],
+ r:2,
+ e:'15% de 480 = 72. Logo, 480 − 72 = R$ 408,00 (ou 480 × 0,85 = 408).'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · grandezas inversas',
+ q:'Doze operários constroem um muro em 30 dias. Mantido o mesmo ritmo de trabalho, 20 operários construiriam o mesmo muro em:',
+ alts:['15 dias','16 dias','18 dias','20 dias','22 dias'],
+ r:2,
+ e:'Grandezas inversamente proporcionais: 12 × 30 = 360 "dias-homem". Então 360 ÷ 20 = 18 dias.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · perímetro',
+ q:'Um terreno retangular tem 30 m de comprimento e 20 m de largura. Para cercá-lo completamente, serão necessários, de tela:',
+ alts:['90 m','100 m','110 m','120 m','600 m'],
+ r:1,
+ e:'Perímetro do retângulo: 2 × (30 + 20) = 100 m. Atenção: 600 m² seria a área, não o contorno.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · probabilidade',
+ q:'Em uma caixa há 4 bolas azuis e 6 bolas vermelhas. Retirando-se uma bola ao acaso, a probabilidade de ela ser azul é de:',
+ alts:['1/5','2/5','3/5','1/2','4/6'],
+ r:1,
+ e:'São 4 azuis em um total de 10 bolas: 4/10 = 2/5.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · sequências',
+ q:'Observe a sequência numérica: 3, 7, 11, 15, … O próximo termo dessa sequência é:',
+ alts:['17','18','19','20','21'],
+ r:2,
+ e:'A sequência cresce de 4 em 4 (progressão aritmética de razão 4): 15 + 4 = 19.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · consumo',
+ q:'Uma viatura consome 1 litro de combustível a cada 8 km rodados. Para percorrer 96 km, ela consumirá:',
+ alts:['10 litros','11 litros','12 litros','13 litros','14 litros'],
+ r:2,
+ e:'96 ÷ 8 = 12 litros.'},
+
+{c:'pmesp', m:'Matemática', f:'Estilo VUNESP · sistema de equações',
+ q:'Em um pátio há carros e motocicletas, num total de 20 veículos e 64 rodas. O número de motocicletas no pátio é:',
+ alts:['6','7','8','10','12'],
+ r:2,
+ e:'Sendo c o número de carros: 4c + 2(20 − c) = 64 → 2c + 40 = 64 → c = 12 carros. Motos: 20 − 12 = 8.'},
+
+/* ---------------- PMESP · Conhecimentos Gerais ---------------- */
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Geografia de São Paulo',
+ q:'Sobre o estado de São Paulo, é correto afirmar que:',
+ alts:['é o estado menos populoso da região Sudeste.',
+       'sua capital é a cidade mais populosa do Brasil.',
+       'faz fronteira com o estado da Bahia.',
+       'não possui litoral.',
+       'sua economia baseia-se exclusivamente na agricultura.'],
+ r:1,
+ e:'A cidade de São Paulo é a mais populosa do Brasil. O estado é o mais populoso do país, tem litoral (Baixada Santista, litoral norte e sul) e faz divisa com MG, RJ, PR e MS — não com a Bahia.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'História do Brasil',
+ q:'A Constituição Federal em vigor no Brasil, conhecida como "Constituição Cidadã", foi promulgada em:',
+ alts:['1946','1964','1985','1988','1992'],
+ r:3,
+ e:'A Constituição Federal foi promulgada em 5 de outubro de 1988, marcando a redemocratização após o regime militar (1964–1985).'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Atualidades estruturais',
+ q:'Sobre o Sistema Único de Segurança Pública (SUSP), criado pela Lei nº 13.675/2018, é correto afirmar que ele:',
+ alts:['substituiu integralmente as polícias estaduais por uma polícia única federal.',
+       'busca integrar e articular os órgãos de segurança pública dos entes federativos.',
+       'extinguiu as guardas municipais em todo o território nacional.',
+       'transferiu o policiamento ostensivo para a Polícia Federal.',
+       'aplica-se somente aos estados da região Sudeste.'],
+ r:1,
+ e:'O SUSP tem como objetivo a atuação integrada e articulada entre União, estados e municípios na segurança pública — sem extinguir ou substituir órgãos existentes.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Geopolítica',
+ q:'O Mercosul é um bloco econômico do qual o Brasil é membro fundador. Também são membros fundadores do bloco:',
+ alts:['Argentina, Chile e Peru.','Argentina, Paraguai e Uruguai.','Bolívia, Colômbia e Equador.','Argentina, Uruguai e Venezuela.','Paraguai, Chile e Bolívia.'],
+ r:1,
+ e:'O Tratado de Assunção (1991) foi assinado por Brasil, Argentina, Paraguai e Uruguai — os quatro membros fundadores do Mercosul.'},
+
+/* ---------------- PMESP · Noções de Informática ---------------- */
+{c:'pmesp', m:'Noções de Informática', f:'Windows / atalhos',
+ q:'No Microsoft Windows, em sua configuração padrão, o atalho de teclado utilizado para copiar um item selecionado é:',
+ alts:['Ctrl + V','Ctrl + X','Ctrl + C','Ctrl + Z','Ctrl + A'],
+ r:2,
+ e:'Ctrl + C copia. Ctrl + V cola, Ctrl + X recorta, Ctrl + Z desfaz e Ctrl + A seleciona tudo.'},
+
+{c:'pmesp', m:'Noções de Informática', f:'Excel',
+ q:'No Microsoft Excel, em sua configuração padrão, a fórmula que soma os valores contidos no intervalo de células A1 até A10 é:',
+ alts:['=SOMA(A1:A10)','=SOMA(A1;A10)','=TOTAL(A1:A10)','=ADICIONAR(A1-A10)','=SOMAR(A1+A10)'],
+ r:0,
+ e:'A função correta é =SOMA(A1:A10). Os dois-pontos indicam intervalo (de A1 até A10); o ponto e vírgula indicaria apenas as duas células A1 e A10.'},
+
+{c:'pmesp', m:'Noções de Informática', f:'Internet / e-mail',
+ q:'Em um programa de correio eletrônico, o campo "Cco" (com cópia oculta) serve para:',
+ alts:['enviar o e-mail com prioridade alta.',
+       'anexar arquivos de forma criptografada.',
+       'enviar cópia a destinatários sem que os demais vejam seus endereços.',
+       'agendar o envio da mensagem para outra data.',
+       'impedir que o destinatário responda à mensagem.'],
+ r:2,
+ e:'O campo Cco envia cópia oculta: os destinatários em Cco recebem a mensagem, mas seus endereços não ficam visíveis para os demais.'},
+
+/* ---------------- PMESP · Noções de Administração Pública ---------------- */
+{c:'pmesp', m:'Noções de Adm. Pública', f:'CF/88 · art. 37',
+ q:'Segundo o art. 37 da Constituição Federal, a administração pública direta e indireta obedecerá, entre outros, aos princípios de:',
+ alts:['legalidade, impessoalidade, moralidade, publicidade e eficiência.',
+       'legalidade, hierarquia, sigilo, pessoalidade e economia.',
+       'moralidade, discricionariedade, publicidade, celeridade e sigilo.',
+       'impessoalidade, informalidade, eficiência, gratuidade e oralidade.',
+       'legalidade, moralidade, autonomia, soberania e eficácia.'],
+ r:0,
+ e:'São os princípios expressos do art. 37, caput — memorize pelo mnemônico LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência.'},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'CF/88 · art. 144',
+ q:'De acordo com o art. 144 da Constituição Federal, às polícias militares cabem:',
+ alts:['a apuração de infrações penais contra a ordem política e social.',
+       'a polícia ostensiva e a preservação da ordem pública.',
+       'o patrulhamento ostensivo das rodovias federais.',
+       'as funções de polícia judiciária da União.',
+       'a execução de atividades de defesa civil, exclusivamente.'],
+ r:1,
+ e:'Art. 144, § 5º: às polícias militares cabem a polícia ostensiva e a preservação da ordem pública. Polícia judiciária da União e apuração de infrações federais são da Polícia Federal; rodovias federais, da PRF.'},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'Hierarquia e disciplina',
+ q:'A Constituição Federal estabelece que as polícias militares e os corpos de bombeiros militares são instituições organizadas com base:',
+ alts:['na autonomia e na independência funcional.',
+       'na hierarquia e na disciplina.',
+       'na eletividade e na alternância de comando.',
+       'no consenso e na gestão colegiada.',
+       'na descentralização e na terceirização.'],
+ r:1,
+ e:'Art. 42 da CF/88: os militares dos Estados são organizados com base na hierarquia e na disciplina — pilares das instituições militares.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Organismos internacionais',
+ q:'A Organização das Nações Unidas (ONU), da qual o Brasil é membro fundador, tem como principal objetivo:',
+ alts:['administrar o comércio de armas entre os países-membros.',
+       'manter a paz e a segurança internacionais e promover a cooperação entre as nações.',
+       'unificar as moedas de todos os países-membros.',
+       'comandar as forças policiais dos países em desenvolvimento.',
+       'regular exclusivamente o comércio internacional de alimentos.'],
+ r:1,
+ e:'Criada em 1945, após a Segunda Guerra Mundial, a ONU tem como missão central a manutenção da paz e da segurança internacionais e a cooperação entre os povos.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Biomas brasileiros',
+ q:'O bioma brasileiro de maior extensão territorial é:',
+ alts:['o Cerrado.','a Caatinga.','a Amazônia.','o Pantanal.','a Mata Atlântica.'],
+ r:2,
+ e:'A Amazônia é o maior bioma do Brasil, ocupando cerca de metade do território nacional. O Cerrado é o segundo maior.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Geografia do Brasil',
+ q:'O estado de São Paulo integra a região Sudeste do Brasil, composta pelos estados de:',
+ alts:['São Paulo, Paraná, Santa Catarina e Rio Grande do Sul.',
+       'São Paulo, Rio de Janeiro, Minas Gerais e Espírito Santo.',
+       'São Paulo, Goiás, Minas Gerais e Mato Grosso do Sul.',
+       'São Paulo, Rio de Janeiro, Bahia e Minas Gerais.',
+       'São Paulo, Espírito Santo, Paraná e Rio de Janeiro.'],
+ r:1,
+ e:'A região Sudeste é formada por SP, RJ, MG e ES. Paraná, SC e RS formam a região Sul; Bahia pertence ao Nordeste; Goiás e MS, ao Centro-Oeste.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'História do Brasil',
+ q:'A Proclamação da República no Brasil, que pôs fim ao período imperial, ocorreu em:',
+ alts:['7 de setembro de 1822.','15 de novembro de 1889.','13 de maio de 1888.','24 de fevereiro de 1891.','24 de outubro de 1930.'],
+ r:1,
+ e:'A República foi proclamada em 15/11/1889, pelo Marechal Deodoro da Fonseca. 07/09/1822 é a Independência; 13/05/1888, a Lei Áurea; 1891, a primeira Constituição republicana.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Organização do Estado',
+ q:'Segundo a Constituição Federal, são Poderes da União, independentes e harmônicos entre si:',
+ alts:['o Executivo, o Judiciário e o Ministério Público.',
+       'o Legislativo, o Executivo e o Judiciário.',
+       'o Executivo, o Legislativo e as Forças Armadas.',
+       'o Judiciário, o Legislativo e o Tribunal de Contas.',
+       'o Executivo, o Moderador e o Judiciário.'],
+ r:1,
+ e:'Art. 2º da CF/88: são Poderes da União o Legislativo, o Executivo e o Judiciário. O Ministério Público é instituição essencial à Justiça, mas não é um Poder.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Meio ambiente',
+ q:'O Acordo de Paris, tratado internacional do qual o Brasil é signatário, tem como objetivo principal:',
+ alts:['eliminar as fronteiras comerciais entre os países.',
+       'reduzir a emissão de gases de efeito estufa e conter o aquecimento global.',
+       'proibir o uso de energia elétrica de origem hidráulica.',
+       'regulamentar a exploração de petróleo em águas profundas.',
+       'criar uma moeda única para os países signatários.'],
+ r:1,
+ e:'Firmado em 2015, o Acordo de Paris busca limitar o aumento da temperatura média global, por meio da redução das emissões de gases de efeito estufa.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Tecnologia e sociedade',
+ q:'O termo "fake news", frequentemente presente no debate público, refere-se a:',
+ alts:['notícias publicadas exclusivamente em jornais impressos.',
+       'informações falsas divulgadas como se fossem verdadeiras, geralmente pela internet.',
+       'reportagens investigativas de longa duração.',
+       'mensagens criptografadas trocadas entre governos.',
+       'propagandas eleitorais autorizadas pela Justiça.'],
+ r:1,
+ e:'Fake news são conteúdos falsos ou enganosos difundidos como notícias verdadeiras, sobretudo em redes sociais, com potencial de manipular a opinião pública.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Energia',
+ q:'A matriz elétrica brasileira destaca-se no cenário mundial porque sua principal fonte de geração é:',
+ alts:['a energia nuclear.','a queima de carvão mineral.','a energia hidrelétrica.','a queima de óleo diesel.','a energia geotérmica.'],
+ r:2,
+ e:'A maior parte da eletricidade do Brasil vem de usinas hidrelétricas, o que torna a matriz elétrica do país predominantemente renovável. Eólica e solar vêm crescendo como fontes complementares.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Censo IBGE 2022',
+ q:'De acordo com o Censo Demográfico de 2022, do IBGE, a população do Brasil é de aproximadamente:',
+ alts:['150 milhões de habitantes.','180 milhões de habitantes.','203 milhões de habitantes.','230 milhões de habitantes.','250 milhões de habitantes.'],
+ r:2,
+ e:'O Censo 2022 apurou cerca de 203 milhões de habitantes no Brasil, sendo São Paulo o estado mais populoso, com mais de 44 milhões.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Hidrografia paulista',
+ q:'O rio que nasce em Salesópolis, atravessa a capital paulista e percorre o interior do estado até desaguar no rio Paraná é o:',
+ alts:['rio Pinheiros.','rio Tietê.','rio Paraíba do Sul.','rio Ribeira de Iguape.','rio Grande.'],
+ r:1,
+ e:'O rio Tietê é o mais emblemático de São Paulo: nasce em Salesópolis, corta a capital e cruza o estado rumo ao rio Paraná.'},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'Blocos e grupos internacionais',
+ q:'O grupo internacional conhecido como BRICS foi formado, originalmente, pelos seguintes países:',
+ alts:['Brasil, Rússia, Índia, China e África do Sul.',
+       'Brasil, Reino Unido, Itália, Canadá e Suíça.',
+       'Bolívia, Rússia, Irã, Chile e Síria.',
+       'Brasil, Romênia, Indonésia, Cuba e Senegal.',
+       'Bélgica, Rússia, Índia, China e Espanha.'],
+ r:0,
+ e:'O acrônimo BRICS corresponde a Brasil, Rússia, Índia, China e África do Sul (South Africa) — grupo de grandes economias emergentes, que nos últimos anos passou a admitir novos membros.'},
+
+{c:'pmesp', m:'Noções de Informática', f:'Word (pt-BR)',
+ q:'No Microsoft Word, em português e em sua configuração padrão, o atalho de teclado que aplica negrito ao texto selecionado é:',
+ alts:['Ctrl + B','Ctrl + N','Ctrl + I','Ctrl + S','Ctrl + G'],
+ r:1,
+ e:'Na versão em português do Word, Ctrl + N aplica Negrito, Ctrl + I aplica itálico e Ctrl + S aplica sublinhado. (Ctrl + B, no Word em português, salva o arquivo.)'},
+
+{c:'pmesp', m:'Noções de Informática', f:'Arquivos e extensões',
+ q:'A extensão padrão dos arquivos de pasta de trabalho criados no Microsoft Excel, em suas versões atuais, é:',
+ alts:['.docx','.pptx','.xlsx','.pdf','.txt'],
+ r:2,
+ e:'.xlsx é a extensão das planilhas do Excel. .docx é do Word, .pptx do PowerPoint, .pdf é formato de documento portátil e .txt é texto sem formatação.'},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'CF/88 · art. 37, II',
+ q:'De acordo com a Constituição Federal, a investidura em cargo ou emprego público depende, em regra, de:',
+ alts:['indicação de autoridade competente.',
+       'aprovação prévia em concurso público de provas ou de provas e títulos.',
+       'sorteio público entre os interessados.',
+       'contrato temporário renovável indefinidamente.',
+       'filiação a partido político.'],
+ r:1,
+ e:'Art. 37, II, da CF/88: a investidura em cargo ou emprego público depende de aprovação prévia em concurso público, ressalvadas as nomeações para cargos em comissão.'},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'CF/88 · art. 41',
+ q:'Nos termos da Constituição Federal, o servidor público civil nomeado para cargo de provimento efetivo em virtude de concurso adquire estabilidade após:',
+ alts:['um ano de efetivo exercício.','dois anos de efetivo exercício.','três anos de efetivo exercício.','quatro anos de efetivo exercício.','cinco anos de efetivo exercício.'],
+ r:2,
+ e:'Art. 41 da CF/88 (com a redação da EC 19/98): a estabilidade é adquirida após 3 anos de efetivo exercício, condicionada à avaliação especial de desempenho.'},
+
+/* ---------------- GCM Sorocaba ---------------- */
+{c:'gcm', m:'Legislação', f:'Lei 13.022/2014 · Estatuto das Guardas',
+ q:'De acordo com a Lei Federal nº 13.022/2014 (Estatuto Geral das Guardas Municipais), é competência geral das guardas municipais:',
+ alts:['a investigação de crimes contra a vida.',
+       'a proteção de bens, serviços, logradouros públicos municipais e instalações do Município.',
+       'o policiamento ostensivo em rodovias estaduais.',
+       'a lavratura de inquéritos policiais.',
+       'a defesa externa do território nacional.'],
+ r:1,
+ e:'Art. 4º da Lei 13.022/2014: compete às guardas municipais a proteção de bens, serviços, logradouros públicos municipais e instalações do Município. Investigação e inquérito são atribuições da polícia judiciária.'},
+
+{c:'gcm', m:'Legislação', f:'Lei 13.022/2014 · princípios',
+ q:'São princípios mínimos de atuação das guardas municipais, segundo a Lei nº 13.022/2014:',
+ alts:['uso preferencial da força e sigilo absoluto das operações.',
+       'proteção dos direitos humanos fundamentais e uso progressivo da força.',
+       'autonomia investigativa e independência em relação ao Município.',
+       'atuação exclusivamente repressiva e ostensividade máxima.',
+       'subordinação direta às polícias militares estaduais.'],
+ r:1,
+ e:'Art. 3º: entre os princípios estão a proteção dos direitos humanos fundamentais, o exercício da cidadania e das liberdades públicas, a preservação da vida, a redução do sofrimento e o uso progressivo da força.'},
+
+{c:'gcm', m:'Língua Portuguesa', f:'Ortografia',
+ q:'Assinale a alternativa em que todas as palavras estão grafadas corretamente.',
+ alts:['previlégio, exceção, enxergar','privilégio, excessão, enchergar','privilégio, exceção, enxergar','previlégio, excessão, enxergar','privilégio, exceção, enchergar'],
+ r:2,
+ e:'As formas corretas são: privilégio (com i), exceção (com ç após o x) e enxergar (com x).'},
+
+{c:'gcm', m:'Matemática', f:'Porcentagem',
+ q:'A GCM de um município tem 240 agentes, dos quais 25% atuam no período noturno. O número de agentes que atuam no período noturno é:',
+ alts:['48','54','60','66','72'],
+ r:2,
+ e:'25% = 1/4. Então 240 ÷ 4 = 60 agentes.'},
+
+{c:'gcm', m:'Legislação', f:'Porte de arma',
+ q:'Quanto ao porte de arma de fogo pelos integrantes das guardas municipais, a legislação federal vigente:',
+ alts:['proíbe o porte de arma em qualquer hipótese.',
+       'autoriza o porte apenas dentro das repartições públicas.',
+       'prevê a possibilidade de porte, na forma da lei e de sua regulamentação.',
+       'permite o porte somente aos comandantes das guardas.',
+       'equipara automaticamente os guardas aos policiais federais.'],
+ r:2,
+ e:'A Lei 13.022/2014 (art. 16) e o Estatuto do Desarmamento preveem o porte de arma pelos guardas municipais na forma da lei e de sua regulamentação (capacitação, controle e demais requisitos).'},
+
+/* ---------------- Correios ---------------- */
+{c:'correios', m:'Língua Portuguesa', f:'Acentuação',
+ q:'Assinale a alternativa em que todas as palavras estão acentuadas corretamente.',
+ alts:['juíz, país, saúde','juiz, pais, saude','juiz, país, saúde','juíz, pais, saúde','juiz, paíz, saúde'],
+ r:2,
+ e:'"Juiz" não leva acento (o "i" tônico forma sílaba com consoante seguinte: ju-iz). "País" e "saúde" levam acento por serem hiatos com i/u tônicos.'},
+
+{c:'correios', m:'Matemática', f:'Raciocínio lógico',
+ q:'Um carteiro entrega, em média, 45 correspondências por hora. Mantendo esse ritmo, em uma jornada de 6 horas de entregas ele entregará:',
+ alts:['240 correspondências','250 correspondências','260 correspondências','270 correspondências','280 correspondências'],
+ r:3,
+ e:'45 × 6 = 270 correspondências.'},
+
+{c:'correios', m:'Matemática', f:'Frações',
+ q:'De um lote de 600 encomendas, 2/5 foram entregues no período da manhã. O número de encomendas que restaram para os demais períodos é:',
+ alts:['240','300','320','360','400'],
+ r:3,
+ e:'2/5 de 600 = 240 entregues pela manhã. Restam 600 − 240 = 360.'},
+
+{c:'correios', m:'Noções de Informática', f:'Navegadores',
+ q:'Em navegadores de internet, em sua configuração padrão, o atalho Ctrl + T é utilizado para:',
+ alts:['fechar o navegador.','abrir uma nova guia (aba).','imprimir a página atual.','atualizar a página.','abrir o histórico de navegação.'],
+ r:1,
+ e:'Ctrl + T abre uma nova guia. Ctrl + W fecha a guia, Ctrl + P imprime, F5 atualiza e Ctrl + H abre o histórico.'},
+
+{c:'correios', m:'Noções de Informática', f:'Segurança',
+ q:'O tipo de golpe em que criminosos enviam mensagens falsas, imitando empresas conhecidas, para roubar dados pessoais e senhas é chamado de:',
+ alts:['firewall','phishing','backup','spam legítimo','antivírus'],
+ r:1,
+ e:'Phishing é a fraude que "pesca" dados da vítima por meio de mensagens e páginas falsas. Firewall e antivírus são mecanismos de proteção; backup é cópia de segurança.'},
+];
+
+/* =====================================================================
+   ARMAZENAMENTO (histórico) — com fallback em memória
+   ===================================================================== */
+const store = {
+  _mem:{},
+  get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return this._mem[k] ?? null; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){ this._mem[k]=v; } }
+};
+
+/* =====================================================================
+   ESTADO E NAVEGAÇÃO
+   ===================================================================== */
+const app = document.getElementById('app');
+let S = {}; // estado do simulado atual
+
+const esc = t => t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const LETRAS = ['A','B','C','D','E'];
+const embaralhar = a => { a=[...a]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+
+/* ---------- TELA: início ---------- */
+function telaInicio(){
+  const hist = store.get('historico') || [];
+  app.innerHTML = `
+    <p class="eyebrow">Escolha o concurso</p>
+    ${CONCURSOS.map(c=>{
+      const n = BANCO.filter(q=>q.c===c.id).length;
+      return `<button class="concurso ${c.id}" onclick="telaSetup('${c.id}')">
+        <span class="sigla">${c.sigla}</span>
+        <span><h3>${c.nome}</h3><p>${c.desc}</p></span>
+        <span class="n"><b>${n}</b>questões</span>
+      </button>`;
+    }).join('')}
+
+    <p class="eyebrow">Últimos simulados</p>
+    ${hist.length ? hist.slice(0,6).map(h=>{
+      const pct = Math.round(h.acertos/h.total*100);
+      return `<div class="hist">
+        <span class="pct ${pct>=50?'ok':'ruim'}">${pct}%</span>
+        <span class="info"><b>${h.nome}</b><span>${h.acertos}/${h.total} acertos · ${h.data}</span></span>
+      </div>`;
+    }).join('') : `<div class="vazio">Nenhum simulado feito ainda. Bora começar? 💪</div>`}
+    <p class="aviso">Feito para estudo entre amigos · adicione questões novas direto no arquivo <b>index.html</b></p>
+  `;
+  window.scrollTo(0,0);
+}
+
+/* ---------- TELA: configurar simulado ---------- */
+function telaSetup(cid){
+  const c = CONCURSOS.find(x=>x.id===cid);
+  const qs = BANCO.filter(q=>q.c===cid);
+  const materias = [...new Set(qs.map(q=>q.m))];
+  const sel = new Set(materias);
+  let qtd = Math.min(10, qs.length);
+
+  function render(){
+    const disponiveis = qs.filter(q=>sel.has(q.m)).length;
+    qtd = Math.min(qtd, disponiveis);
+    const totalProva = c.prova ? Object.values(c.prova).reduce((a,b)=>a+b,0) : 0;
+    app.innerHTML = `
+      <p class="eyebrow">${c.nome}</p>
+      ${c.prova ? `
+      <button class="btn btn-primario" id="oficial" style="margin-bottom:8px; border-bottom:3px solid var(--insignia);">
+        Prova real · ${totalProva} questões
+      </button>
+      <p style="font-size:12.5px; color:var(--tinta-2); text-align:center; margin:0 0 20px;">
+        Mesma distribuição da prova oficial · nota de corte: ${c.corte} acertos
+      </p>` : ''}
+      <p class="eyebrow" style="margin-top:6px;">Ou monte um treino rápido</p>
+      <div class="painel">
+        <h4>Matérias</h4>
+        <div class="chips">
+          ${materias.map(m=>{
+            const n = qs.filter(q=>q.m===m).length;
+            return `<button class="chip ${sel.has(m)?'on':''}" data-m="${esc(m)}">${m} <span class="qtd">(${n})</span></button>`;
+          }).join('')}
+        </div>
+      </div>
+      <div class="painel">
+        <h4>Quantidade de questões</h4>
+        <div class="chips" id="qtds">
+          ${[5,10,15,20].filter(n=>n<=disponiveis).map(n=>`<button class="chip ${qtd===n?'on':''}" data-q="${n}">${n}</button>`).join('')}
+          <button class="chip ${qtd===disponiveis?'on':''}" data-q="${disponiveis}">Todas (${disponiveis})</button>
+        </div>
+      </div>
+      <button class="btn btn-primario" id="comecar" ${disponiveis===0?'disabled':''}>Começar simulado</button>
+      <button class="btn btn-linha" onclick="telaInicio()">← Voltar</button>
+    `;
+    app.querySelectorAll('.chip[data-m]').forEach(b=>b.onclick=()=>{
+      const m=b.dataset.m;
+      if(sel.has(m) && sel.size>1) sel.delete(m); else sel.add(m);
+      render();
+    });
+    app.querySelectorAll('.chip[data-q]').forEach(b=>b.onclick=()=>{ qtd=+b.dataset.q; render(); });
+    document.getElementById('comecar').onclick=()=>iniciarSimulado(cid, [...sel], qtd);
+    const ofc=document.getElementById('oficial');
+    if(ofc) ofc.onclick=()=>iniciarProvaOficial(cid);
+    window.scrollTo(0,0);
+  }
+  render();
+}
+
+/* ---------- prova real: distribuição oficial por matéria ---------- */
+function iniciarProvaOficial(cid){
+  const c = CONCURSOS.find(x=>x.id===cid);
+  let pool = [];
+  for(const [m, n] of Object.entries(c.prova)){
+    pool = pool.concat(embaralhar(BANCO.filter(q=>q.c===cid && q.m===m)).slice(0, n));
+  }
+  S = { cid, nome:c.nome, questoes:pool,
+        respostas:Array(pool.length).fill(null), i:0,
+        oficial:true, corte:c.corte };
+  telaQuestao();
+}
+
+/* ---------- iniciar ---------- */
+function iniciarSimulado(cid, materias, qtd){
+  const pool = embaralhar(BANCO.filter(q=>q.c===cid && materias.includes(q.m))).slice(0, qtd);
+  S = { cid, nome:CONCURSOS.find(x=>x.id===cid).nome, questoes:pool,
+        respostas:Array(pool.length).fill(null), i:0 };
+  telaQuestao();
+}
+
+/* ---------- TELA: questão ---------- */
+function telaQuestao(){
+  const q = S.questoes[S.i];
+  const ultima = S.i === S.questoes.length-1;
+  const respondidas = S.respostas.filter(r=>r!==null).length;
+
+  app.innerHTML = `
+    <div class="faixa">
+      <div class="meta">
+        <b>Questão ${String(S.i+1).padStart(2,'0')} / ${String(S.questoes.length).padStart(2,'0')}</b>
+        <span>${respondidas} respondida${respondidas===1?'':'s'}</span>
+      </div>
+      <div class="strip">
+        ${S.questoes.map((_,k)=>`<i class="${S.respostas[k]!==null?'feita':''} ${k===S.i?'atual':''}"></i>`).join('')}
+      </div>
+    </div>
+    <span class="q-materia">${q.m}</span>
+    <p class="q-texto">${esc(q.q)}</p>
+    <p class="q-fonte">${q.f}</p>
+    <div class="alts">
+      ${q.alts.map((a,k)=>`
+        <button class="alt ${S.respostas[S.i]===k?'sel':''}" data-k="${k}">
+          <span class="bolha">${LETRAS[k]}</span><span>${esc(a)}</span>
+        </button>`).join('')}
+    </div>
+    <div class="nav-quiz">
+      ${S.i>0 ? `<button class="btn btn-claro" id="ant">← Anterior</button>` : ''}
+      <button class="btn btn-primario" id="prox" ${S.respostas[S.i]===null?'disabled':''}>
+        ${ultima ? 'Finalizar ✓' : 'Próxima →'}
+      </button>
+    </div>
+    <button class="btn btn-linha" onclick="if(confirm('Sair do simulado? O progresso será perdido.')) telaInicio()">Sair do simulado</button>
+  `;
+
+  app.querySelectorAll('.alt').forEach(b=>b.onclick=()=>{
+    S.respostas[S.i]=+b.dataset.k;
+    app.querySelectorAll('.alt').forEach(x=>x.classList.remove('sel'));
+    b.classList.add('sel');
+    document.getElementById('prox').disabled=false;
+  });
+  const ant=document.getElementById('ant');
+  if(ant) ant.onclick=()=>{ S.i--; telaQuestao(); };
+  document.getElementById('prox').onclick=()=>{
+    if(S.respostas[S.i]===null) return;
+    if(ultima) telaResultado(); else { S.i++; telaQuestao(); }
+  };
+  window.scrollTo(0,0);
+}
+
+/* ---------- TELA: resultado ---------- */
+function telaResultado(){
+  const total = S.questoes.length;
+  const acertos = S.questoes.filter((q,k)=>S.respostas[k]===q.r).length;
+  const pct = Math.round(acertos/total*100);
+
+  // salvar histórico (apenas uma vez por simulado)
+  if(!S.salvo){
+    const hist = store.get('historico') || [];
+    hist.unshift({ nome:S.nome, acertos, total,
+      data:new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})+' '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}) });
+    store.set('historico', hist.slice(0,20));
+    S.salvo = true;
+  }
+
+  // desempenho por matéria
+  const porMateria = {};
+  S.questoes.forEach((q,k)=>{
+    porMateria[q.m] = porMateria[q.m] || {a:0,t:0};
+    porMateria[q.m].t++;
+    if(S.respostas[k]===q.r) porMateria[q.m].a++;
+  });
+
+  let selo;
+  if(S.oficial){
+    selo = acertos>=S.corte ? ['ok',`Acima do corte (${S.corte}) — aprovado! 🎯`] : ['ruim',`Abaixo do corte de ${S.corte} acertos`];
+  } else {
+    selo = pct>=70 ? ['ok','Mandou bem! 🎯'] : pct>=50 ? ['quase','No caminho certo'] : ['ruim','Bora revisar os erros'];
+  }
+
+  app.innerHTML = `
+    <div class="placar">
+      <div class="nota">${acertos}<small>/${total}</small></div>
+      <p>${pct}% de acertos · ${S.nome}${S.oficial?' · Prova real':''}</p>
+      <span class="selo ${selo[0]}">${selo[1]}</span>
+    </div>
+
+    <p class="eyebrow">Desempenho por matéria</p>
+    <div class="painel barras">
+      ${Object.entries(porMateria).map(([m,d])=>{
+        const p = Math.round(d.a/d.t*100);
+        const cls = p>=70?'':p>=50?'media':'baixa';
+        return `<div class="barra-linha">
+          <div class="rot"><span>${m}</span><span>${d.a}/${d.t}</span></div>
+          <div class="barra-bg"><div class="barra-fill ${cls}" style="width:${Math.max(p,4)}%"></div></div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    <button class="btn btn-primario" onclick="telaRevisao('erradas')">Corrigir as que errei (${total-acertos})</button>
+    <div style="height:10px"></div>
+    <button class="btn btn-claro" onclick="telaRevisao('todas')">Ver gabarito completo</button>
+    <button class="btn btn-linha" onclick="telaInicio()">← Início</button>
+  `;
+  window.scrollTo(0,0);
+}
+
+/* ---------- TELA: revisão / gabarito ---------- */
+function telaRevisao(filtro){
+  const itens = S.questoes.map((q,k)=>({q,k,ok:S.respostas[k]===q.r}))
+                          .filter(x=> filtro==='todas' ? true : !x.ok);
+
+  app.innerHTML = `
+    <p class="eyebrow">${filtro==='todas' ? 'Gabarito completo' : 'Questões que você errou'}</p>
+    <div class="filtros-rev">
+      <button class="chip ${filtro==='erradas'?'on':''}" onclick="telaRevisao('erradas')">Só os erros</button>
+      <button class="chip ${filtro==='todas'?'on':''}" onclick="telaRevisao('todas')">Todas</button>
+    </div>
+    ${itens.length===0 ? `<div class="vazio">Nenhum erro — gabaritou! 🏆</div>` : itens.map(({q,k,ok})=>`
+      <div class="rev ${ok?'acerto':''}">
+        <div class="num">Questão ${String(k+1).padStart(2,'0')} · ${q.m}</div>
+        <p class="enun">${esc(q.q)}</p>
+        ${!ok ? `<div class="linha-resp"><span class="tag sua">Sua resposta</span><span>${LETRAS[S.respostas[k]]}) ${esc(q.alts[S.respostas[k]])}</span></div>` : ''}
+        <div class="linha-resp"><span class="tag gab">Gabarito</span><span>${LETRAS[q.r]}) ${esc(q.alts[q.r])}</span></div>
+        <div class="explica"><b>Por quê:</b> ${esc(q.e)}</div>
+      </div>
+    `).join('')}
+    <button class="btn btn-primario" onclick="telaResultado()">← Voltar ao resultado</button>
+    <button class="btn btn-linha" onclick="telaInicio()">Início</button>
+  `;
+  window.scrollTo(0,0);
+}
+
+telaInicio();
+</script>
+</body>
+</html>
