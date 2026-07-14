@@ -130,7 +130,22 @@
     background:#E8EDF4; border-radius:6px; padding:4px 9px; margin-bottom:12px;
   }
   .q-texto{font-size:16.5px; font-weight:500; line-height:1.6; margin:0 0 6px; white-space:pre-line;}
-  .q-fonte{font-size:12px; color:var(--tinta-2); margin:0 0 18px;}
+  .q-fonte{font-size:12px; color:var(--tinta-2); margin:0 0 10px;}
+
+  /* ---------- dica sutil ---------- */
+  .dica-btn{
+    display:inline-block; background:none; border:none; font-family:'Inter';
+    font-weight:600; font-size:12px; color:var(--tinta-2); opacity:.5;
+    cursor:pointer; padding:2px 0 0; margin:0 0 16px; text-decoration:underline dotted;
+    text-underline-offset:2px; transition:opacity .15s ease;
+  }
+  .dica-btn:hover, .dica-btn:active{opacity:.85;}
+  .dica-caixa{
+    display:none; background:#FBF6E9; border:1px dashed var(--insignia);
+    border-radius:10px; padding:10px 12px; margin:0 0 16px;
+    font-size:13px; line-height:1.5; color:var(--tinta-2);
+  }
+  .dica-caixa.aberta{display:block;}
 
   /* ---------- alternativas estilo cartão-resposta ---------- */
   .alts{display:flex; flex-direction:column; gap:10px;}
@@ -252,7 +267,8 @@ const BANCO = [
        'Existe, na corporação, policiais com mais de vinte anos de serviço.',
        'Devem haver novas turmas de formação no próximo semestre.'],
  r:2,
- e:'O verbo "fazer" indicando tempo decorrido é impessoal e fica no singular: "Faz dez anos". "Haver" no sentido de existir também é impessoal ("Havia muitos candidatos"; "Deve haver novas turmas"). Já "existir" é pessoal e concorda: "Existem policiais".'},
+ e:'O verbo "fazer" indicando tempo decorrido é impessoal e fica no singular: "Faz dez anos". "Haver" no sentido de existir também é impessoal ("Havia muitos candidatos"; "Deve haver novas turmas"). Já "existir" é pessoal e concorda: "Existem policiais".',
+ dica:'Troque mentalmente "fazer"/"haver" por "existir": se der pra dizer "existem", o verbo concorda; se for tempo decorrido, ele fica sempre no singular.'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · crase',
  q:'Assinale a alternativa em que o sinal indicativo de crase está empregado corretamente.',
@@ -262,7 +278,8 @@ const BANCO = [
        'Ele se referiu à todos os presentes na reunião.',
        'Começou à chover durante o patrulhamento.'],
  r:1,
- e:'Crase = preposição "a" + artigo "a". "Comunicar a + a autoridade" → "à autoridade". Não ocorre crase antes de palavras masculinas ("a tempo"), numerais ("a duzentos metros"), pronomes indefinidos ("a todos") nem verbos ("a chover").'},
+ e:'Crase = preposição "a" + artigo "a". "Comunicar a + a autoridade" → "à autoridade". Não ocorre crase antes de palavras masculinas ("a tempo"), numerais ("a duzentos metros"), pronomes indefinidos ("a todos") nem verbos ("a chover").',
+ dica:'Troque a palavra depois do "a" por uma equivalente masculina: se ficar bem dizer "ao", há crase; se soar estranho, não há.'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · regência',
  q:'Considerando a regência verbal segundo a norma-padrão, assinale a alternativa correta.',
@@ -272,7 +289,8 @@ const BANCO = [
        'Prefiro mais trabalhar de dia do que de noite.',
        'O tenente obedeceu o regulamento sem questionar.'],
  r:2,
- e:'"Visar" no sentido de objetivar pede preposição "a": "visava à melhoria". "Assistir" (ver) pede "a" ("assistiu ao filme"); "aspirar" (desejar) pede "a" ("aspiravam ao cargo"); "preferir" não admite "mais... do que" ("prefiro X a Y"); "obedecer" pede "a" ("obedeceu ao regulamento").'},
+ e:'"Visar" no sentido de objetivar pede preposição "a": "visava à melhoria". "Assistir" (ver) pede "a" ("assistiu ao filme"); "aspirar" (desejar) pede "a" ("aspiravam ao cargo"); "preferir" não admite "mais... do que" ("prefiro X a Y"); "obedecer" pede "a" ("obedeceu ao regulamento").',
+ dica:'Pergunte-se: esse verbo pede complemento com a preposição "a"? "Assistir", "aspirar", "obedecer" e "visar" costumam ser os vilões dessas questões.'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · interpretação',
  q:'Leia o trecho:\n\n"A confiança da população na polícia não se constrói apenas com resultados operacionais; ela depende, sobretudo, da forma como cada agente trata o cidadão no contato cotidiano."\n\nDe acordo com o trecho, é correto afirmar que:',
@@ -282,7 +300,8 @@ const BANCO = [
        'o contato cotidiano com o cidadão deve ser evitado pelos agentes.',
        'a polícia constrói confiança exclusivamente por meio de campanhas publicitárias.'],
  r:1,
- e:'"Sobretudo" indica que o tratamento ao cidadão é o fator principal — mas não o único: os resultados operacionais também contam ("não se constrói APENAS com..."). Por isso a alternativa que diz "irrelevantes" extrapola o texto.'},
+ e:'"Sobretudo" indica que o tratamento ao cidadão é o fator principal — mas não o único: os resultados operacionais também contam ("não se constrói APENAS com..."). Por isso a alternativa que diz "irrelevantes" extrapola o texto.',
+ dica:'Repare na palavra "sobretudo" — ela marca o fator MAIS importante, não o ÚNICO. Desconfie de alternativas com "apenas", "exclusivamente" ou "irrelevante".'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · colocação pronominal',
  q:'Assinale a alternativa em que a colocação pronominal atende à norma-padrão.',
@@ -292,14 +311,16 @@ const BANCO = [
        'Quando apresentou-se ao quartel, já era noite.',
        'Em se tratando de emergência, deve-se acionar-se o COPOM.'],
  r:2,
- e:'Não se inicia frase com pronome oblíquo átono: o correto é a ênclise "Informaram-me". Palavras atrativas como "nunca" e "quando" exigem próclise ("nunca se desrespeitou", "quando se apresentou").'},
+ e:'Não se inicia frase com pronome oblíquo átono: o correto é a ênclise "Informaram-me". Palavras atrativas como "nunca" e "quando" exigem próclise ("nunca se desrespeitou", "quando se apresentou").',
+ dica:'Frase nunca pode começar com "me", "se", "lhe" etc. Veja também se há uma palavra "atrativa" (nunca, quando, que...) antes do verbo — ela puxa o pronome pra antes dele.'},
 
 /* ---------------- PMESP · Matemática ---------------- */
 {c:'pmesp', m:'Matemática', f:'Estilo VUNESP · regra de três',
  q:'Uma equipe de 6 policiais realiza a vistoria de 90 veículos em 3 horas. Mantida a mesma produtividade individual, o número de veículos que 8 policiais vistoriam em 2 horas é:',
  alts:['70','75','80','85','95'],
  r:2,
- e:'Cada policial vistoria 90 ÷ 6 ÷ 3 = 5 veículos por hora. Então 8 policiais × 2 horas × 5 = 80 veículos.'},
+ e:'Cada policial vistoria 90 ÷ 6 ÷ 3 = 5 veículos por hora. Então 8 policiais × 2 horas × 5 = 80 veículos.',
+ dica:'Ache primeiro quanto UM policial faz em UMA hora — depois é só multiplicar pelos novos números de policiais e horas.'},
 
 {c:'pmesp', m:'Matemática', f:'Estilo VUNESP · porcentagem',
  q:'Em um mês, foram registradas 250 ocorrências em um município. No mês seguinte, esse número caiu 12%. O total de ocorrências do segundo mês foi:',
@@ -333,7 +354,8 @@ const BANCO = [
        'os especialistas são contrários ao uso de câmeras corporais.',
        'o treinamento contínuo tornou-se desnecessário nas corporações.'],
  r:2,
- e:'O conectivo "contudo" introduz uma ressalva: as câmeras deram resultado (reduziram reclamações), mas o treinamento continua necessário. As demais alternativas contradizem ou extrapolam o texto.'},
+ e:'O conectivo "contudo" introduz uma ressalva: as câmeras deram resultado (reduziram reclamações), mas o treinamento continua necessário. As demais alternativas contradizem ou extrapolam o texto.',
+ dica:'"Contudo" é uma conjunção adversativa — sinaliza uma ressalva a seguir, sem anular o que foi dito antes dela.'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · sinonímia',
  q:'Na frase "O policial agiu com cautela ao abordar o veículo suspeito", o termo destacado pode ser substituído, sem alteração de sentido, por:',
@@ -349,7 +371,8 @@ const BANCO = [
        'Compramos coletes capacetes e rádios para a equipe.',
        'Após o treinamento os soldados, descansaram.'],
  r:2,
- e:'As vírgulas isolam corretamente o aposto explicativo "responsável pela equipe". Nas demais: não se separa sujeito do verbo nem verbo do complemento com vírgula, e enumerações exigem vírgulas ("coletes, capacetes e rádios").'},
+ e:'As vírgulas isolam corretamente o aposto explicativo "responsável pela equipe". Nas demais: não se separa sujeito do verbo nem verbo do complemento com vírgula, e enumerações exigem vírgulas ("coletes, capacetes e rádios").',
+ dica:'Regra de ouro: nunca se separa sujeito do verbo com vírgula. Descarte de cara qualquer alternativa que faça isso.'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · acentuação',
  q:'Assinale a alternativa em que todas as palavras estão acentuadas corretamente.',
@@ -361,13 +384,15 @@ const BANCO = [
  q:'Assinale a alternativa que preenche, correta e respectivamente, as lacunas:\n\n"Ele é um ___ exemplo para os colegas; comportou-se ___ durante toda a ocorrência."',
  alts:['mau … mal','mal … mau','mau … mau','mal … mal','mal … mais'],
  r:0,
- e:'"Mau" é adjetivo (contrário de bom): "mau exemplo". "Mal" é advérbio (contrário de bem): "comportou-se mal".'},
+ e:'"Mau" é adjetivo (contrário de bom): "mau exemplo". "Mal" é advérbio (contrário de bem): "comportou-se mal".',
+ dica:'Troque a palavra por "bom"/"ruim" — se encaixar, é "mau". Troque por "bem" — se encaixar, é "mal".'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · uso dos porquês',
  q:'Assinale a alternativa que preenche, correta e respectivamente, as lacunas:\n\n"Ninguém explicou o ___ da mudança na escala; você sabe ___ ela foi alterada?"',
  alts:['porque … porquê','porquê … por que','por que … porque','porquê … por quê','por quê … porque'],
  r:1,
- e:'"O porquê" (com artigo) é substantivo e significa "o motivo". "Por que" (separado, sem acento) é usado em perguntas indiretas no meio da frase: "sabe por que ela foi alterada".'},
+ e:'"O porquê" (com artigo) é substantivo e significa "o motivo". "Por que" (separado, sem acento) é usado em perguntas indiretas no meio da frase: "sabe por que ela foi alterada".',
+ dica:'Se der pra trocar por "o motivo", é "o porquê" junto e com acento. Se vier antes de uma pergunta implícita, é "por que" separado.'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · concordância nominal',
  q:'Assinale a alternativa em que a concordância nominal está de acordo com a norma-padrão.',
@@ -377,7 +402,8 @@ const BANCO = [
        'Ela mesmo assinou o boletim de ocorrência.',
        'Havia menas viaturas disponíveis naquele dia.'],
  r:0,
- e:'"Anexo" é adjetivo e concorda: "anexos os relatórios". Com artigo, seria "é proibida a entrada"; "mesma" concorda com "ela"; e "menos" é invariável — "menas" não existe.'},
+ e:'"Anexo" é adjetivo e concorda: "anexos os relatórios". Com artigo, seria "é proibida a entrada"; "mesma" concorda com "ela"; e "menos" é invariável — "menas" não existe.',
+ dica:'"Anexo" funciona como adjetivo e concorda em gênero/número com o que vem depois — não é uma palavra fixa, como muita gente pensa.'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · valor das conjunções',
  q:'Na frase "Embora estivesse cansado, o soldado completou a ronda", a oração destacada expressa ideia de:',
@@ -399,7 +425,8 @@ const BANCO = [
  q:'Assinale a alternativa que preenche corretamente a lacuna:\n\n"O soldado ___ viatura apresentou defeito pediu apoio pelo rádio."',
  alts:['que a','cuja','cujo a','onde a','a qual'],
  r:1,
- e:'"Cujo/cuja" indica posse (a viatura do soldado) e concorda com o substantivo seguinte: "cuja viatura". Não se usa artigo depois de "cujo".'},
+ e:'"Cujo/cuja" indica posse (a viatura do soldado) e concorda com o substantivo seguinte: "cuja viatura". Não se usa artigo depois de "cujo".',
+ dica:'"Cujo" já tem a força de um artigo embutido — nunca coloque "a"/"o" logo depois dele.'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · denotação e conotação',
  q:'Na frase "A cidade dormia quando a viatura iniciou o patrulhamento", o verbo "dormir" foi empregado em sentido:',
@@ -431,7 +458,8 @@ const BANCO = [
  q:'Assinale a alternativa que preenche, correta e respectivamente, as lacunas:\n\n"___ dois anos ele ingressou na corporação; daqui ___ três meses, será promovido."',
  alts:['Há … a','A … há','Há … há','A … a','A … à'],
  r:0,
- e:'"Há" (verbo haver) indica tempo passado/decorrido: "há dois anos". "A" (preposição) indica tempo futuro: "daqui a três meses".'},
+ e:'"Há" (verbo haver) indica tempo passado/decorrido: "há dois anos". "A" (preposição) indica tempo futuro: "daqui a três meses".',
+ dica:'Tempo que já passou = "há" (do verbo haver). Tempo que ainda vai chegar, contado a partir de agora, = "a".'},
 
 {c:'pmesp', m:'Língua Portuguesa', f:'Estilo VUNESP · semântica',
  q:'Na frase "O efetivo da companhia foi ampliado no último semestre", o termo destacado pode ser substituído, sem prejuízo de sentido, por:',
@@ -449,7 +477,8 @@ const BANCO = [
  q:'Dois policiais tiraram serviço juntos hoje. Um deles retorna à escala a cada 6 dias e o outro, a cada 8 dias. Eles voltarão a tirar serviço juntos daqui a:',
  alts:['12 dias','18 dias','24 dias','36 dias','48 dias'],
  r:2,
- e:'É o mínimo múltiplo comum: MMC(6, 8) = 24. Eles coincidem novamente em 24 dias.'},
+ e:'É o mínimo múltiplo comum: MMC(6, 8) = 24. Eles coincidem novamente em 24 dias.',
+ dica:'Quando dois eventos se repetem em ciclos diferentes e você quer saber quando coincidem de novo, pense em MMC — não em MDC.'},
 
 {c:'pmesp', m:'Matemática', f:'Estilo VUNESP · juros simples',
  q:'Um capital de R$ 2.000,00 foi aplicado a juros simples, à taxa de 1,5% ao mês, durante 8 meses. Os juros obtidos nessa aplicação foram de:',
@@ -564,7 +593,8 @@ const BANCO = [
        'impessoalidade, informalidade, eficiência, gratuidade e oralidade.',
        'legalidade, moralidade, autonomia, soberania e eficácia.'],
  r:0,
- e:'São os princípios expressos do art. 37, caput — memorize pelo mnemônico LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência.'},
+ e:'São os princípios expressos do art. 37, caput — memorize pelo mnemônico LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência.',
+ dica:'Lembre do mnemônico LIMPE — cada letra corresponde a um princípio, na mesma ordem do artigo.'},
 
 {c:'pmesp', m:'Noções de Adm. Pública', f:'CF/88 · art. 144',
  q:'De acordo com o art. 144 da Constituição Federal, às polícias militares cabem:',
@@ -747,6 +777,534 @@ const BANCO = [
  r:2,
  e:'A Lei 13.022/2014 (art. 16) e o Estatuto do Desarmamento preveem o porte de arma pelos guardas municipais na forma da lei e de sua regulamentação (capacitação, controle e demais requisitos).'},
 
+/* ---------------- PMESP · Edital 2025 (VUNESP) ---------------- */
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o poema:\n\nHá estes dias em que pressentimos na casa\na ruína da casa\ne no corpo\na morte do corpo\ne no amor\no fim do amor\nestes dias\nem que tomar o ônibus é no entanto perdê-lo\ne chegar a tempo é já chegar demasiado tarde\nnão são coisas que se expliquem\napenas são dias em que de repente sabemos\no que sempre soubemos e todos sabem\nque a madeira é apenas o que vem logo antes\nda cinza\ne por mais vidas que tenha\ncada gato\né o cadáver de um gato\n\n(Ana Martins Marques. O livro das semelhanças. São Paulo: Companhia das Letras, 2015)\n\nA partir da leitura do poema, é correto afirmar que o eu lírico expressa',
+ alts:['desencantamento pelas circunstâncias presentes e tentativa de recuperar o passado.','consciência sobre a impermanência de todos os seres, sejam eles animados ou inanimados.','preocupação pelo descaso com que os humanos tratam suas vidas e as dos demais seres.','dificuldade em aceitar os obstáculos encontrados no cotidiano, como a perda de um ônibus.','nostalgia de coisas que marcaram sua vida, como as casas e os amores do passado.'],
+ r:1,
+ e:'O poema encadeia várias imagens de fim/transformação (casa->ruína, corpo->morte, amor->fim, madeira->cinza, gato->cadáver), mostrando que tudo, animado ou inanimado, é passageiro. As demais alternativas atribuem ao eu lírico sentimentos (nostalgia, desencantamento, indignação, dificuldade de aceitação) que não são o foco central do texto.',
+ ano:2025},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o poema:\n\nHá estes dias em que pressentimos na casa\na ruína da casa\ne no corpo\na morte do corpo\ne no amor\no fim do amor\nestes dias\nem que tomar o ônibus é no entanto perdê-lo\ne chegar a tempo é já chegar demasiado tarde\nnão são coisas que se expliquem\napenas são dias em que de repente sabemos\no que sempre soubemos e todos sabem\nque a madeira é apenas o que vem logo antes\nda cinza\ne por mais vidas que tenha\ncada gato\né o cadáver de um gato\n\n(Ana Martins Marques. O livro das semelhanças. São Paulo: Companhia das Letras, 2015)\n\nAssinale a alternativa em que o acréscimo de vírgula(s) está em conformidade com a norma-padrão de emprego desse sinal de pontuação.',
+ alts:['Há, estes dias em que pressentimos, na casa','apenas são, dias em que, de repente sabemos','em que tomar o ônibus é, no entanto, perdê-lo','e chegar a tempo, é já chegar demasiado tarde','que a madeira, é apenas o que vem logo antes'],
+ r:2,
+ e:'O advérbio/conjunção \'no entanto\', quando inserido no meio da oração, deve ser isolado por vírgulas: \'é, no entanto, perdê-lo\'. As demais alternativas separam indevidamente sujeito de verbo ou verbo de complemento sem justificativa gramatical.',
+ ano:2025},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto:\n\nNos últimos tempos, rompeu-se o elo colaborativo entre gerações. Nas famílias tradicionais, por milhares de anos, ter filhos significava que, quando os pais envelhecessem e não pudessem mais trabalhar, os filhos adultos cuidariam deles. Assim, garantia-se um equilíbrio entre a idade adulta produtiva e os dependentes (crianças e idosos) em uma cadeia de solidariedade intergeracional. Mas o que acontece quando a maioria dos adultos não tem filhos, como vem acontecendo?\n\nNos países nórdicos, políticas públicas garantem lares dignos para idosos e saúde gratuita para a população envelhecida. O que antes era responsabilidade das famílias, agora é assegurado em escala coletiva. Nos apartamentos exíguos da família nuclear, não há espaço para os avós, mas ao menos há apoio público. Já em países como EUA, e sobretudo no Brasil, os idosos enfrentam apoio familiar declinante e políticas sociais precárias. Os asilos privados? Caríssimos e mal administrados - quando não criminosamente negligenciados. Sistemas que só visam lucro máximo não são opção de gestão adequada - pra dizer o mínimo. E a ansiedade acerca de nosso futuro quando idosos já é sentida quando estamos na meia idade.\n\n(Ladislau Dowbor. Adaptado)\n\nQuanto à comparação feita no texto entre o Brasil e outros países, é correto afirmar:',
+ alts:['Os países nórdicos e o Brasil negligenciam tanto o papel do Estado quanto o da família no cuidado com os mais velhos.','Nos países nórdicos, a responsabilidade com os idosos permanece majoritariamente com as famílias, enquanto no Brasil o Estado complementa a assistência.','Os asilos privados tanto no Brasil quanto nos EUA são em geral bem administrados, mas inacessíveis para a maioria da população.','A atuação das políticas públicas nos países nórdicos assegura dignidade aos idosos, enquanto no Brasil os asilos são opções insatisfatórias.','Os modelos de gestão baseados no lucro máximo vigoram nos países nórdicos, mas não no Brasil, e são uma solução adequada para o cuidado dos idosos.'],
+ r:3,
+ e:'O texto afirma que nos países nórdicos as políticas públicas garantem lares dignos aos idosos, enquanto no Brasil os asilos privados são caríssimos e mal administrados. As demais alternativas invertem ou distorcem essas informações.',
+ ano:2025},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto:\n\nNos últimos tempos, rompeu-se o elo colaborativo entre gerações. Nas famílias tradicionais, por milhares de anos, ter filhos significava que, quando os pais envelhecessem e não pudessem mais trabalhar, os filhos adultos cuidariam deles. Assim, garantia-se um equilíbrio entre a idade adulta produtiva e os dependentes (crianças e idosos) em uma cadeia de solidariedade intergeracional. Mas o que acontece quando a maioria dos adultos não tem filhos, como vem acontecendo?\n\nNos países nórdicos, políticas públicas garantem lares dignos para idosos e saúde gratuita para a população envelhecida. O que antes era responsabilidade das famílias, agora é assegurado em escala coletiva. Nos apartamentos exíguos da família nuclear, não há espaço para os avós, mas ao menos há apoio público. Já em países como EUA, e sobretudo no Brasil, os idosos enfrentam apoio familiar declinante e políticas sociais precárias. Os asilos privados? Caríssimos e mal administrados - quando não criminosamente negligenciados. Sistemas que só visam lucro máximo não são opção de gestão adequada - pra dizer o mínimo. E a ansiedade acerca de nosso futuro quando idosos já é sentida quando estamos na meia idade.\n\n(Ladislau Dowbor. Adaptado)\n\nConsidere os trechos:\n• Nos apartamentos exíguos da família nuclear, não há espaço para os avós... (2º parágrafo)\n• ...sobretudo no Brasil, os idosos enfrentam apoio familiar declinante... (2º parágrafo)\nNo contexto em que foram empregadas, as palavras destacadas têm como sinônimos, respectivamente,',
+ alts:['íntimos e descendente.','extensos e grave.','apertados e excludente.','reduzidos e crescente.','pequenos e decadente.'],
+ r:4,
+ e:'\'Exíguos\' significa pequenos, apertados, e \'declinante\' significa em decadência/diminuição. A alternativa correta é \'pequenos e decadente\'. As demais trazem ao menos um sinônimo incorreto (por exemplo, \'crescente\' é o oposto de \'declinante\').',
+ ano:2025},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto:\n\nAssassinato digital\n\nAo contrário de tempos passados, quando sumir com alguém exigia certo grau de dificuldade e até risco criminal, hoje tornou-se facílimo dar fim a uma pessoa. Bastam um dedo e algumas teclas. É possível mudar completamente o círculo de amizades, sumir da turma, buscar novos ares, sem grandes enfrentamentos. Um amigo estava falando de sua ex: "Bloqueei". Explicou que bloqueou em tudo: no WhatsApp, no Instagram, no Face. Em qualquer outra rede social, uma pessoa existe ou não existe. Se é bloqueada em todos os canais em que pode se comunicar com a outra, tecnicamente não existe mais. Simplesmente deixa de estar presente. Mesmo porque, na atualidade, a presença é mais digital que física em um número imenso de casos.\n\nHouve um tempo em que eu me admirava ao dar uma "limpa" no celular. Por que tanta gente, com quem nunca converso, tantos endereços que já não fazem parte do meu dia a dia? Para meu susto, recebi reclamações: "Por que você me deletou?", "Me bloqueou?". Na prática, respondia: "Porque a gente não se falava mais". Descobri que estar na minha rede mesmo sem papo era um modo de afirmar a existência da pessoa em minha vida. Portanto, era ofensivo ser excluído. Parecia sem sentido. Mas entendi. Se a pessoa for deletada ou, pior, bloqueada, simplesmente deixa de existir. A comparação é forte, mas inevitável: morre.\n\nEu ainda acredito nas relações de carne e osso, nos abraços, nos encontros longos e profundos. Mas descubro que os relacionamentos digitais tomaram um espaço impressionante. Deletar equivale a dizer adeus. E dizer adeus é sempre uma forma de luto.\n\n(Walcyr Carrasco. Adaptado)\n\nA respeito das transformações nas formas de relacionamento interpessoal com as tecnologias digitais, o autor do texto',
+ alts:['reconhece o impacto das redes sociais, mas valoriza, acima delas, as relações presenciais e concretas.','afirma que, no passado, as relações humanas eram menos sólidas, pois não havia redes sociais para mantê-las.','considera que o bloqueio em redes sociais não gera maiores consequências para a percepção da existência do outro.','entende que excluir alguém das redes sociais, nos dias de hoje, é um crime mais grave do que matar uma pessoa.','defende que as relações digitais substituíram de forma saudável e definitiva os vínculos presenciais.'],
+ r:0,
+ e:'No último parágrafo, o autor diz \'Eu ainda acredito nas relações de carne e osso... Mas descubro que os relacionamentos digitais tomaram um espaço impressionante\', reconhecendo o peso das redes sociais sem deixar de valorizar as relações presenciais acima delas. As demais alternativas contradizem o texto.',
+ ano:2025},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto:\n\nAssassinato digital\n\nAo contrário de tempos passados, quando sumir com alguém exigia certo grau de dificuldade e até risco criminal, hoje tornou-se facílimo dar fim a uma pessoa. Bastam um dedo e algumas teclas. É possível mudar completamente o círculo de amizades, sumir da turma, buscar novos ares, sem grandes enfrentamentos. Um amigo estava falando de sua ex: "Bloqueei". Explicou que bloqueou em tudo: no WhatsApp, no Instagram, no Face. Em qualquer outra rede social, uma pessoa existe ou não existe. Se é bloqueada em todos os canais em que pode se comunicar com a outra, tecnicamente não existe mais. Simplesmente deixa de estar presente. Mesmo porque, na atualidade, a presença é mais digital que física em um número imenso de casos.\n\nHouve um tempo em que eu me admirava ao dar uma "limpa" no celular. Por que tanta gente, com quem nunca converso, tantos endereços que já não fazem parte do meu dia a dia? Para meu susto, recebi reclamações: "Por que você me deletou?", "Me bloqueou?". Na prática, respondia: "Porque a gente não se falava mais". Descobri que estar na minha rede mesmo sem papo era um modo de afirmar a existência da pessoa em minha vida. Portanto, era ofensivo ser excluído. Parecia sem sentido. Mas entendi. Se a pessoa for deletada ou, pior, bloqueada, simplesmente deixa de existir. A comparação é forte, mas inevitável: morre.\n\nEu ainda acredito nas relações de carne e osso, nos abraços, nos encontros longos e profundos. Mas descubro que os relacionamentos digitais tomaram um espaço impressionante. Deletar equivale a dizer adeus. E dizer adeus é sempre uma forma de luto.\n\n(Walcyr Carrasco. Adaptado)\n\nConsidere o trecho:\n• Houve um tempo em que eu me admirava ao dar uma "limpa" no celular. Por que tanta gente, com quem nunca converso, tantos endereços que já não fazem parte do meu dia a dia?\nAs expressões destacadas ("em que", "com quem" e "que") podem ser substituídas, respectivamente e em conformidade com a norma-padrão de emprego dos pronomes, por:',
+ alts:['no qual … que … onde','de que … com as quais … nos quais','onde … que … os quais','onde … de quem … nos quais','no qual … com a qual … os quais'],
+ r:4,
+ e:'\'Em que\' retoma \'tempo\' (masculino singular) e pode virar \'no qual\'; \'com quem\' retoma \'gente\' (gramaticalmente feminino singular) e pode virar \'com a qual\'; \'que\' retoma \'endereços\' (masculino plural) e pode virar \'os quais\'. A combinação correta é \'no qual … com a qual … os quais\'.',
+ ano:2025},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Assinale a alternativa redigida em conformidade com a norma-padrão de concordância.',
+ alts:['Durante a nossa infância era comum brincadeiras em que se respeitava as regras do jogo.','Haviam muitas crianças que brincavam no parque junto à professora que a acompanhava.','Foi preciso que as crianças permanecessem no parque depois daquele fatídico intervalo.','Comprou-se para o pátio da escola alguns brinquedos novos que foi alvo de depredação.','Para aprender a se balançar bem, é necessário muita prudência nas primeiras tentativas.'],
+ r:2,
+ e:'A frase \'Foi preciso que as crianças permanecessem no parque...\' está correta. Nas demais: (A) deveria ser \'eram comuns brincadeiras\' (concordância com o sujeito posposto plural); (B) o verbo haver impessoal é invariável: \'Havia muitas crianças\'; (D) deveria ser \'que foram alvo\', concordando com \'brinquedos\' (plural); (E) apresenta problema de concordância do predicativo com o sujeito.',
+ ano:2025},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Considere a frase:\nDevido ___ facilidade de acessar as plataformas online, vem crescendo o número de brasileiros expostos ___ atividades como as apostas, que são prejudiciais ___ saúde mental.\nAssinale a alternativa que preenche, respectivamente, as lacunas, de acordo com a norma-padrão de emprego do acento indicativo de crase.',
+ alts:['à … a … à','à … à … a','a … às … a','à … à … à','a … as … à'],
+ r:3,
+ e:'As três lacunas exigem crase: \'devido à facilidade\' (regência de \'devido a\' + artigo feminino \'a facilidade\'), \'expostos à atividades\' e \'prejudiciais à saúde mental\' (regência de \'exposto a\'/\'prejudicial a\' combinada com artigo feminino). A sequência correta é \'à … à … à\'.',
+ ano:2025},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Ao iniciar mais um dia de trabalho, um pequeno comércio tinha R$ 1.280,00 de dinheiro em caixa na loja. Durante esse dia, aconteceram os seguintes eventos:\n• Pagamento de fornecedor: R$ 675,00\n• Recebimento ao realizar venda: R$ 42,00\n• Recebimento ao realizar venda: R$ 67,00\n• Recebimento ao realizar venda: R$ 148,00\n• Recebimento ao realizar venda: R$ 95,00\n• Pagamento de fornecedor: R$ 742,00\n• Recebimento ao realizar venda: R$ 127,00\n• Pagamento de fornecedor: R$ 159,00\nConsiderando que todos esses pagamentos e recebimentos foram feitos utilizando apenas o dinheiro do caixa, é correto afirmar que o saldo em caixa, após essas movimentações, foi de',
+ alts:['R$ 189,00.','R$ 183,00.','R$ 175,00.','R$ 192,00.','R$ 178,00.'],
+ r:1,
+ e:'1.280 - 675 + 42 + 67 + 148 + 95 - 742 + 127 - 159 = 183. O saldo final é R$ 183,00.',
+ ano:2025},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'O resultado do censo populacional em um município mostrou que 17.076 habitantes são pessoas do sexo feminino, representando 3/5 da população total. O censo também indicou que 1/3 das pessoas do sexo feminino do município tem menos de 30 anos de idade e que 3/8 das pessoas do sexo masculino do município têm 30 anos de idade ou mais.\nA Secretaria de Saúde desse município encomendou 15 mil doses de uma vacina para ser aplicada na população com menos de 30 anos de idade; logo, se todas as pessoas nessa faixa etária receberem uma dose dessa vacina, o número de doses que sobrará da encomenda será',
+ alts:['4.822.','2.268.','2.794.','2.193.','5.039.'],
+ r:3,
+ e:'População total = 17.076 ÷ (3/5) = 28.460; homens = 11.384. Mulheres <30 = 17.076/3 = 5.692. Homens ≥30 = 3/8 × 11.384 = 4.269, logo homens <30 = 11.384 - 4.269 = 7.115. Total <30 = 5.692 + 7.115 = 12.807. Sobra = 15.000 - 12.807 = 2.193 doses.',
+ ano:2025},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'O gerente de um escritório resolveu distribuir para três de seus funcionários os 378 processos que precisavam ser arquivados. A quantidade de processos que cada funcionário arquivará será diretamente proporcional às horas que cada um deles tem disponíveis para o trabalho, sendo que um deles dispõe de 3 horas, outro dispõe de 5 horas e outro dispõe de 6 horas.\nDistribuídos dessa maneira, a quantidade somada de processos que os dois funcionários com menos horas disponíveis receberão para arquivar supera a quantidade a ser recebida pelo outro funcionário em',
+ alts:['65.','70.','58.','54.','48.'],
+ r:3,
+ e:'Total de partes = 3+5+6 = 14; cada parte = 378/14 = 27. Assim, 3h → 81, 5h → 135, 6h → 162. Os dois funcionários com menos horas (3h e 5h) recebem juntos 81+135=216, que supera os 162 do outro funcionário em 216-162=54.',
+ ano:2025},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Sabe-se que o preço de um produto na loja A é o triplo do preço do mesmo produto na loja B. O lojista da loja A aplicou um desconto de x% no preço desse produto, o lojista da loja B aplicou um aumento também de x% no preço desse produto, e, após esses reajustes, o novo preço da loja A passou a ser o dobro do novo preço da loja B.\nCom essas informações, é correto afirmar que o valor de x é',
+ alts:['25.','10.','30.','15.','20.'],
+ r:4,
+ e:'Seja p o preço em B; em A é 3p. Após os reajustes: 3p(1 - x/100) = 2p(1 + x/100). Simplificando: 3 - 3x/100 = 2 + 2x/100, logo 1 = 5x/100, ou seja, x = 20.',
+ ano:2025},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'A sequência a seguir foi criada com um padrão lógico matemático:\n5, 5, 10, 20, 60, 10, 10, 20, 40, 120, 15, 15, 30, 60, 180, 20, 20, 40, ...\nSeja J o 35o elemento dessa sequência, K o 44o elemento e L o 51o elemento.\nO valor numérico da expressão J - K - L é igual a',
+ alts:['175.','180.','170.','185.','165.'],
+ r:3,
+ e:'A sequência é formada em blocos de 5 termos; o bloco k (k=1,2,3,...) é [5k, 5k, 10k, 20k, 60k]. O 35o termo é o último termo do bloco 7: 60×7=420 (J). O 44o termo é o 4o termo do bloco 9: 20×9=180 (K). O 51o termo é o 1o termo do bloco 11: 5×11=55 (L). J - K - L = 420 - 180 - 55 = 185.',
+ ano:2025},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Considere que as afirmações a seguir são verdadeiras:\nI. Todo jogador de futebol é um atleta.\nII. Há pessoas que gostam de música e que são jogadores de futebol.\nA partir dessas informações, é logicamente correto concluir que',
+ alts:['há algum atleta que gosta de música.','não há pessoa que seja jogador de futebol e goste de música.','os atletas que gostam de música não são jogadores de futebol.','todo atleta gosta de música.','qualquer pessoa que gosta de música é um atleta.'],
+ r:0,
+ e:'Como todo jogador de futebol é atleta (I) e existe interseção não vazia entre \'gosta de música\' e \'jogador de futebol\' (II), essa interseção também pertence ao conjunto dos atletas. Logo, existe pelo menos um atleta que gosta de música. As demais alternativas extrapolam o que as premissas garantem.',
+ ano:2025},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto:\nQuando falamos da Primeira Guerra Mundial, falamos muito sobre as batalhas, os novos armamentos, as estratégias militares, as origens e os desdobramentos do conflito. Isso tudo é muito importante. Mas precisamos falar mais da vida cotidiana, da história social, explorar a vida e os sentimentos dos soldados que participaram dos combates. Eles têm muito a dizer, e a partir dessas falas podemos compreender melhor as nuances da Grande Guerra. Mais do que um sistema de posição e fortificação, as trincheiras eram um ecossistema cultural, extremamente dinâmico e complexo.\n(Bruno Leal, "A vida cotidiana nas trincheiras da Primeira Guerra Mundial", Boletim Café História. Adaptado)\nEm relação às trincheiras na Primeira Guerra Mundial, é correto afirmar que',
+ alts:['surgiram a partir das convenções de guerra, que estabeleceram limites para os conflitos entre os exércitos e a população civil e restringiram o enfrentamento armado à linha de frente da guerra, reduzindo drasticamente a mortalidade dos civis.','revelaram as ambiguidades da guerra, pois expressavam, ao mesmo tempo, o ódio nacionalista dos militares e o reconhecimento empático entre soldados de exércitos rivais, como no caso da trégua de Natal de 1914.','se restringiram aos combates de guerra ocorridos fora do continente europeu, especialmente na África e na Ásia, enquanto o conflito na Europa ficou marcado pelo avanço por terra da Alemanha em relação à França.','se constituíram como um espaço privilegiado de representação dos interesses nacionais de cada país envolvido no conflito, tendo em vista a participação equânime de todas as classes sociais na linha de frente da guerra.','marcaram a última grande guerra antes do desenvolvimento tecnológico da indústria bélica, em um conflito caracterizado pela utilização de armas não automáticas e pela inexistência de granadas ou bombardeios aéreos.'],
+ r:1,
+ e:'A trégua de Natal de 1914, em que soldados inimigos confraternizaram nas trincheiras, ilustra bem a ambiguidade entre o ódio nacionalista da guerra e momentos de empatia humana entre combatentes rivais. As demais alternativas trazem afirmações historicamente incorretas.',
+ ano:2025},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto:\nAs Constituições de 1934 e de 1946 marcaram períodos democráticos no país. A Carta de 1934 dava amplos poderes aos Estados e assegurava preponderância do Poder Legislativo. A de 1946, elaborada após o período autoritário do Estado Novo, reforçou direitos individuais e políticos e estabeleceu independência dos Poderes Judiciário e Legislativo e separação entre igreja e Estado.\n(Agência Senado. Adaptado)\nAinda que tenha reforçado direitos políticos, a Constituição de 1946 não assegurou o voto',
+ alts:['das mulheres.','obrigatório.','secreto.','dos analfabetos.','direto.'],
+ r:3,
+ e:'A Constituição de 1946 manteve a exclusão dos analfabetos do direito de voto, restrição que só foi extinta pela Constituição de 1988. O voto feminino já havia sido conquistado em 1932, e o voto secreto, direto e obrigatório já eram características do sistema eleitoral da época.',
+ ano:2025},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Fenômeno essencial para a manutenção da vida na Terra, que consiste na retenção de grande parte do calor irradiado pela superfície terrestre nas partículas de gases presentes na atmosfera, que absorvem a radiação infravermelha emitida pela Terra, impedindo que todo esse calor se dissipe para o espaço.\nO conceito apresentado refere-se',
+ alts:['ao aquecimento global.','ao efeito estufa.','à inversão térmica.','ao saldo de radiação de onda curta.','à camada de ozônio.'],
+ r:1,
+ e:'A descrição corresponde ao efeito estufa, fenômeno natural pelo qual gases atmosféricos retêm calor, sendo essencial à manutenção da vida na Terra (diferente do aquecimento global, que é a intensificação antrópica desse efeito).',
+ ano:2025},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'O Ministério da Ciência, Tecnologia e Inovação publicou em junho de 2025 a versão final do Plano Brasileiro de Inteligência Artificial, que estabelece as diretrizes para o desenvolvimento ético e sustentável da inteligência artificial no país até 2028. O plano prevê R$ 23,03 bilhões em investimentos públicos e privados, distribuídos entre ações de curto prazo e programas estruturantes de médio e longo prazo.\n(telesintese. Adaptado)\nEntre os pilares do Plano Brasileiro de Inteligência Artificial está o de',
+ alts:['concentrar a pesquisa em inteligência artificial no setor militar.','permitir a livre exploração de dados pessoais por empresas estrangeiras.','garantir a soberania tecnológica nacional com inclusão social.','promover a substituição de empregos humanos por sistemas autônomos.','ampliar o uso de sistemas automatizados desconsiderando impactos ambientais.'],
+ r:2,
+ e:'O Plano Brasileiro de IA tem entre seus eixos centrais a soberania tecnológica nacional aliada à inclusão social e ao desenvolvimento ético. As demais alternativas contradizem os objetivos declarados do plano.',
+ ano:2025},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'O Brasil responde por quase 96% dos casos de chikungunya confirmados neste ano nas Américas, segundo dados divulgados pela Organização Mundial da Saúde (OMS). O País também contabiliza cerca de 72% das mortes pela doença no mundo. A OMS relaciona o avanço da doença impulsionada pela urbanização desordenada, falta de saneamento, falhas em programas de controle dos vetores e pelas mudanças climáticas.\n(CNN. Adaptado)\nEntre as causas que contribuíram para o avanço dessa doença, encontram-se',
+ alts:['a poluição atmosférica, o crescimento industrial e a escassez de recursos hídricos.','a urbanização desordenada, a falta de saneamento básico e o aumento do comércio internacional.','a expansão das áreas rurais, o uso de pesticidas e a criação extensiva de gado.','o desmatamento amazônico, o aumento da exportação de commodities e a redução da umidade do ar.','o excesso de chuvas, o uso de agrotóxicos e a concentração de atividades agrícolas.'],
+ r:1,
+ e:'O texto atribui o avanço da doença à \'urbanização desordenada\' e à \'falta de saneamento\', exatamente as causas citadas na alternativa correta. As demais trazem fatores (poluição industrial, agropecuária, desmatamento, excesso de chuvas) não mencionados no texto.',
+ ano:2025},
+
+{c:'pmesp', m:'Noções de Informática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Em uma planilha de escala de serviço no MS-Excel 2016 (versão em português brasileiro), a coluna A contém o identificador do policial, a coluna B contém as horas cumpridas pelo policial no mês, em formato numérico, e a coluna C indica o pelotão ("A", "B" ou "C"). A primeira linha contém o cabeçalho das colunas (A1:C1) e os dados estão completamente preenchidos no intervalo de células A2:C31, sendo que cada uma das 30 linhas representa um policial diferente. O comandante pede a quantidade de policiais do pelotão A que cumpriram 160 horas ou mais no mês e o soldado decide usar uma fórmula em E2.\nConsiderando o separador ponto e vírgula (;) no Excel em pt-BR, qual fórmula atende ao pedido sem criar colunas auxiliares?',
+ alts:['=CONT.SE(C2:C31;"A")','=CONT.VALORES(B2:B31;"A")','=SE(C2:C31="A";B2:B31>=160)','=CONT.SES(C2:C31;"A";B2:B31;">=160")','=SOMASE(B2:B31;">=160")'],
+ r:3,
+ e:'CONT.SES (equivalente a COUNTIFS) permite contar registros que atendem a múltiplos critérios simultaneamente - pelotão igual a \'A\' e horas maiores ou iguais a 160 - sem precisar de colunas auxiliares. CONT.SE só aceita um critério, CONT.VALORES apenas conta células não vazias, SE não funciona dessa forma para contagem, e SOMASE somaria valores em vez de contá-los.',
+ ano:2025},
+
+{c:'pmesp', m:'Noções de Informática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'No Microsoft Word 2016 (em português do Brasil), um soldado está editando um relatório fotográfico com 12 imagens. As legendas das figuras foram inseridas por meio do comando Referências → Inserir legenda, e um Índice de Ilustrações foi criado ao final do documento. A opção "Controlar Alterações" está desativada e não existem campos em cabeçalhos, rodapés, notas de rodapé ou caixas de texto. Após mover duas imagens de posição, o usuário percebe que a numeração das legendas automáticas e o Índice de Ilustrações ficaram desatualizados. Para atualizar todas as legendas automáticas e o Índice de Ilustrações, o usuário deve pressionar ___ para selecionar todo o conteúdo do corpo do documento, depois pressionar ___ para atualizar todos os campos selecionados e, por fim, clicar sobre o Índice de Ilustrações e escolher Atualizar índice inteiro.\nAssinale a alternativa que preenche, correta e respectivamente, as lacunas do enunciado.',
+ alts:['Ctrl+Shift+End … F5','Ctrl+E ... F9','Ctrl+A ... F9','Ctrl+U ... F5','Ctrl+S … F5'],
+ r:2,
+ e:'Ctrl+A seleciona todo o conteúdo do documento, e F9 é o atalho padrão do Word para atualizar campos selecionados, como legendas numeradas e índices. As demais combinações não correspondem às funções descritas no enunciado.',
+ ano:2025},
+
+{c:'pmesp', m:'Noções de Informática', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'O soldado precisa imprimir a página de um mapa on-line com rotas de deslocamento e quer checar o layout antes de gastar papel e tinta. Ele acessa o site institucional no navegador Google Chrome (Versão 141.0.7390.108 - 64 bits) em um computador com sistema operacional Windows, em configuração padrão. Nos navegadores modernos, existe um atalho de teclado que abre diretamente a interface de impressão com visualização prévia automática do documento, permitindo verificar como o conteúdo será impresso no papel e ajustar configurações como Orientação e Margens antes de enviar para a impressora física.\nNesse contexto, qual atalho de teclado o soldado deve utilizar para acessar diretamente a interface padrão de impressão com visualização prévia no Google Chrome?',
+ alts:['Ctrl+P','Ctrl+F','Ctrl+S','Ctrl+N','Ctrl+I'],
+ r:0,
+ e:'Ctrl+P é o atalho universal para abrir a interface de impressão com pré-visualização no Google Chrome e na maioria dos navegadores. Ctrl+F abre a busca na página, Ctrl+S salva, Ctrl+N abre uma nova janela e Ctrl+I não possui função de impressão no Chrome.',
+ ano:2025},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Diante da instauração de uma grave crise nacional de segurança pública impulsionada pela atuação de uma máfia, a Presidência da República, por meio do Ministério da Defesa, avalia a possibilidade do acionamento das forças auxiliares e reserva para apoiar o Exército Brasileiro na atuação terrestre. Caso sejam acionadas, além das polícias militares, o exército poderá contar também com',
+ alts:['as guardas metropolitanas.','os corpos de bombeiros militares.','as polícias civis.','a polícia federal.','as polícias penais.'],
+ r:1,
+ e:'Segundo a Constituição Federal (art. 144, §6º c/c art. 142), as polícias militares e os corpos de bombeiros militares são considerados forças auxiliares e reserva do Exército. Guardas municipais, polícias civis, polícia federal e polícias penais não possuem essa natureza constitucional.',
+ ano:2025},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Após sentença transitada em julgado, um oficial da Polícia Militar foi condenado na Justiça comum à pena privativa de liberdade por dois anos. Posteriormente, por meio de decisão do Tribunal de Justiça Militar do Estado, esse mesmo oficial foi julgado indigno do oficialato. Dada essa situação, o oficial militar',
+ alts:['perderá o posto, mas não a patente, pois já recebeu como punição a privação da liberdade.','não perderá nem o posto nem a patente, pois foi condenado pela Justiça comum.','perderá a patente, mas não o posto, pois a condenação à pena privativa de liberdade foi inferior a três anos.','não perderá nem o posto nem a patente, pois não cabe ao Tribunal de Justiça Militar do Estado essa decisão.','perderá o posto e a patente, uma vez que os elementos necessários para tanto estão presentes.'],
+ r:4,
+ e:'Conforme a Constituição Federal (art. 125, §4º) e a legislação militar, compete ao Tribunal de Justiça Militar decidir sobre a perda do posto e da patente do oficial julgado indigno do oficialato, inclusive quando há condenação transitada em julgado pela Justiça comum. Presentes esses elementos, o oficial perde tanto o posto quanto a patente.',
+ ano:2025},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'VUNESP 2025 · PM-ESP Soldado 2ª Classe',
+ q:'Por meio da plataforma Fala.SP, um cidadão apresentou pedido de acesso a informações de interesse público destinadas à Polícia Militar do Estado de São Paulo. Dentro do prazo legal, o pedido formulado por esse cidadão foi indeferido pelo órgão militar. No inteiro teor de decisão de negativa de acesso, verificou-se que a disponibilização das informações requeridas comprometeria atividades de inteligência, bem como de investigação ou fiscalização em andamento, relacionadas com a prevenção de infrações. Como consequência desse motivo, as informações requeridas apresentavam graus de sigilo ultrassecreto, secreto e reservado, o que corresponde, respectivamente, aos seguintes prazos máximos:',
+ alts:['25, 20 e 15 anos.','20, 15 e 10 anos.','25, 15 e 5 anos.','20, 10 e 5 anos.','25, 10 e 5 anos.'],
+ r:2,
+ e:'Conforme a Lei de Acesso à Informação (Lei nº 12.527/2011, art. 24), os prazos máximos de restrição de acesso a informações classificadas são de 25 anos para as ultrassecretas, 15 anos para as secretas e 5 anos para as reservadas.',
+ ano:2025},
+
+/* ---------------- PMESP · Edital 2024 (FGV) ---------------- */
+{c:'pmesp', m:'Língua Portuguesa', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'As opções abaixo mostram definições de palavras. Assinale aquela que mostra um tipo de definição não técnica, diferente das demais por seu caráter criativo.',
+ alts:['Espada é uma arma branca de lâmina comprida e pontuda, dotada de punho, com um ou dois gumes.','Chuvisco é uma chuva pouco intensa.','Cigarra é um inseto cujo macho é provido de órgão que produz som estridente.','Cigarro é tabaco picado e enrolado em papel, para se fumar.','A natureza é uma nuvem mutável, sempre e nunca a mesma.'],
+ r:4,
+ e:'As alternativas A-D trazem definições técnicas/objetivas (denotativas). Só a alternativa E foge do padrão técnico, usando linguagem figurada e criativa (\'nuvem mutável\') para definir \'natureza\'.',
+ ano:2024},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Assinale a frase em que todos os sinais de pontuação foram bem-empregados.\n(A) A verdadeira questão não é se as máquinas pensam, mas se os homens pensam.\n(B) Antigamente, a cidade era o mundo hoje o mundo é uma cidade.\n(C) Ciência, sem consciência, não é senão, uma ruína da alma.\n(D) A ciência é o grande antídoto do veneno, do entusiasmo, e da superstição.\n(E) Genética é uma coisa, hereditária.',
+ alts:['A verdadeira questão não é se as máquinas pensam, mas se os homens pensam.','Antigamente, a cidade era o mundo hoje o mundo é uma cidade.','Ciência, sem consciência, não é senão, uma ruína da alma.','A ciência é o grande antídoto do veneno, do entusiasmo, e da superstição.','Genética é uma coisa, hereditária.'],
+ r:0,
+ e:'A alternativa A está corretamente pontuada. As demais têm vírgulas indevidas (separando termos que não deveriam ser separados, como sujeito/predicado ou elementos de uma enumeração) ou falta de vírgula entre orações (B).',
+ ano:2024},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Assinale a frase em que o sinal indicativo da crase está bem-empregado.\n(A) É difícil ensinar o alfabeto à garotos atualmente, pois todos pensam que o "vê" vem depois do "tê".\n(B) Uma mão lava à outra e a poluição suja as duas.\n(C) O progresso é a injustiça que cada geração comete em relação à geração precedente.\n(D) Vou usar o computador com reservas. Esse equipamento invade à privacidade humana.\n(E) O automóvel resolve à ansiedade dos homens.',
+ alts:['É difícil ensinar o alfabeto à garotos atualmente, pois todos pensam que o "vê" vem depois do "tê".','Uma mão lava à outra e a poluição suja as duas.','O progresso é a injustiça que cada geração comete em relação à geração precedente.','Vou usar o computador com reservas. Esse equipamento invade à privacidade humana.','O automóvel resolve à ansiedade dos homens.'],
+ r:2,
+ e:'Em C há crase correta: a locução \'em relação a\' exige a preposição \'a\', que se funde com o artigo feminino \'a\' de \'geração\' (à geração). Nas demais, o verbo (invadir, resolver) ou o substantivo não exige a preposição \'a\' antes de palavra feminina determinada, ou o termo seguinte é masculino/indeterminado, não cabendo crase.',
+ ano:2024},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'As frases abaixo mostram locuções adjetivas que foram substituídas por adjetivos, indicados entre parênteses. Entre as substituições propostas, assinale aquela que é inadequada.\n(A) Um beijo de minha mãe (materno) fez de mim um pintor.\n(B) O importante na obra de arte (artística) é o espanto.\n(C) A obra-prima é uma variedade do milagre (milagrosa).\n(D) Apreciar os defeitos do próximo (alheios) é ter talento?\n(E) Nenhuma arte pode imitar a indústria da natureza (natural).',
+ alts:['Um beijo de minha mãe (materno) fez de mim um pintor.','O importante na obra de arte (artística) é o espanto.','A obra-prima é uma variedade do milagre (milagrosa).','Apreciar os defeitos do próximo (alheios) é ter talento?','Nenhuma arte pode imitar a indústria da natureza (natural).'],
+ r:2,
+ e:'Em C, o adjetivo \'milagrosa\' deveria concordar e substituir semanticamente \'do milagre\' qualificando \'variedade\', mas \'milagrosa\' sugere que a obra-prima É milagrosa, e não que é uma espécie/variedade DE milagre — a substituição altera o sentido original, sendo inadequada.',
+ ano:2024},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Assinale o texto que deve ser classificado como informativo, por centrar seu interesse na divulgação de informações.\n(A) Se você pretende ter uma velhice tranquila, economize o dinheiro que ganha enquanto jovem.\n(B) Eu nunca sei o que fazer no dia seguinte a um feriado.\n(C) Todos devemos ter respeito com os mais velhos, pois todos chegaremos lá.\n(D) Os povos mais ricos sempre dominam a cena política.\n(E) O Palmeiras desembarcou ontem em Buenos Aires, onde vai disputar mais um título.',
+ alts:['Se você pretende ter uma velhice tranquila, economize o dinheiro que ganha enquanto jovem.','Eu nunca sei o que fazer no dia seguinte a um feriado.','Todos devemos ter respeito com os mais velhos, pois todos chegaremos lá.','Os povos mais ricos sempre dominam a cena política.','O Palmeiras desembarcou ontem em Buenos Aires, onde vai disputar mais um título.'],
+ r:4,
+ e:'A alternativa E relata um fato/notícia (viagem do time e próximo jogo), sem opinião ou conselho — é puramente informativa. As demais expressam opiniões, conselhos ou juízos de valor.',
+ ano:2024},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Assinale a frase em que a palavra sublinhada \'luz\' está empregada em sentido figurado.\n(A) A primeira criatura que Deus fez foi a luz.\n(B) Tudo quanto está debaixo da terra, o tempo porá a descoberto à luz do sol.\n(C) A luz é o ouro das casas dos pobres.\n(D) A luz da lua é vista como romântica.\n(E) As palavras dele trouxeram luz a nosso estudo.',
+ alts:['A primeira criatura que Deus fez foi a luz.','Tudo quanto está debaixo da terra, o tempo porá a descoberto à luz do sol.','A luz é o ouro das casas dos pobres.','A luz da lua é vista como romântica.','As palavras dele trouxeram luz a nosso estudo.'],
+ r:4,
+ e:'Em E, \'luz\' significa clareza/compreensão (sentido figurado), não a luz física. Nas demais alternativas, \'luz\' é usada no sentido literal (luminosidade real).',
+ ano:2024},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Observe o seguinte texto:\n"A casa era pequena, no centro do terreno, toda branca com janelas azuis, como todas as da pequena cidade. Após passar pela porta, o visitante se deparava com cômodos pequenos, mas simpáticos, muito bem arrumados. Na parte de trás, um terreno grande com grande diversidade de árvores frutíferas."\nA observação correta em relação a ele é:\n(A) o texto é descritivo e a descrição realizada é de caráter físico, tendo por objeto uma casa, que é focalizada de fora para dentro.\n(B) o texto é narrativo, contando a história de uma casa em uma cidade do interior.\n(C) o texto é narrativo e descritivo, pois, ao mesmo tempo que nos dá a história da casa, mostra detalhes dela.\n(D) a descrição realizada é feita de forma estática, em que observador e objeto estão imóveis.\n(E) a casa que é objeto da descrição é observada de cima para baixo.',
+ alts:['o texto é descritivo e a descrição realizada é de caráter físico, tendo por objeto uma casa, que é focalizada de fora para dentro.','o texto é narrativo, contando a história de uma casa em uma cidade do interior.','o texto é narrativo e descritivo, pois, ao mesmo tempo que nos dá a história da casa, mostra detalhes dela.','a descrição realizada é feita de forma estática, em que observador e objeto estão imóveis.','a casa que é objeto da descrição é observada de cima para baixo.'],
+ r:0,
+ e:'O texto descreve a casa começando pelo exterior (fachada branca, janelas) e só depois entra nos cômodos internos, ou seja, vai de fora para dentro — é descrição física, não há narrativa (não há ações/eventos encadeados no tempo).',
+ ano:2024},
+
+{c:'pmesp', m:'Matemática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Um dado número somado com a sua terça parte dá como resultado 228. A soma dos algarismos do número dado é\n(A) 5.\n(B) 6.\n(C) 7.\n(D) 8.\n(E) 9.',
+ alts:['5.','6.','7.','8.','9.'],
+ r:4,
+ e:'x + x/3 = 228 → 4x/3 = 228 → x = 171. Soma dos algarismos: 1+7+1 = 9.',
+ ano:2024},
+
+{c:'pmesp', m:'Matemática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Em certa loja um artigo que custa 80 reais pode ser comprado, na promoção, por 66 reais. O valor do desconto é\n(A) 14%.\n(B) 16,5%.\n(C) 17,5%.\n(D) 18%.\n(E) 19,5%.',
+ alts:['14%.','16,5%.','17,5%.','18%.','19,5%.'],
+ r:2,
+ e:'Desconto em reais: 80 - 66 = 14. Em percentual: 14/80 = 0,175 = 17,5%.',
+ ano:2024},
+
+{c:'pmesp', m:'Matemática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Em uma lanchonete todos os sanduíches têm o mesmo preço e todos os sucos têm mesmo preço. Certo dia, Joana e Laura compraram, nessa lanchonete, 2 sanduíches e 3 sucos pagando o total de 51 reais. Na semana seguinte, as duas levaram Maria a essa lanchonete. Elas compraram 3 sanduíches e 4 sucos e pagaram o total de 72 reais. Nessa lanchonete o preço do sanduíche é\n(A) 9 reais.\n(B) 10 reais.\n(C) 11 reais.\n(D) 12 reais.\n(E) 13 reais.',
+ alts:['9 reais.','10 reais.','11 reais.','12 reais.','13 reais.'],
+ r:3,
+ e:'Sistema: 2s+3j=51 e 3s+4j=72. Multiplicando a primeira por 3 e a segunda por 2: 6s+9j=153 e 6s+8j=144. Subtraindo: j=9. Substituindo: 2s+27=51 → s=12.',
+ ano:2024},
+
+{c:'pmesp', m:'Matemática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Uma máquina leva 2 minutos e 15 segundos (2min15s) para imprimir e encadernar certo livro. Para imprimir e encadernar 24 exemplares desse livro, trabalhando continuamente, a máquina levará\n(A) 50min.\n(B) 51min45s.\n(C) 52min30s.\n(D) 53min15s.\n(E) 54min.',
+ alts:['50min.','51min45s.','52min30s.','53min15s.','54min.'],
+ r:4,
+ e:'2min15s = 135s. Para 24 livros: 24 × 135 = 3240s = 54min exatos (3240/60=54).',
+ ano:2024},
+
+{c:'pmesp', m:'Matemática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Em um encontro de 57 Policiais Militares, há apenas sargentos, cabos e soldados. Para cada cabo, há 5 soldados, e para cada sargento, há 3 cabos. O número de soldados nesse encontro é igual a\n(A) 50.\n(B) 48.\n(C) 45.\n(D) 42.\n(E) 40.',
+ alts:['50.','48.','45.','42.','40.'],
+ r:2,
+ e:'Seja s = nº de sargentos. Cabos = 3s. Soldados = 5×(3s) = 15s. Total: s+3s+15s = 19s = 57 → s=3. Soldados = 15×3 = 45.',
+ ano:2024},
+
+{c:'pmesp', m:'Matemática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Um número N é tal que dividido por 6 deixa resto 2 e dividido por 8 também deixa resto 2. A soma dos algarismos do menor número N (maior que os divisores) que satisfaz essas condições é\n(A) 8.\n(B) 7.\n(C) 6.\n(D) 5.\n(E) 4.',
+ alts:['8.','7.','6.','5.','4.'],
+ r:0,
+ e:'N-2 deve ser múltiplo de 6 e de 8, logo múltiplo de mmc(6,8)=24. O menor N nessas condições é N=26 (24+2). Soma dos algarismos de 26: 2+6=8.',
+ ano:2024},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'O plano Schlieffen, nomeado em homenagem ao seu idealizador, o conde Schlieffen, foi uma estratégia militar implementada pela Alemanha no início da Primeira Guerra Mundial. Assinale a afirmativa que apresenta corretamente os objetivos do plano Schlieffen.\n(A) O plano tinha como objetivo provocar o desgaste do inimigo, visando a uma guerra de trincheiras em solo alemão, como uma medida preventiva frente ao conhecimento do plano russo de ataque à Alemanha.\n(B) O plano tinha como objetivo prolongar o conflito, adotando a tática de empregar gradualmente as forças militares alemãs nos primeiros confrontos com a Rússia e, posteriormente, com a França.\n(C) O plano tinha como objetivo atacar a França através da Bélgica, contornando as defesas francesas e empregando um alto investimento militar, com a expectativa de uma rápida vitória alemã.\n(D) O plano tinha como objetivo empreender ataques frontais nas duas frentes, francesa e russa, simultaneamente, visando desmoralizar os exércitos inimigos, que culminaria na tomada de Paris e o armistício com a Rússia.\n(E) O plano tinha como objetivo adotar uma postura defensiva contra os ataques russos e franceses, priorizando investimentos em fortificações nas fronteiras do território alemão.',
+ alts:['O plano tinha como objetivo provocar o desgaste do inimigo, visando a uma guerra de trincheiras em solo alemão, como uma medida preventiva frente ao conhecimento do plano russo de ataque à Alemanha.','O plano tinha como objetivo prolongar o conflito, adotando a tática de empregar gradualmente as forças militares alemãs nos primeiros confrontos com a Rússia e, posteriormente, com a França.','O plano tinha como objetivo atacar a França através da Bélgica, contornando as defesas francesas e empregando um alto investimento militar, com a expectativa de uma rápida vitória alemã.','O plano tinha como objetivo empreender ataques frontais nas duas frentes, francesa e russa, simultaneamente, visando desmoralizar os exércitos inimigos, que culminaria na tomada de Paris e o armistício com a Rússia.','O plano tinha como objetivo adotar uma postura defensiva contra os ataques russos e franceses, priorizando investimentos em fortificações nas fronteiras do território alemão.'],
+ r:2,
+ e:'O plano Schlieffen previa invadir a França rapidamente através da neutra Bélgica, driblando as fortificações francesas na fronteira, para vencer no Ocidente antes que a Rússia mobilizasse suas tropas no Oriente.',
+ ano:2024},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Assinale a afirmativa que descreve corretamente as inovações introduzidas pelas constituições brasileiras do período contemporâneo.\n(A) A constituição de 1934 ampliou a participação eleitoral, concedendo pela primeira vez o direito de voto aos analfabetos.\n(B) A constituição de 1937 confirmou a liberdade partidária e a independência dos poderes Legislativo e Judiciário em relação ao Executivo.\n(C) A constituição de 1946 estabeleceu a legalidade da pena de morte para punir determinados crimes e a eleição indireta para o cargo de presidente.\n(D) A constituição de 1967 suprimiu o Congresso Nacional e reforçou o poder do Judiciário como principal responsável por garantir a segurança nacional.\n(E) A constituição de 1988 reduziu quatro horas semanais da jornada de trabalho e garantiu o direito à greve e à liberdade sindical.',
+ alts:['A constituição de 1934 ampliou a participação eleitoral, concedendo pela primeira vez o direito de voto aos analfabetos.','A constituição de 1937 confirmou a liberdade partidária e a independência dos poderes Legislativo e Judiciário em relação ao Executivo.','A constituição de 1946 estabeleceu a legalidade da pena de morte para punir determinados crimes e a eleição indireta para o cargo de presidente.','A constituição de 1967 suprimiu o Congresso Nacional e reforçou o poder do Judiciário como principal responsável por garantir a segurança nacional.','A constituição de 1988 reduziu quatro horas semanais da jornada de trabalho e garantiu o direito à greve e à liberdade sindical.'],
+ r:4,
+ e:'A Constituição de 1988 reduziu a jornada semanal de 48 para 44 horas e assegurou expressamente o direito de greve e a liberdade sindical. As demais alternativas invertem fatos históricos (1934 não deu voto a analfabetos, 1937 foi ditatorial/Estado Novo, 1946 não legalizou pena de morte, 1967 não suprimiu o Congresso).',
+ ano:2024},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Em outubro de 2023, o Brasil apresentou uma resolução ao Conselho de Segurança da Organização das Nações Unidas. Esse documento pedia a pausa do conflito entre Israel e o Hamas na Faixa de Gaza para permitir o acesso de ajuda humanitária aos civis afetados. O texto apresentado pela diplomacia brasileira foi vetado porque\n(A) os Estados Unidos da América exerceram seu poder de veto contra a resolução.\n(B) a resolução recebeu uma votação majoritariamente desfavorável.\n(C) o texto apresentava erros significativos em relação aos protocolos do conselho.\n(D) o Brasil não possui o estatuto de membro permanente no conselho.\n(E) a resolução contrariava os interesses de países como Rússia e China na região.',
+ alts:['os Estados Unidos da América exerceram seu poder de veto contra a resolução.','a resolução recebeu uma votação majoritariamente desfavorável.','o texto apresentava erros significativos em relação aos protocolos do conselho.','o Brasil não possui o estatuto de membro permanente no conselho.','a resolução contrariava os interesses de países como Rússia e China na região.'],
+ r:0,
+ e:'Em outubro de 2023, os EUA, membro permanente do Conselho de Segurança, vetaram a resolução proposta pelo Brasil sobre pausa humanitária em Gaza, mesmo com ampla maioria de votos favoráveis dos demais membros.',
+ ano:2024},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'A empresa americana Tesla é uma referência no crescente mercado dos veículos elétricos. Sob a liderança do empresário Elon Musk, a companhia permaneceu por anos como a maior fabricante desse segmento no mundo. No entanto, nos últimos meses, ela foi superada pela concorrente\n(A) Lucid Motors (EUA).\n(B) Hyundai (Coreia do Sul).\n(C) BYD (China).\n(D) Nissan (Japão).\n(E) Volkswagen (Alemanha).',
+ alts:['Lucid Motors (EUA).','Hyundai (Coreia do Sul).','BYD (China).','Nissan (Japão).','Volkswagen (Alemanha).'],
+ r:2,
+ e:'No quarto trimestre de 2023, a chinesa BYD superou a Tesla em vendas de veículos elétricos, tornando-se a maior fabricante do segmento no mundo.',
+ ano:2024},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Em novembro do ano passado, um grupo de cidadãos brasileiros residentes na Palestina aguardava, preocupado, pelas autorizações necessárias para seu processo de repatriação. A saída se daria pela cidade de Rafah, ao sul da Faixa de Gaza, de onde cruzariam para o país vizinho e, posteriormente, seguiriam para o Brasil. O país, referido no texto, que faz fronteira com a Faixa de Gaza é\n(A) o Catar.\n(B) a Jordânia.\n(C) o Egito.\n(D) a Síria.\n(E) o Líbano.',
+ alts:['o Catar.','a Jordânia.','o Egito.','a Síria.','o Líbano.'],
+ r:2,
+ e:'A cidade de Rafah fica na fronteira sul da Faixa de Gaza com o Egito, sendo a principal passagem terrestre usada para saída de civis e estrangeiros durante o conflito.',
+ ano:2024},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Nos últimos tempos, a popularização do acesso às ferramentas de inteligência artificial tem mudado diversos aspectos da sociedade. É o caso do ChatGPT, da empresa OpenAI, com brasileiros representando 5,16% do seu tráfego total em janeiro deste ano. O ChatGPT é uma ferramenta de inteligência artificial\n(A) reativa.\n(B) simbólica.\n(C) geral.\n(D) híbrida.\n(E) generativa.',
+ alts:['reativa.','simbólica.','geral.','híbrida.','generativa.'],
+ r:4,
+ e:'O ChatGPT é um modelo de IA generativa, pois cria (gera) conteúdo novo — textos, respostas, código — a partir de padrões aprendidos, e não apenas reage de forma fixa a estímulos (IA reativa) nem representa uma IA geral (que ainda não existe na prática).',
+ ano:2024},
+
+{c:'pmesp', m:'Noções de Informática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Com base nos conceitos do sistema operacional Microsoft Windows 10, avalie as afirmações abaixo:\nI. No Windows 10, ao excluir um arquivo usando a tecla "Delete", o arquivo é permanentemente removido do sistema sem passar pela Lixeira.\nII. A área de transferência permite ao usuário copiar e mover arquivos e textos entre diferentes locais, armazenando temporariamente os dados copiados ou cortados.\nIII. Atalhos são ícones que permitem acesso rápido a arquivos, pastas ou programas e ocupam menos espaço no disco rígido do que os próprios arquivos originais.\nEstá correto o que se afirma em\n(A) I, apenas.\n(B) II, apenas.\n(C) III, apenas.\n(D) I e II, apenas.\n(E) II e III, apenas.',
+ alts:['I, apenas.','II, apenas.','III, apenas.','I e II, apenas.','II e III, apenas.'],
+ r:4,
+ e:'I é falsa: a tecla Delete manda o arquivo para a Lixeira (só Shift+Delete apaga em definitivo). II é verdadeira: a área de transferência armazena temporariamente o que foi copiado/recortado. III é verdadeira: atalhos são pequenos ponteiros para o arquivo original, ocupando bem menos espaço. Logo, II e III apenas.',
+ ano:2024},
+
+{c:'pmesp', m:'Noções de Informática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'No contexto dos aplicativos Microsoft Office 2016, avalie as afirmações a seguir:\nI. No Word 2016, a ferramenta "Comparar Documentos" permite mesclar automaticamente o conteúdo de dois documentos diferentes em um único documento.\nII. No Excel 2016, a função "SOMASE" permite somar valores em um intervalo que atendam a um critério especificado.\nIII. No PowerPoint 2016, o recurso "Slide Mestre" é usado para aplicar animações específicas a cada elemento individual de um slide.\nEstá correto o que se afirma em\n(A) I, apenas.\n(B) II, apenas.\n(C) III, apenas.\n(D) I e II, apenas.\n(E) II e III, apenas.',
+ alts:['I, apenas.','II, apenas.','III, apenas.','I e II, apenas.','II e III, apenas.'],
+ r:1,
+ e:'I é falsa: \'Comparar Documentos\' mostra as diferenças entre dois arquivos, não os mescla automaticamente em um só. II é verdadeira: SOMASE soma valores de um intervalo que atendem a um critério. III é falsa: Slide Mestre serve para padronizar formatação/layout dos slides, não para animações individuais. Logo, apenas II.',
+ ano:2024},
+
+{c:'pmesp', m:'Noções de Informática', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'No contexto dos ambientes colaborativos Google Workspace e Microsoft Teams, avalie as afirmações abaixo e assinale (V) para a verdadeira e (F) para a falsa.\n( ) No Google Workspace, o Google Meet só permite a participação em reuniões por meio de convites enviados por e-mail, sem possibilidade de criar reuniões diretamente na plataforma.\n( ) No Microsoft Teams, é possível fazer chamadas de áudio e vídeo, bem como compartilhar a tela durante as reuniões.\n( ) No Google Workspace, o Google Drive permite o armazenamento de arquivos na nuvem e a colaboração em tempo real em Documentos, Planilhas e Apresentações.\nAs afirmativas são, respectivamente,\n(A) V – V – F.\n(B) V – F – F.\n(C) F – V – V.\n(D) F – F – V.\n(E) F – F – F.',
+ alts:['V – V – F.','V – F – F.','F – V – V.','F – F – V.','F – F – F.'],
+ r:2,
+ e:'1ª é falsa: o Google Meet permite criar reuniões diretamente na plataforma, não só por convite de e-mail. 2ª é verdadeira: o Teams permite chamadas de áudio/vídeo e compartilhamento de tela. 3ª é verdadeira: o Google Drive armazena arquivos na nuvem e permite colaboração em tempo real. Logo, F – V – V.',
+ ano:2024},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'João, após estudar muitos anos no exterior, aprendeu a realizar um trabalho de grande relevância social, o que lhe permitia auferir uma boa renda. Ao retornar ao território brasileiro, constatou, para sua surpresa, que não existia lei regulamentando o exercício dessa profissão. Ao consultar um especialista nessa temática, foi corretamente informado a João que\n(A) a ausência de lei impede o exercício da profissão.\n(B) a ausência de lei indica ser livre o exercício da profissão.\n(C) o trabalho é livre, logo, a lei não pode estabelecer qualquer requisito para o seu exercício.\n(D) é cabível a impetração de mandado de injunção para que lhe seja permitido o exercício da profissão.\n(E) é cabível a impetração de mandado de segurança para que lhe seja permitido o exercício da profissão.',
+ alts:['a ausência de lei impede o exercício da profissão.','a ausência de lei indica ser livre o exercício da profissão.','o trabalho é livre, logo, a lei não pode estabelecer qualquer requisito para o seu exercício.','é cabível a impetração de mandado de injunção para que lhe seja permitido o exercício da profissão.','é cabível a impetração de mandado de segurança para que lhe seja permitido o exercício da profissão.'],
+ r:1,
+ e:'Pelo art. 5º, XIII, da CF, é livre o exercício de qualquer trabalho, ofício ou profissão, atendidas as qualificações que a lei estabelecer. Na ausência de lei regulamentadora, a profissão é livremente exercida (não impedida). A alternativa C erra ao dizer que a lei jamais pode estabelecer requisitos — ela pode, só que aqui não existe lei nesse sentido.',
+ ano:2024},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'O Prefeito do Município Alfa foi informado por sua assessoria que era necessário o preenchimento de uma função de confiança e de um cargo em comissão. Os pretendentes eram Ana, servidora ocupante de cargo de provimento efetivo; Pedro, servidor público estadual aposentado; e Maria, que jamais ocupou um cargo público. À luz da sistemática constitucional vigente, é correto afirmar que\n(A) Ana pode ocupar a função de confiança ou o cargo em comissão.\n(B) Pedro pode ocupar a função de confiança ou o cargo em comissão.\n(C) Maria pode ocupar a função de confiança ou o cargo em comissão.\n(D) Ana e Pedro somente podem ocupar o cargo em comissão.\n(E) Maria somente pode ocupar a função de confiança.',
+ alts:['Ana pode ocupar a função de confiança ou o cargo em comissão.','Pedro pode ocupar a função de confiança ou o cargo em comissão.','Maria pode ocupar a função de confiança ou o cargo em comissão.','Ana e Pedro somente podem ocupar o cargo em comissão.','Maria somente pode ocupar a função de confiança.'],
+ r:0,
+ e:'Pelo art. 37, V, da CF, a função de confiança só pode ser exercida por servidor ocupante de cargo efetivo — Ana se enquadra. Já o cargo em comissão pode ser ocupado por qualquer pessoa, inclusive Ana. Logo, Ana pode ocupar qualquer um dos dois. Maria, por não ter vínculo efetivo, só pode ocupar o cargo em comissão, e não a função de confiança.',
+ ano:2024},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'FGV 2024 · PM-ESP Soldado 2ª Classe',
+ q:'Maria, pessoa analfabeta e que não se alistou como eleitora, mas que possui elevada consciência cívica, sendo residente no Estado Alfa, apresentou requerimento de acesso à informação a uma autarquia federal com sede em Brasília, com o objetivo de que fosse informada sobre a remuneração dos seus servidores. Na situação descrita na narrativa, é correto afirmar, à luz da Lei de Acesso à Informação, que\n(A) Maria não pode requerer as informações, pois não é cidadã.\n(B) não precisam ser apresentados os motivos determinantes da solicitação.\n(C) a Lei de Acesso à Informação somente é aplicada aos Estados e aos Municípios, não à União.\n(D) a remuneração dos servidores diz respeito à intimidade desses agentes, não podendo ser fornecida.\n(E) o requerimento somente deve ser atendido caso a autarquia tenha classificado tais informações como publicizáveis.',
+ alts:['Maria não pode requerer as informações, pois não é cidadã.','não precisam ser apresentados os motivos determinantes da solicitação.','a Lei de Acesso à Informação somente é aplicada aos Estados e aos Municípios, não à União.','a remuneração dos servidores diz respeito à intimidade desses agentes, não podendo ser fornecida.','o requerimento somente deve ser atendido caso a autarquia tenha classificado tais informações como publicizáveis.'],
+ r:1,
+ e:'A Lei de Acesso à Informação (Lei 12.527/2011, art. 10, §3º) dispensa a apresentação de motivos para o pedido de acesso à informação. Ela se aplica a todos os entes federativos, inclusive à União e suas autarquias, e a remuneração de servidores públicos é informação de interesse público, não protegida por sigilo.',
+ ano:2024},
+
+/* ---------------- PMESP · Edital 2023 (VUNESP) ---------------- */
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto a seguir.\n\nExercícios\n\nHá senhores, graves senhores, que leem graves estudos de filosofia ou coisas afins, ou procuram sozinhos filosofar, considerando as suas ideias que eles julgam próprias. Isto em geral os leva à redescoberta da pólvora. Mas não há de ser nada... Porque estou me lembrando agora é dos tempos em que havia cadeiras na calçada e muitas estrelas lá em cima, e a preocupação dos pequenos, alheios à conversa da gente grande, era observar a forma das nuvens, que se punham a figurar dragões ou bichos mais complicados, ou fragatas que terminavam naufragando, ou mais prosaicamente uma vasta galinha que acabava pondo um ovo luminoso: a lua.\nE esses exercícios eram muito mais divertidos, meus graves senhores, que os de vossas ideias, isto é, os de vossas nuvens interiores.\n(Mario Quintana, A vaca e o hipogrifo.)\n\nNo contexto em que se encontram (1º parágrafo), as palavras "graves" e "afins" têm sinônimos respectivamente em',
+ alts:['carrancudos e gerais.','perigosos e parentes.','pesados e dispostas.','sérios e assemelhadas.','profundos e propensas.'],
+ r:3,
+ e:'No texto, "graves senhores" significa senhores sérios, e "coisas afins" significa coisas assemelhadas/semelhantes. As demais opções trazem sinônimos que não se encaixam no sentido do texto.',
+ ano:2023},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto a seguir.\n\nExercícios\n\nHá senhores, graves senhores, que leem graves estudos de filosofia ou coisas afins, ou procuram sozinhos filosofar, considerando as suas ideias que eles julgam próprias. Isto em geral os leva à redescoberta da pólvora. Mas não há de ser nada... Porque estou me lembrando agora é dos tempos em que havia cadeiras na calçada e muitas estrelas lá em cima, e a preocupação dos pequenos, alheios à conversa da gente grande, era observar a forma das nuvens, que se punham a figurar dragões ou bichos mais complicados, ou fragatas que terminavam naufragando, ou mais prosaicamente uma vasta galinha que acabava pondo um ovo luminoso: a lua.\nE esses exercícios eram muito mais divertidos, meus graves senhores, que os de vossas ideias, isto é, os de vossas nuvens interiores.\n(Mario Quintana, A vaca e o hipogrifo.)\n\nAssinale a alternativa que reescreve a passagem do texto de acordo com a norma-padrão de colocação pronominal e de concordância verbal.',
+ alts:['Agora lembro-me dos tempos em que na calçada existia cadeiras.','Agora me lembro dos tempos em que na calçada existia cadeiras.','Agora me lembro dos tempos em que na calçada existiam cadeiras.','Me lembro agora dos tempos em que existia cadeiras na calçada.','Me lembro agora dos tempos em que existiam cadeiras na calçada.'],
+ r:2,
+ e:'Na norma-padrão, evita-se iniciar a oração com pronome oblíquo átono (por isso "Agora me lembro", e não "Me lembro..."). Além disso, o verbo "existir" no sentido de "haver, ocorrer" concorda normalmente com o sujeito ("existiam cadeiras"), diferentemente do verbo "haver" nesse mesmo sentido, que é impessoal. Apenas a alternativa C atende às duas exigências.',
+ ano:2023},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto a seguir.\n\nSinais de quem sofre bullying\n\nApesar das inúmeras campanhas de conscientização, o bullying segue sendo um tema que merece a nossa atenção. Uma pesquisa realizada pela Microsoft, em 2020, em 32 países, incluindo o Brasil, aponta que 43% dos entrevistados estiveram envolvidos em incidentes de bullying na internet, conhecido como cyberbullying.\nPor sua vez, a Pesquisa Nacional de Saúde Escolar 2019, feita pelo Instituto Brasileiro de Geografia e Estatística com 188 mil estudantes com idades entre 13 e 17 anos, aponta que um em cada 10 adolescentes já se sentiu ameaçado, ofendido e humilhado em redes sociais ou aplicativos. Além disso, 23% dos estudantes afirmaram ter sido vítimas de bullying em ambiente escolar. Os motivos? Aparência do corpo (16,5%), aparência do rosto (11,6%) e cor ou raça (4,6%).\nAlém de seguir com as campanhas de conscientização e de abordar o assunto com as crianças e os adolescentes, entendo que é importante que pais e responsáveis estejam 100% atentos ao comportamento dos seus filhos. A forma como estes agem pode nos dizer muitas coisas, entre elas, demonstrar se eles estão sendo autores ou vítimas de bullying. Esse é um dos melhores meios para identificar se uma criança sofre com zombarias, ridicularizações, humilhações e outro tipo de violência emocional.\nO assunto precisa ser tratado com seriedade pelos pais e responsáveis. É interessante que encarem as situações juntos, sem pressionar os filhos a reagir ou minimizar a situação, fazendo com que eles se sintam pior.\nNesse momento, é relevante pedir discrição para lidar com o assunto, pois expor o menor não irá ajudar. Ao contrário, apenas irá incentivar os colegas a aumentar a prática. Em paralelo, vale buscar a ajuda de um profissional experiente na área.\n(Sueli Bravi Conte, Revista Bem-Estar, 05.06.2022. Adaptado)\n\nDiante dos dados de pesquisas, a autora recomenda que as campanhas de conscientização sobre o bullying sejam',
+ alts:['repensadas com cuidado, para dar lugar ao acompanhamento dos pais e responsáveis.','renovadas para que os pais se especializem no modo de enfrentar o assunto em família.','repetidas sempre que necessário e associadas a pressões dos pais para proibir a prática.','continuadas e contem com a atenção dos pais e responsáveis ao modo de agir dos filhos.','substituídas por educação dos jovens acerca desse tema que preocupa as famílias.'],
+ r:3,
+ e:'O texto afirma que, além de seguir com as campanhas de conscientização, é importante que pais e responsáveis estejam atentos ao comportamento dos filhos — ou seja, as campanhas devem continuar e ser somadas à atenção parental, exatamente o que diz a alternativa D.',
+ ano:2023},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Leia o texto a seguir.\n\nSinais de quem sofre bullying\n\nApesar das inúmeras campanhas de conscientização, o bullying segue sendo um tema que merece a nossa atenção. Uma pesquisa realizada pela Microsoft, em 2020, em 32 países, incluindo o Brasil, aponta que 43% dos entrevistados estiveram envolvidos em incidentes de bullying na internet, conhecido como cyberbullying.\nPor sua vez, a Pesquisa Nacional de Saúde Escolar 2019, feita pelo Instituto Brasileiro de Geografia e Estatística com 188 mil estudantes com idades entre 13 e 17 anos, aponta que um em cada 10 adolescentes já se sentiu ameaçado, ofendido e humilhado em redes sociais ou aplicativos. Além disso, 23% dos estudantes afirmaram ter sido vítimas de bullying em ambiente escolar. Os motivos? Aparência do corpo (16,5%), aparência do rosto (11,6%) e cor ou raça (4,6%).\nAlém de seguir com as campanhas de conscientização e de abordar o assunto com as crianças e os adolescentes, entendo que é importante que pais e responsáveis estejam 100% atentos ao comportamento dos seus filhos. A forma como estes agem pode nos dizer muitas coisas, entre elas, demonstrar se eles estão sendo autores ou vítimas de bullying. Esse é um dos melhores meios para identificar se uma criança sofre com zombarias, ridicularizações, humilhações e outro tipo de violência emocional.\nO assunto precisa ser tratado com seriedade pelos pais e responsáveis. É interessante que encarem as situações juntos, sem pressionar os filhos a reagir ou minimizar a situação, fazendo com que eles se sintam pior.\nNesse momento, é relevante pedir discrição para lidar com o assunto, pois expor o menor não irá ajudar. Ao contrário, apenas irá incentivar os colegas a aumentar a prática. Em paralelo, vale buscar a ajuda de um profissional experiente na área.\n(Sueli Bravi Conte, Revista Bem-Estar, 05.06.2022. Adaptado)\n\nNa passagem – é importante que pais e responsáveis estejam 100% atentos ao comportamento dos seus filhos – a expressão numérica destacada deve ser entendida como',
+ alts:['ocasionalmente.','totalmente.','relativamente.','eventualmente.','virtualmente.'],
+ r:1,
+ e:'"100%" no contexto significa integralmente/totalmente atentos, e não de forma ocasional, relativa ou eventual.',
+ ano:2023},
+
+{c:'pmesp', m:'Língua Portuguesa', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Assinale a alternativa que preenche, respectivamente e de acordo com a norma-padrão de concordância nominal, as lacunas do texto a seguir:\n\nFoi ..... rapidamente uma verificação das ocorrências envolvendo menores, para que fosse ..... providência imediata, antes do meio-dia e ..... . As conclusões da averiguação seguem ..... ao relatório final do setor.',
+ alts:['feito ... tomado ... meia ... anexas','feito ... tomada ... meio ... anexo','feito ... tomado... meio ... anexas','feita ... tomada ... meia ... anexas','feita ... tomada ... meio ... anexo'],
+ r:3,
+ e:'"Foi feita" concorda com "verificação" (feminino); "fosse tomada" concorda com "providência" (feminino); a expressão consagrada é "meio-dia e meia" (subentende-se "hora", feminino); "seguem anexas" concorda com "As conclusões" (feminino plural). Apenas a alternativa D atende a todas as concordâncias.',
+ ano:2023},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Certo procedimento é realizado por uma máquina computadorizada que, em velocidade padrão de trabalho, executa todo o procedimento em um período de tempo igual a 4 horas e meia. Pretende-se aumentar a velocidade da máquina para realizar todo o procedimento em um período de tempo um quinto menor do que o período de tempo da velocidade padrão. Esse período de tempo será igual a',
+ alts:['3 horas e 36 minutos.','3 horas e 45 minutos.','4 horas e 10 minutos.','4 horas.','3 horas.'],
+ r:0,
+ e:'4h30min = 270 minutos. Um quinto de 270 é 54. Reduzindo esse valor: 270 - 54 = 216 minutos = 3 horas e 36 minutos.',
+ ano:2023},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'De acordo com dados publicados no site da Secretaria de Segurança Pública do Estado de São Paulo, com relação às "Ocorrências de Porte de Entorpecentes" no Estado, em 2022, pode-se concluir que adicionadas as ocorrências atendidas nos meses de setembro e de outubro, tem-se como total 2 264 ocorrências, e subtraídas as ocorrências atendidas no mês de setembro das atendidas no mês de outubro, tem-se 50 ocorrências. Sabendo-se que, para a mesma natureza de ocorrência, em agosto de 2022 foram atendidas 96 ocorrências a mais que as atendidas no mês de setembro desse mesmo ano, pode-se afirmar corretamente que o número de ocorrências de porte de entorpecentes atendidas, em agosto de 2022, foi igual a',
+ alts:['1 351.','1 301.','1 061.','1 253.','1 203.'],
+ r:4,
+ e:'Setembro + Outubro = 2264 e Outubro - Setembro = 50, logo Outubro = 1157 e Setembro = 1107. Agosto = Setembro + 96 = 1107 + 96 = 1203.',
+ ano:2023},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Com o total de R$ 252,00, comprou-se apenas dois produtos, sendo o preço pago em um deles 10% maior do que o preço pago no outro. O preço pago no produto mais caro foi de',
+ alts:['R$ 124,00.','R$ 128,00.','R$ 132,00.','R$ 126,00.','R$ 130,00.'],
+ r:2,
+ e:'Sendo x o preço do produto mais barato: x + 1,1x = 252 → 2,1x = 252 → x = 120. O produto mais caro custou 1,1 × 120 = R$ 132,00.',
+ ano:2023},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Um entregador de mercadorias faz suas entregas em determinado comércio a cada 8 dias e em outro comércio a cada 12 dias, independentemente de o dia ser útil ou não. No último dia de 2022, um sábado, o entregador fez suas entregas em ambos os comércios. Logo, em fevereiro de 2023, ele fará suas entregas nestes comércios, em um mesmo dia, em uma',
+ alts:['quinta-feira.','terça-feira.','sexta-feira.','quarta-feira.','segunda-feira.'],
+ r:2,
+ e:'O MMC(8,12) = 24 dias. Contando 24 dias a partir de 31/12/2022 (sábado) chega-se a 24/01/2023 (terça-feira); somando mais 24 dias chega-se a 17/02/2023. Como 24 dias equivalem a 3 semanas e 3 dias, o dia da semana avança 3 posições a cada intervalo: de terça-feira para sexta-feira.',
+ ano:2023},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Cinco orçamentos distintos, P, Q, R, S e T, serão ordenados de acordo com os seus valores, para serem apresentados ao setor responsável pela liberação da verba para a execução de um serviço. Sabe-se que o valor do orçamento S é mais alto que o de R e mais baixo que o de P. Sabe-se, também, que o valor do orçamento P é mais alto que o de T, que não é mais baixo que o de S. Se o valor do orçamento Q não é mais alto que o de R, então é verdade que, na ordenação, o orçamento que ficará na terceira posição é o orçamento',
+ alts:['S.','Q.','T.','R.','P.'],
+ r:0,
+ e:'Das condições: R < S < P; T < P e T ≥ S; Q ≤ R. Ordenando do menor para o maior: Q, R, S, T, P. O orçamento na terceira posição é S.',
+ ano:2023},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Um objeto feito em madeira maciça tem o formato de prisma reto com base no formato de losango, cujas diagonais medem 5 cm e 6 cm. Se o volume de madeira contido nesse objeto é de 450 cm³, então sua altura, comparada à medida da maior diagonal da sua base, é maior em',
+ alts:['26 cm.','25 cm.','28 cm.','27 cm.','24 cm.'],
+ r:4,
+ e:'Área do losango = (5×6)/2 = 15 cm². Altura do prisma = Volume/Área = 450/15 = 30 cm. A maior diagonal mede 6 cm, então a diferença é 30 - 6 = 24 cm.',
+ ano:2023},
+
+{c:'pmesp', m:'Matemática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Um terreno no formato retangular tem perímetro de 82 m, com comprimento excedendo a largura em 1 m. O proprietário pretende dividir esse terreno em duas partes de mesma área, utilizando-se uma das diagonais desse terreno. Essa divisória (a diagonal) terá medida de',
+ alts:['30 m.','31 m.','29 m.','32 m.','33 m.'],
+ r:2,
+ e:'2(L+W) = 82 → L+W = 41. Como L = W+1: 2W+1 = 41 → W = 20 e L = 21. Diagonal = √(20² + 21²) = √841 = 29 m.',
+ ano:2023},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Podemos dividir a Segunda Guerra Mundial em três fases: a primeira, que vai de 1º de setembro de 1939 a 22 de junho de 1941; a segunda, de 22 de junho de 1941 a 3 de setembro de 1943, e a terceira, que se estendeu de 3 de setembro de 1943 a 2 de setembro de 1945.\n(Luiz Koshiba, História: origens, estruturas e processos: ensino médio. Texto adaptado)\n\nA segunda fase da Segunda Guerra começou com',
+ alts:['a invasão da Normandia pela Força Aérea Britânica, que obrigou a Alemanha a assinar um tratado de não agressão com a URSS e romper a aliança com o Japão.','a invasão da Manchúria pelo Japão, com o objetivo de se aproximar das fronteiras soviéticas, e a formação da aliança bélica entre a França e a Bulgária.','a forte resistência das forças bélicas francesas contra os ataques da aviação alemã, situação que fez com que os nazistas pedissem um cessar-fogo.','o ataque alemão à URSS e, ainda em 1941, o ataque japonês à base naval de Pearl Harbor, o que provocou a entrada dos Estados Unidos na guerra.','a queda do governo de Mussolini e a saída da Itália da guerra, o que provocou, em 1942, a declaração de guerra da Alemanha contra a França e a Grã-Bretanha.'],
+ r:3,
+ e:'A segunda fase iniciou-se em 22/06/1941 com a Operação Barbarossa (invasão alemã à URSS); ainda em 1941, o Japão atacou Pearl Harbor, levando os Estados Unidos a entrar na guerra. As demais alternativas apresentam fatos fora de ordem cronológica ou fictícios.',
+ ano:2023},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Teve rígida organização hierárquica, dividido em alas. Usou uniforme – camisa verde com gravata preta, o símbolo era a letra grega sigma. Adotou o lema Deus, Pátria e Família. Havia um cumprimento, com o braço direito levantado e pronunciando a palavra "anauê", da língua tupi, um grito de guerra ou saudação. Apoiou o golpe do Estado Novo: fez antes homenagens a Vargas em comícios e desfiles.\n(Francisco Iglésias, Trajetória política do Brasil: 1500-1964. Texto adaptado)\n\nO excerto faz referência',
+ alts:['ao Bloco Operário e Camponês.','à Ação Integralista Brasileira.','à União Republicana Brasileira.','ao Comando de Libertação Nacional.','à Aliança Nacional Libertadora.'],
+ r:1,
+ e:'A camisa verde, o símbolo sigma, a saudação "Anauê" e o lema "Deus, Pátria e Família" identificam a Ação Integralista Brasileira (AIB), liderada por Plínio Salgado.',
+ ano:2023},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'É uma fonte de energia que consiste na conversão natural do calor do interior da terra para o aquecimento de edificações e geração de eletricidade a partir do vapor e da água aquecida. Trata-se de uma fonte de energia ambientalmente mais limpa e com menor emissão de gases poluentes quando comparada às energias fósseis. Essa forma de energia é definida como:',
+ alts:['geotérmica.','solar.','maremotriz.','termoelétrica.','heliotérmica.'],
+ r:0,
+ e:'A energia geotérmica aproveita o calor do interior da Terra; as demais alternativas referem-se a outras fontes de energia (sol, marés, combustão).',
+ ano:2023},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Os ambientes urbanos são marcados pela crescente urbanização e impermeabilização das superfícies, alterando o balanço de energia, além da crescente concentração de poluentes atmosféricos. Nesse ambiente, tem-se observado um fenômeno atmosférico que tende a agravar as condições de desconforto térmico, além de outras consequências indesejáveis para a população.\n\nEsse fenômeno é conhecido como',
+ alts:['enchente urbana.','redução da camada de ozônio.','brisa terrestre.','ilha de calor.','inversão térmica.'],
+ r:3,
+ e:'A impermeabilização do solo e a concentração de poluentes nas cidades geram o fenômeno da "ilha de calor urbana", que eleva a temperatura local em relação às áreas rurais vizinhas.',
+ ano:2023},
+
+{c:'pmesp', m:'Conhecimentos Gerais', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'O Ministério da Defesa da Polônia afirmou, no dia 21 de novembro de 2022, que irá propor a instalação de sistemas de defesa aérea adicionais ao longo de fronteira da Ucrânia, devido aos amplos ataques aéreos resultantes da invasão russa ao país vizinho.\n(Veja. Adaptado)\n\nA intenção do governo polonês se reporta ao acontecimento de 15 de novembro, quando',
+ alts:['drones russos cruzaram o espaço aéreo polonês para atingir alvos ucranianos.','míssil, de origem não confirmada, caiu em território polonês matando duas pessoas.','avião ucraniano invadiu o espaço aéreo polonês para defender o seu território.','instalações hospitalares polonesas foram atingidas por drones ucranianos desgovernados.','aviões russos invadiram o espaço aéreo polonês para atacar a Ucrânia.'],
+ r:1,
+ e:'Em 15/11/2022, um míssil caiu na vila polonesa de Przewodów, matando duas pessoas; a origem do míssil gerou grande controvérsia internacional na época.',
+ ano:2023},
+
+{c:'pmesp', m:'Noções de Informática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Um usuário editando um documento simples de texto por meio do Bloco de Notas do MS-Windows 10, ambos em configuração padrão, desejava formatar o texto e abriu uma janela com opções de formatação.\n\nAssinale a alternativa que apresenta apenas formatações possíveis de serem feitas por meio do Bloco de Notas conforme o enunciado.',
+ alts:['Texto sublinhado, alinhamento centralizado e tipo de fonte Arial.','Tipo de Fonte Times New Roman, tamanho de Fonte e alinhamento justificado.','Itálico, sublinhado e tachado.','Alinhamento à direita, sublinhado e tachado.','Itálico, negrito e tamanho de Fonte.'],
+ r:4,
+ e:'O Bloco de Notas só permite alterar a fonte de todo o documento (nome, estilo — regular, itálico, negrito — e tamanho) pela caixa de diálogo "Fonte"; não há recursos de alinhamento, sublinhado ou tachado, exclusivos de editores como o Word.',
+ ano:2023},
+
+{c:'pmesp', m:'Noções de Informática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Um usuário do Firefox, versão 102, em sua configuração padrão, estava com 4 abas abertas. Fechou uma por engano, e desejava reabrir a aba fechada.\n\nO atalho por teclado que pode ser usado para reabrir a aba fechada, conforme o enunciado é:',
+ alts:['Ctrl + Shift + T','Alt + F','Ctrl + F','Ctrl + Shift + F','Ctrl + T'],
+ r:0,
+ e:'Ctrl+Shift+T reabre a última aba fechada no Firefox. Ctrl+T apenas abre uma nova aba em branco, e as demais opções não têm essa função.',
+ ano:2023},
+
+{c:'pmesp', m:'Noções de Informática', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'João recebeu um e-mail enviado pela Maria e escolheu a opção Responder a Todos. Os campos preenchidos automaticamente na resposta de João são vistos a seguir.\n\nDe: João\nPara: Maria\nCc: Pedro\n\nAssinale a alternativa que contém os possíveis campos do e-mail enviado pela Maria para o João.',
+ alts:['De: Maria / Para: João / Cc: Bianca / Cco: Pedro','De: Maria / Para: João / Cc: Pedro / Cco: Bianca','De: João / Para: Pedro / Cc: Maria / Cco: Bianca','De: João / Para: Maria / Cc: Bianca / Cco: Pedro','De: Maria / Para: Pedro / Cc: João, Bianca'],
+ r:1,
+ e:'Ao "Responder a Todos", o remetente original (Maria) vira destinatário, e os destinatários visíveis em Cc do e-mail original (Pedro) são mantidos em Cc na resposta. Quem estava em Cco (cópia oculta, Bianca) não é visível a João e por isso não aparece na resposta. Isso só é compatível com o e-mail original tendo De: Maria, Para: João, Cc: Pedro, Cco: Bianca.',
+ ano:2023},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Considere que Luciana tem um filho de sete meses de vida, amamenta, mas foi devidamente processada, julgada e condenada pela prática do crime de roubo. Com base na situação hipotética e no disposto na Constituição Federal, é correto afirmar:',
+ alts:['assegura-se à Luciana o respeito à integridade física e moral, e a ela não deve ser aplicada a pena de banimento.','como o filho de Luciana já tem mais de seis meses de vida, não lhe é assegurada a possibilidade de permanecer com seu filho durante o período de amamentação.','Luciana poderá ser condenada a cumprir pena de trabalhos forçados.','em face do princípio da isonomia, a Constituição determina que a pena deverá ser cumprida no mesmo tipo de estabelecimento penal, não havendo distinção de acordo com a natureza do delito e a idade da apenada.','admite-se que Luciana seja condenada à pena de caráter perpétuo, mas não a penas cruéis.'],
+ r:0,
+ e:'O art. 5º da CF assegura a todo preso o respeito à integridade física e moral (inciso XLIX) e proíbe expressamente as penas de morte, de caráter perpétuo, de trabalhos forçados, de banimento e cruéis (inciso XLVII). Apenas a alternativa A está correta; as demais contrariam a Constituição.',
+ ano:2023},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'Considere que Amauri é Governador do Estado X, mas deseja candidatar-se ao cargo de Presidente da República. Com base na situação hipotética e no disposto na Constituição Federal, é correto afirmar que Amauri',
+ alts:['pode continuar normalmente no seu cargo.','deve renunciar ao seu mandato até seis meses antes do pleito.','caso perca a eleição para Presidente da República, retornará ao cargo de Governador.','precisa pedir a suspensão do seu mandato até três meses antes do pleito presidencial.','não pode ter mais de setenta anos e deve estar no mesmo partido há pelo menos seis meses.'],
+ r:1,
+ e:'Pelo art. 14, §6º, da CF, para concorrer a outros cargos, o Presidente da República, os Governadores de Estado e do Distrito Federal e os Prefeitos devem renunciar aos respectivos mandatos até seis meses antes do pleito.',
+ ano:2023},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'De acordo com a Constituição Federal, o mandato eletivo poderá ser impugnado ante à',
+ alts:['Justiça Federal, no prazo de quinze dias contados da diplomação, instruída a ação com provas de abuso do poder econômico, corrupção ou fraude.','Justiça Eleitoral, no prazo de trinta dias contados da eleição, instruída a ação com provas de abuso do poder econômico, corrupção ou fraude.','Justiça Federal, no prazo de quinze dias contados da eleição, instruída a ação com provas de abuso do poder econômico, corrupção ou fraude.','Justiça Eleitoral, no prazo de quinze dias contados da diplomação, instruída a ação com provas de abuso do poder econômico, corrupção ou fraude.','Justiça Comum, no prazo de trinta dias contados da eleição, instruída a ação com provas de abuso do poder econômico, corrupção ou fraude.'],
+ r:3,
+ e:'O art. 14, §10, da CF prevê que o mandato eletivo poderá ser impugnado perante a Justiça Eleitoral no prazo de 15 dias contados da diplomação, mediante ação instruída com provas de abuso do poder econômico, corrupção ou fraude.',
+ ano:2023},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'A respeito da Administração Pública, assinale a alternativa que está de acordo com a Constituição Federal.',
+ alts:['Os acréscimos pecuniários percebidos por servidor público serão computados para fins de concessão de acréscimos ulteriores.','A Constituição incentiva equiparação de espécies remuneratórias para o efeito de remuneração de pessoal do serviço público.','O prazo de validade do concurso público será de até quatro anos, prorrogável uma única vez por igual período.','Admite-se que os vencimentos dos cargos do Poder Legislativo e do Poder Judiciário sejam superiores aos pagos pelo Poder Executivo.','A Lei estabelecerá os prazos de prescrição para ilícitos praticados por qualquer agente, servidor ou não, que causem prejuízos ao erário, ressalvadas as respectivas ações de ressarcimento.'],
+ r:4,
+ e:'O art. 37, §5º, da CF determina que a lei estabelecerá os prazos de prescrição para ilícitos praticados por qualquer agente, servidor ou não, que causem prejuízos ao erário, ressalvadas as respectivas ações de ressarcimento (imprescritíveis). As demais alternativas contrariam vedações constitucionais expressas.',
+ ano:2023},
+
+{c:'pmesp', m:'Noções de Adm. Pública', f:'VUNESP 2023 · PM-ESP Soldado 2ª Classe',
+ q:'De acordo com a Constituição Federal, exercer as funções de polícia marítima é competência',
+ alts:['da Polícia Federal.','do órgão da Segurança Pública que primeiro tomar conhecimento da infração.','concorrente da Polícia Civil e da Polícia Federal.','conjunta da Polícia Militar e do Corpo de Bombeiros.','compartilhada da Polícia Militar e da Guarda Civil do município costeiro.'],
+ r:0,
+ e:'O art. 144, §1º, II, da CF atribui à Polícia Federal, entre outras funções, exercer as funções de polícia marítima, aeroportuária e de fronteiras.',
+ ano:2023},
+
 /* ---------------- GCM · Língua Portuguesa (VUNESP 2024 · GCM Lins-SP, mesma banca da GCM Sorocaba) ---------------- */
 {c:'gcm', m:'Língua Portuguesa', f:'VUNESP 2024 · GCM Lins-SP (letra de música)',
  q:'Leia a letra da música:\n\nSapato 36\n\nEu calço é 37\nMeu pai me dá 36\nDói, mas no dia seguinte\nAperto meu pé outra vez\n\nPai eu já tô crescidinho\nPague prá ver, que eu aposto\nVou escolher meu sapato\nE andar do jeito que eu gosto\n\nPor que cargas d\'águas\nVocê acha que tem o direito\nDe afogar tudo aquilo que eu\nSinto em meu peito\n\nVocê só vai ter o respeito que quer\nNa realidade\nNo dia em que você souber respeitar\nA minha vontade\n\nMeu pai\nPai já tô indo-me embora\nQuero partir sem brigar\nPois eu já escolhi meu sapato\nQue não vai mais me apertar\n\n(Raul Seixas)\n\nA partir da leitura do texto, é correto afirmar que:',
@@ -824,7 +1382,8 @@ const BANCO = [
        'Seu jogo complementa, com humildade, à necessidade alheia.',
        'Nikola começa à jogar dando assistência aos seus colegas.'],
  r:1,
- e:'"Referir-se a" + "as habilidades" (artigo feminino plural) = "às habilidades" — crase correta. Não há crase antes de verbo ("à jogar"), diante de artigo masculino/indefinido ("à um jogo") nem quando o verbo não exige a preposição "a" regendo substantivo feminino determinado ("à necessidade").'},
+ e:'"Referir-se a" + "as habilidades" (artigo feminino plural) = "às habilidades" — crase correta. Não há crase antes de verbo ("à jogar"), diante de artigo masculino/indefinido ("à um jogo") nem quando o verbo não exige a preposição "a" regendo substantivo feminino determinado ("à necessidade").',
+ dica:'Crase nunca aparece antes de verbo. Descarte de cara qualquer opção com "à" seguido de um verbo no infinitivo.'},
 
 {c:'gcm', m:'Língua Portuguesa', f:'VUNESP 2024 · GCM Lins-SP (concordância)',
  q:'Assinale a alternativa em que a frase apresenta concordância de acordo com a norma-padrão.',
@@ -924,7 +1483,8 @@ const BANCO = [
        'a execução de atividades de defesa civil é atribuição dos corpos de bombeiros militares.',
        'as guardas municipais possuem as atribuições de polícia ostensiva e a preservação da ordem pública.'],
  r:2,
- e:'Art. 144, §5º, CF/88: aos corpos de bombeiros militares, além das atribuições definidas em lei, incumbe a execução de atividades de defesa civil. A polícia rodoviária federal patrulha ostensivamente as rodovias federais; polícias civis não apuram crimes militares; polícia ostensiva e preservação da ordem pública são atribuições das polícias militares (art. 144, §5º), não das guardas municipais.'},
+ e:'Art. 144, §5º, CF/88: aos corpos de bombeiros militares, além das atribuições definidas em lei, incumbe a execução de atividades de defesa civil. A polícia rodoviária federal patrulha ostensivamente as rodovias federais; polícias civis não apuram crimes militares; polícia ostensiva e preservação da ordem pública são atribuições das polícias militares (art. 144, §5º), não das guardas municipais.',
+ dica:'Cuidado pra não confundir as atribuições de cada órgão do art. 144 — cada um tem uma função bem específica, e a banca adora trocar uma pela outra.'},
 
 {c:'gcm', m:'Legislação', f:'VUNESP 2024 · GCM Lins-SP · Código Penal',
  q:'Constitui crime de _____ a conduta de agenciar, aliciar, recrutar, transportar, transferir, comprar, alojar ou acolher pessoa, mediante grave ameaça, violência, coação, fraude ou abuso, com a finalidade de realizar adoção ilegal. Assinale a alternativa que preenche corretamente a lacuna.',
@@ -1082,7 +1642,8 @@ const BANCO = [
        'revela que todas as profissões são dignas embora algumas sejam desvalorizadas.',
        'mostra que a situação de um carroceiro não se compara a de todos os demais.'],
  r:1,
- e:'O narrador contrapõe a percepção da criança de oito anos (achava ser carroceiro "algo incrível") à compreensão adulta sobre a falta de opção de sustento — duas percepções diferentes sobre a mesma situação, motivadas pela idade.'},
+ e:'O narrador contrapõe a percepção da criança de oito anos (achava ser carroceiro "algo incrível") à compreensão adulta sobre a falta de opção de sustento — duas percepções diferentes sobre a mesma situação, motivadas pela idade.',
+ dica:'Repare que o texto mistura duas "vozes": a criança que via o carroceiro com admiração, e o adulto que entende a realidade por trás. É essa diferença de olhar que a questão está cobrando.'},
 
 {c:'correios', m:'Língua Portuguesa', f:'IBFC 2024 · Agente de Correios - Carteiro (acentuação)',
  q:'Leia o trecho:\n\nAmor com cabeça de oito\n\n"Seu Manéu era o carroceiro da nossa rua e também o único carroceiro que eu conhecia. Quando eu tinha oito, não entendia que quando um pai de família é carroceiro isso quer dizer que ele não tem muita escolha de sustento. [...]"\n\n(ARRAES, Jarid. Redemoinho em dia quente. 1ª ed. Rio de Janeiro: Alfaguara, 2019)\n\nO vocábulo "família" (1º parágrafo) é acentuado pela mesma regra de acentuação de:',
@@ -1309,6 +1870,10 @@ function telaSetup(cid){
   const sel = new Set(materias);
   let qtd = Math.min(10, qs.length);
 
+  const anosDisponiveis = [...new Set(qs.filter(q=>q.ano).map(q=>q.ano))].sort((a,b)=>b-a);
+  const porAno = {}; anosDisponiveis.forEach(a=>porAno[a]=qs.filter(q=>q.ano===a).length);
+  const totalEditais = qs.filter(q=>q.ano).length;
+
   function render(){
     const disponiveis = qs.filter(q=>sel.has(q.m)).length;
     qtd = Math.min(qtd, disponiveis);
@@ -1322,6 +1887,14 @@ function telaSetup(cid){
       <p style="font-size:12.5px; color:var(--tinta-2); text-align:center; margin:0 0 20px;">
         Mesma distribuição da prova oficial · nota de corte: ${c.corte} acertos
       </p>` : ''}
+      ${anosDisponiveis.length ? `
+      <p class="eyebrow" style="margin-top:6px;">Ou pegue pesado com editais anteriores</p>
+      <button class="btn btn-primario" id="mesclado" style="margin-bottom:8px; border-bottom:3px solid var(--insignia);">
+        Simulado mesclado · ${totalEditais} questões (${anosDisponiveis.join(', ')})
+      </button>
+      <div class="chips" style="margin:0 0 20px;">
+        ${anosDisponiveis.map(a=>`<button class="chip" data-ano="${a}">Só ${a} (${porAno[a]})</button>`).join('')}
+      </div>` : ''}
       <p class="eyebrow" style="margin-top:6px;">Ou monte um treino rápido</p>
       <div class="painel">
         <h4>Matérias</h4>
@@ -1351,6 +1924,9 @@ function telaSetup(cid){
     document.getElementById('comecar').onclick=()=>iniciarSimulado(cid, [...sel], qtd);
     const ofc=document.getElementById('oficial');
     if(ofc) ofc.onclick=()=>iniciarProvaOficial(cid);
+    const mesclado=document.getElementById('mesclado');
+    if(mesclado) mesclado.onclick=()=>iniciarSimuladoEdital(cid, null);
+    app.querySelectorAll('.chip[data-ano]').forEach(b=>b.onclick=()=>iniciarSimuladoEdital(cid, +b.dataset.ano));
     window.scrollTo(0,0);
   }
   render();
@@ -1366,6 +1942,15 @@ function iniciarProvaOficial(cid){
   S = { cid, nome:c.nome, questoes:pool,
         respostas:Array(pool.length).fill(null), i:0,
         oficial:true, corte:c.corte };
+  telaQuestao();
+}
+
+/* ---------- simulado mesclado / por edital: usa só questões reais marcadas com "ano" ---------- */
+function iniciarSimuladoEdital(cid, ano){
+  const c = CONCURSOS.find(x=>x.id===cid);
+  const pool = embaralhar(BANCO.filter(q=>q.c===cid && q.ano && (ano===null || q.ano===ano)));
+  S = { cid, nome: c.nome + (ano ? ` · Edital ${ano}` : ' · Editais mesclados'),
+        questoes:pool, respostas:Array(pool.length).fill(null), i:0 };
   telaQuestao();
 }
 
@@ -1396,6 +1981,7 @@ function telaQuestao(){
     <span class="q-materia">${q.m}</span>
     <p class="q-texto">${esc(q.q)}</p>
     <p class="q-fonte">${q.f}</p>
+    ${q.dica ? `<button class="dica-btn" id="btnDica">💡 preciso de uma dica</button><div class="dica-caixa" id="caixaDica">${esc(q.dica)}</div>` : ''}
     <div class="alts">
       ${q.alts.map((a,k)=>`
         <button class="alt ${S.respostas[S.i]===k?'sel':''}" data-k="${k}">
@@ -1417,6 +2003,12 @@ function telaQuestao(){
     b.classList.add('sel');
     document.getElementById('prox').disabled=false;
   });
+  const btnDica=document.getElementById('btnDica');
+  if(btnDica) btnDica.onclick=()=>{
+    const caixa=document.getElementById('caixaDica');
+    const aberta=caixa.classList.toggle('aberta');
+    btnDica.textContent = aberta ? '✕ ocultar dica' : '💡 preciso de uma dica';
+  };
   const ant=document.getElementById('ant');
   if(ant) ant.onclick=()=>{ S.i--; telaQuestao(); };
   document.getElementById('prox').onclick=()=>{
