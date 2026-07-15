@@ -255,6 +255,10 @@ const CONCURSOS = [
    prova:{'Língua Portuguesa':20,'Matemática':15,'Conhecimentos Gerais':15,'Noções de Informática':5,'Noções de Adm. Pública':5}, corte:30},
   {id:'gcm', sigla:'GCM', nome:'GCM Sorocaba', banca:'Guarda Civil Municipal', desc:'Português, Matemática e Legislação das Guardas'},
   {id:'correios', sigla:'ECT', nome:'Correios · Agente', banca:'Nível médio', desc:'Português, Matemática e Informática'},
+  {id:'fatec', sigla:'FAT', nome:'FATEC · Vestibular', banca:'VUNESP', desc:'Português, Matemática, núcleo comum, Raciocínio Lógico e Interdisciplinar',
+   prova:{'Língua Portuguesa':8,'Matemática':8,'Física':5,'Química':5,'Biologia':5,'História':5,'Geografia':5,'Inglês':5,'Raciocínio Lógico':5,'Interdisciplinar':9}},
+  {id:'enem', sigla:'ENEM', nome:'ENEM', banca:'INEP', desc:'Linguagens, Ciências Humanas, Ciências da Natureza e Matemática',
+   prova:{'Linguagens':15,'Ciências Humanas':15,'Ciências da Natureza':15,'Matemática':15}},
 ];
 
 const BANCO = [
@@ -2531,6 +2535,713 @@ const BANCO = [
        'Aumentar a velocidade de navegação'],
  r:1,
  e:'O antivírus detecta, bloqueia e remove softwares maliciosos (malware, vírus, spyware, etc.), protegendo o computador contra ameaças.'},
+
+/* ---------------- FATEC · Vestibular (VUNESP, edital mais recente) ---------------- */
+{c:'fatec', m:'Biologia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Em atletas que realizam atividades físicas muito intensas e prolongadas, o gás oxigênio (O2) que chega aos músculos pode ser insuficiente para realizar o processo de respiração aeróbica e liberar a energia química (ATP) necessária à contração das fibras musculares. Quando o O2 é insuficiente, essas fibras podem também obter ATP por meio da fermentação lática, um processo anaeróbico que, embora produza menos energia do que o processo aeróbico, garante a continuidade da contração muscular.\n\nSobre a insuficiência mencionada no texto, assinale a alternativa correta.',
+ alts:['Uma quantidade maior de ATP é liberada em relação à que ocorre no processo aeróbico.','O gás carbônico (CO2) é liberado no interior dos ribossomos, ocasionando aumento do pH celular.','A produção de ácido acético é estimulada para garantir a contração eficiente dos músculos e prevenir cãibras.','O lactato é produzido como produto da quebra da glicose, o que permite continuar gerando energia química (ATP) rapidamente.','Uma quantidade de moléculas inorgânicas e de etanol, ricos em energia necessária para a contração muscular, é produzida durante exercícios intensos.'],
+ r:3,
+ e:'A fermentação lática converte a glicose (via piruvato) em lactato, regenerando NAD+ e permitindo que a glicólise continue produzindo ATP rapidamente mesmo sem oxigênio suficiente. As demais descrevem processos incorretos: produz MENOS ATP que a respiração aeróbica, não ocorre em ribossomos, e não gera ácido acético nem etanol (este é típico da fermentação alcoólica).'},
+
+{c:'fatec', m:'Biologia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Em 2023, segundo relatório da Organização Mundial da Saúde (OMS), a tuberculose voltou a ser uma das principais causas de morte por um único agente infeccioso no mundo.\n\nOs atletas profissionais estão expostos a um risco elevado de contrair doenças infecciosas, incluindo a tuberculose, devido a fatores ocupacionais específicos como viagens internacionais frequentes, a convivência em ambientes de treinamento fechados etc.\n\nEntre as medidas preventivas que devem ser adotadas para não se contrair essa doença, destaca-se',
+ alts:['a prática regular de atividades físicas que proporcionem uma vida saudável, com fortalecimento muscular e saúde cardiovascular, a fim de adquirir imunidade contra as formas virais mais graves da doença.','o consumo de água tratada, que passou por processos de purificação em estações de tratamento a fim de remover impurezas, microrganismos patogênicos e substâncias nocivas.','o uso de máscaras, ao se ter contato com um doente, a fim de evitar a inalação de gotículas contaminadas e exaladas pela tosse, fala ou espirro do paciente.','o consumo de frutas e verduras cruas higienizadas a fim de eliminar o risco de contaminação pelos microrganismos parasitas causadores da doença.','a ingestão preventiva de antibióticos a fim de impedir a propagação, nas vias respiratórias, dos vírus causadores dessa patologia.'],
+ r:2,
+ e:'A tuberculose é causada por uma bactéria transmitida por via respiratória, através de gotículas expelidas por tosse, fala ou espirro. O uso de máscaras em contato com doentes reduz a inalação dessas gotículas. As demais opções tratam de doenças de transmissão hídrica/alimentar ou erram o agente causador (vírus/parasita), ou propõem antibióticos preventivos, prática não indicada dessa forma.'},
+
+{c:'fatec', m:'Biologia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'A eritropoietina (EPO) é um hormônio natural do corpo humano produzido principalmente pelos rins e fígado. Esse hormônio estimula a medula óssea a produzir glóbulos vermelhos (hemácias), aumentando o transporte de oxigênio para todo o corpo.\n\nUma consequência direta da baixa oxigenação tecidual causada pela falta de EPO é',
+ alts:['a icterícia (pele amarelada) por acúmulo de bilirrubina.','a intolerância ao esforço físico e fadiga extrema.','a hipertensão arterial imediata severa.','o aumento súbito da densidade óssea.','a hipersensibilidade à luz (fotofobia).'],
+ r:1,
+ e:'Com menos EPO, há menos hemácias e menor transporte de oxigênio aos tecidos, o que reduz a capacidade de realizar esforço físico e causa fadiga extrema (anemia). As demais alternativas não têm relação lógica direta com a baixa oxigenação tecidual.'},
+
+{c:'fatec', m:'Biologia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Em eventos internacionais, como a Copa do Mundo de Futebol, com alto fluxo de atletas e turistas, há sempre a preocupação quanto à falta de acesso à água tratada e à ausência de serviços de coleta e tratamento de esgoto.\n\nPara minimizar esses problemas, as comunidades em geral devem',
+ alts:['implementar compostagem comunitária para reduzir o volume de lixo inorgânico, tratar as doenças e garantir a insalubridade do meio urbano.','impedir as construções de cisternas, usadas para captação da água das chuvas dos telhados, devido ao risco de contaminação com os poluentes atmosféricos.','lançar o esgoto doméstico nos rios e represas a fim de provocar o fenômeno da eutrofização, que é importante no crescimento de plantas aquáticas e na nutrição dos peixes.','priorizar a construção de hospitais especializados no tratamento de infecções gastrointestinais relacionadas ao esgoto a céu aberto e à água contaminada, independentemente da expansão da infraestrutura de saneamento.','construir banheiros secos ou fossas sépticas, pois funcionam à base de processos biológicos de compostagem ou de biodigestão, em vez de tratamento químico, economizando, assim, água potável.'],
+ r:4,
+ e:'Banheiros secos e fossas sépticas tratam os dejetos por processos biológicos, sem exigir grandes volumes de água potável, sendo soluções sustentáveis onde não há rede de esgoto. As demais propõem ações prejudiciais (poluir rios, impedir cisternas) ou paliativas que não resolvem a causa do problema.'},
+
+{c:'fatec', m:'Biologia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O javali simboliza um animal bravo, resistente e difícil de ser vencido, sendo por esse motivo escolhido como símbolo para representar diversos times de futebol de várzea e de alguns times profissionais.\n\nÉ uma espécie exótica invasora introduzida no Brasil a partir da década de 1960 para a exploração comercial da sua carne. Entretanto, a produção não se desenvolveu, o que resultou na soltura dos animais para a natureza e seu retorno ao estado selvagem. Sua agressividade e facilidade de adaptação são características que, associadas à reprodução descontrolada e à ausência de predadores naturais, resultam no crescimento populacional e em diversos impactos ao meio ambiente.\n\nSobre esses animais, é correto afirmar que',
+ alts:['reduzem o risco de erosão do solo em áreas de várzea.','auxiliam na criação de bovinos em confinamentos.','atuam no controle biológico das lagartas, responsáveis pelas piores pragas agrícolas.','facilitam a dispersão de sementes de árvores nativas raras e em risco de extinção.','possuem alta taxa reprodutiva e grande adaptabilidade a diferentes climas.'],
+ r:4,
+ e:'O texto afirma explicitamente \'reprodução descontrolada\' (alta taxa reprodutiva) e \'facilidade de adaptação\', características típicas de espécies exóticas invasoras bem-sucedidas. As demais alternativas atribuem benefícios ecológicos que contradizem a natureza invasora e prejudicial da espécie.'},
+
+{c:'fatec', m:'Matemática', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Uma franquia de jogos eletrônicos de futebol utilizava gráficos de radar para mensurar as habilidades dos personagens. Nesse tipo de gráfico, cada eixo é igualmente espaçado e corresponde a uma habilidade diferente (Técnica, Agilidade, Força, Equilíbrio, Precisão e Resistência), numa escala de 0 a 5, sendo que valores mais altos são representados por pontos mais distantes do centro.\n\nNo gráfico do Personagem 1, as habilidades valem: Técnica = 3, Agilidade = 4, Força = 5, Equilíbrio = 4, Precisão = 2 e Resistência = 1.\nNo gráfico do Personagem 2, as habilidades valem: Técnica = 1, Agilidade = 4, Força = 3, Equilíbrio = 5, Precisão = 4 e Resistência = 2.\n\nA partir das informações apresentadas no gráfico, é correto afirmar que',
+ alts:['o Personagem 2 possui menor resistência que o Personagem 1, mas maior equilíbrio.','o Personagem 2 é superior ao Personagem 1 em todas as características avaliadas.','ambos os personagens apresentam exatamente o mesmo desempenho em equilíbrio e em força.','o Personagem 1 possui a força como maior estatística; enquanto o Personagem 2, o equilíbrio.','o Personagem 1 apresenta maior desempenho em agilidade, resistência e precisão em relação às mesmas características do Personagem 2.'],
+ r:3,
+ e:'No Personagem 1, o maior valor é Força (5). No Personagem 2, o maior valor é Equilíbrio (5). As demais são falsas: o Personagem 2 tem MAIOR resistência (2>1); não supera o 1 em Agilidade nem Força; força e equilíbrio diferem entre eles; o Personagem 1 não supera em resistência nem precisão.'},
+
+{c:'fatec', m:'Matemática', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Uma franquia de jogos eletrônicos de futebol utilizava gráficos de radar para mensurar as habilidades dos personagens, numa escala de 0 a 5 em cada eixo (Técnica, Agilidade, Força, Equilíbrio, Precisão e Resistência).\n\nNo gráfico do Personagem 1, as habilidades valem: Técnica = 3, Agilidade = 4, Força = 5, Equilíbrio = 4, Precisão = 2 e Resistência = 1.\n\nA média aritmética das estatísticas das habilidades do Personagem 1 pertence a qual intervalo real?',
+ alts:['[–1 ; 1[','[1 ; 2[','[2 ; 3[','[3 ; 4[','[4 ; 5['],
+ r:3,
+ e:'A média é (3+4+5+4+2+1)/6 = 19/6 ≈ 3,17, que pertence ao intervalo [3 ; 4[.'},
+
+{c:'fatec', m:'Matemática', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'A Trionda, a bola da Copa de 2026, é baseada no tetraedro regular: um sólido formado por quatro faces triangulares iguais. Desta forma, a bola é composta por apenas 4 painéis (o menor número já usado).\n\nO truque para obter o formato esférico foi transformar os lados retos dos triângulos em curvas, obtendo o formato base para o painel que compõe a bola. O modelo Pro, que será usado nos campos, tem cerca de 69 cm de circunferência e custo estimado em R$ 1.300,00, contudo existe um modelo Mini, mais barato.\n\nDe acordo com o texto, apesar do truque utilizado para obter o formato esférico da Trionda, pode-se afirmar que, após esse processo, a característica do tetraedro que permanece preservada é',
+ alts:['a medida dos ângulos entre as bordas das regiões da superfície.','o volume do sólido geométrico obtido.','o comprimento das curvas que delimitam cada região da superfície.','o caráter plano das regiões da superfície.','a quantidade de regiões que compõem a superfície do sólido geométrico.'],
+ r:4,
+ e:'O texto destaca que a bola é composta por apenas 4 painéis, o mesmo número de faces do tetraedro original — apenas os lados retos das faces viram curvas, mas o número de regiões (painéis) permanece 4. O volume, os ângulos e o caráter plano das regiões se alteram, pois as faces deixam de ser planas para formar o globo esférico.'},
+
+{c:'fatec', m:'Matemática', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'A Trionda, a bola da Copa de 2026, é baseada no tetraedro regular. O modelo Pro, que será usado nos campos, tem cerca de 69 cm de circunferência.\n\nLembrando que o volume de uma esfera é dado por V = (4/3)·π·r³, assinale a alternativa que apresenta o volume aproximado do modelo Pro da bola Trionda (adote π = 3).',
+ alts:['3 571 cm³','6 084 cm³','13 140 cm³','14 283 cm³','16 425 cm³'],
+ r:1,
+ e:'Da circunferência C=2πr, temos r=C/(2π)=69/6=11,5 cm. Assim, V=(4/3)·3·r³=4·(11,5)³=4·1520,875≈6084 cm³.'},
+
+{c:'fatec', m:'Matemática', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'A Trionda, a bola da Copa de 2026, tem no modelo Pro um custo estimado em R$ 1.300,00, contudo existe um modelo Mini, mais barato.\n\nSuponha que o modelo Mini da bola Trionda custe R$ 100,00. Assinale a alternativa que apresenta, aproximadamente, a porcentagem que esse valor representa em relação ao preço do modelo Pro.',
+ alts:['5%','8%','10%','13%','20%'],
+ r:1,
+ e:'100/1300 ≈ 0,0769 = 7,69%, valor mais próximo de 8%.'},
+
+{c:'fatec', m:'Matemática', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O Método de Tracking, ou rastreamento da bola, é usado, por exemplo, para desenvolver câmeras com a função de seguir a bola durante os jogos. Suponha que uma câmera, usando essa tecnologia, tenha mapeado a trajetória de uma bola e registrado na tabela alguns dados, sendo que t é o tempo em segundos e A é a altura em metros em relação ao solo:\nt = 0, A = 0\nt = 1, A = 8\nt = 5, A = 20\n\nLogo, sabendo que a bola descreveu uma trajetória que pode ser modelada por uma função de 2º grau, assinale a alternativa na qual essa função está indicada corretamente.',
+ alts:['A(t) = –t² + 9t','A(t) = –t² + 5t','A(t) = –t² + 13t','A(t) = 3t² + 5t','A(t) = 3t² + 9t'],
+ r:0,
+ e:'Com A(t)=at²+bt+c: de t=0 vem c=0. De t=1: a+b=8. De t=5: 25a+5b=20, ou seja, 5a+b=4. Subtraindo as equações: 4a=-4, logo a=-1 e b=9. Assim, A(t) = -t² + 9t.'},
+
+{c:'fatec', m:'Física', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Ao jogar em altitude elevada, como em alguns estádios na Bolívia e no Peru, os jogadores reclamam de falta de ar e os comentaristas falam que a bola chutada é \'mais rápida\', dificultando o acerto dos passes.\n\nCom base nessas informações, é correto afirmar que essa fala dos comentaristas ocorre porque',
+ alts:['os jogadores são mais rápidos devido a alta altitude proporcionar mais oxigênio.','os atletas têm maior potência nas pernas pelo ar ser mais rarefeito.','a resistência do ar é menor por este ser mais rarefeito.','o ar comprimido da bola a torna mais leve que o ar.','a bola possui menor volume em alta altitude.'],
+ r:2,
+ e:'Em altitudes elevadas, o ar é mais rarefeito (menor densidade), reduzindo a resistência do ar sobre a bola, que assim mantém maior velocidade ao longo da trajetória, dificultando o controle dos jogadores.'},
+
+{c:'fatec', m:'Física', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Em janeiro de 2021, o goleiro inglês Tom King marcou um gol histórico que entrou para o Guinness World Records. Ele bateu um tiro de meta, fazendo a bola traçar uma trajetória parabólica e percorrer aproximadamente 96 m na horizontal em cerca de 6 s.\n\nConsiderando a situação ideal e desprezando a resistência do ar, podemos afirmar, em relação à bola, que',
+ alts:['sua velocidade horizontal foi 576 m/s no final da trajetória.','sua velocidade vertical foi 16 m/s no ponto mais alto da trajetória.','sua velocidade oblíqua foi nula quando estava bem próxima de atingir o chão.','suas velocidades vertical e horizontal foram de 16 m/s no ponto mais alto da trajetória.','sua velocidade vertical foi nula e a horizontal foi 16 m/s no ponto mais alto da trajetória.'],
+ r:4,
+ e:'A velocidade horizontal é constante durante todo o movimento parabólico: vx = 96m/6s = 16 m/s. No ponto mais alto, a velocidade vertical é sempre nula (é o instante em que a bola para de subir e começa a descer).'},
+
+{c:'fatec', m:'Física', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Para resolver a polêmica questão no futebol \'a bola entrou ou não?\', a IFAB colocou em teste sistemas de GLT (Goal-Line Technology). Um deles é o GoalRef, que se baseia em indução eletromagnética. Ao redor de cada baliza são instalados cabos de cobre que funcionam como antenas de baixa frequência; a bola é fabricada com três bobinas de cobre finas.\n\nQuando a bola entra na zona do campo magnético gerado pela baliza, o fluxo magnético (φ) que atravessa essas bobinas varia. Essa variação (Δ) no fluxo magnético, num determinado intervalo de tempo (t), induz uma força eletromotriz (ε). Quanto maior a variação do fluxo magnético no tempo ou menor o tempo de interação com o campo, maior será a força eletromotriz induzida.\n\nCom base nessa descrição, assinale a alternativa que representa corretamente a equação física envolvida nesse processo.',
+ alts:['ε = |Δφ| / Δt','t = |Δε| / Δφ','Δφ = |Δt| / Δε','ε = |Δt| / Δφ','φ = |Δε| / Δt'],
+ r:0,
+ e:'O texto descreve a Lei de Faraday: a força eletromotriz induzida (ε) é igual à variação do fluxo magnético (Δφ) dividida pelo intervalo de tempo (Δt), ou seja, ε = |Δφ|/Δt.'},
+
+{c:'fatec', m:'Física', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O sistema Hawk-Eye utiliza 14 câmeras de alta resolução posicionadas ao redor do estádio (7 para cada baliza). Cada câmera filma o movimento da bola a uma frequência de 500 quadros por segundo, e um sistema de visão computacional determina a velocidade e a posição da bola.\n\nCom base nessa descrição, é correto afirmar que o período, em segundos, entre cada disparo de cada câmera é de',
+ alts:['2,0×10⁶.','2,0×10³.','2,0×10⁰.','2,0×10⁻³.','2,0×10⁻⁶.'],
+ r:3,
+ e:'O período é o inverso da frequência: T = 1/f = 1/500 = 0,002 s = 2,0×10⁻³ s.'},
+
+{c:'fatec', m:'Física', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Pelas regras do futebol, a bola oficial deve estar calibrada com uma pressão entre 0,60 atm e 1,10 atm ao nível do mar. Em um jogo numa cidade litorânea, os oficiais da partida calibraram uma bola a 0,90 atm a uma temperatura de 27°C. Durante uma parada técnica, a bola ficou exposta ao Sol e sua temperatura subiu para 57°C, porém o seu volume permaneceu constante.\n\nAdmitindo que o ar no interior da bola se comporte como gás ideal (P0·V0/T0 = P1·V1/T1, com TK=TC+273), podemos afirmar corretamente que a bola',
+ alts:['foi mantida, pois a pressão abaixou para aproximadamente 0,80 atm.','foi trocada, pois a pressão se manteve em aproximadamente 0,90 atm.','foi mantida, pois a pressão chegou a aproximadamente 1,00 atm.','foi trocada, pois a pressão aumentou para aproximadamente 1,20 atm.','foi mantida, pois a pressão alcançou aproximadamente 1,90 atm.'],
+ r:2,
+ e:'T0=27+273=300K, T1=57+273=330K. Com volume constante, P0/T0=P1/T1, logo P1=0,90·(330/300)=0,90·1,1=0,99≈1,00 atm, valor ainda dentro da faixa permitida (0,60 a 1,10 atm), portanto a bola foi mantida.'},
+
+{c:'fatec', m:'Química', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Durante uma partida de futebol, ocorre liberação de diversos compostos químicos no corpo dos atletas, sendo o óxido nítrico (NO) um dos mais importantes. Esse composto não reage com substâncias presentes no organismo como água, ácidos e bases. No entanto, ele atua como um vasodilatador, contribuindo para aumentar o fluxo sanguíneo no corpo.\n\nO composto químico liberado no corpo dos atletas, mencionado no texto, é classificado corretamente como um',
+ alts:['hidrácido.','hidróxido.','óxido ácido.','óxido neutro.','sal oxigenado.'],
+ r:3,
+ e:'O NO (óxido nítrico) é um óxido que, conforme informado no texto, não reage com água, ácidos ou bases — por isso é classificado como óxido neutro (ou indiferente).'},
+
+{c:'fatec', m:'Química', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'No futebol, quando o juiz marca um pênalti ou quando um time marca um gol, moléculas como a adrenalina e a dopamina são produzidas pelo organismo de torcedores e atletas. Ambas apresentam um anel aromático (benzeno) ligado diretamente a duas hidroxilas (–OH), além de uma cadeia lateral com um grupo amina.\n\nConsiderando as fórmulas estruturais da adrenalina e da dopamina, podemos afirmar corretamente que um grupo funcional comum às duas moléculas é o grupo',
+ alts:['hidroxila (–OH), ligado ao carbono saturado, característico da função álcool.','hidroxila (–OH), ligado ao anel aromático, característico da função fenol.','amídico (–CONH–), ligado ao carbono saturado, característico da função amida.','carboxila (–COOH), ligado ao carbono insaturado, característico da função ácido carboxílico.','carbonila (–CO–), ligado ao carbono insaturado, característico da função cetona.'],
+ r:1,
+ e:'Tanto a adrenalina quanto a dopamina possuem duas hidroxilas ligadas diretamente ao anel aromático (grupo catecol), o que caracteriza a função fenol, e não álcool (que exige o –OH ligado a carbono saturado, fora do anel).'},
+
+{c:'fatec', m:'Química', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'No final dos torneios de futebol, no Brasil, os fogos de artifício são os responsáveis por um espetáculo de cores e de luzes vistas no céu. Os materiais que compõem os rojões são sais de diversos elementos químicos que, ao receberem energia, emitem luz de diferentes cores, sendo que os rojões são disparados em diferentes regiões do céu, não ocorrendo mistura entre as cores. O quadro relaciona compostos químicos com as cores fornecidas nos fogos de artifício:\nNaCl - Amarela\nCuCl2 - Verde\nKNO3 - Lilás\nSrCl2 - Vermelho\nCa(NO3)2 - Laranja\n\nConsidere que o time campeão da última copa do mundo tenha, em sua bandeira, as cores lilás e verde. Para homenagear o time campeão, suponha que os organizadores da competição promovam um espetáculo com fogos de artifício que, ao serem disparados, produzam as cores correspondentes à bandeira do time campeão.\n\nDesse modo, os sais que estarão na composição dos fogos de artifício serão, respectivamente,',
+ alts:['cloreto de sódio e cloreto de cobalto(II).','nitrato de potássio e cloreto de cobre(II).','cloreto de estrôncio e nitrato de cálcio.','cloreto de sódio e cloreto de estrôncio.','nitreto de potássio e cloreto de cobre(II).'],
+ r:1,
+ e:'Pelo quadro, a cor lilás corresponde ao KNO3 (nitrato de potássio) e a cor verde corresponde ao CuCl2 (cloreto de cobre II). As demais opções trocam os sais ou citam compostos que não constam no quadro.'},
+
+{c:'fatec', m:'Química', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'As bebidas isotônicas, usadas pelos atletas para reidratação, contêm, aproximadamente, a mesma concentração de íons sódio, potássio e cloreto que o sangue humano. Suponha que um jogador de futebol, durante o intervalo de uma partida, tenha ingerido 0,042 g de íons sódio, contidos em uma dose de bebida isotônica.\n\nAssinale a alternativa que contém o valor correto do volume, em mL, da dose de bebida isotônica ingerida pelo atleta.\n\nDados: Concentração de íons sódio no sangue = 140 mg/L; Concentração = massa do soluto / volume da solução',
+ alts:['100','200','300','400','500'],
+ r:2,
+ e:'Massa = 0,042 g = 42 mg. Volume = massa/concentração = 42mg / 140mg/L = 0,3 L = 300 mL.'},
+
+{c:'fatec', m:'Química', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O futebol começou a se popularizar no final do século XIX, ocasionando o surgimento dos primeiros uniformes confeccionados de tecidos de algodão. No século XX, os tecidos de algodão passaram a ser substituídos por materiais sintéticos, mais leves, resistentes e de secagem rápida (Dry fit).\n\nO algodão é composto por celulose, um polímero natural com diversos grupos hidroxila (–OH) capazes de fazer ligações de hidrogênio com a água. Já o Dry fit é composto por poliéster (PET), um polímero sintético formado por um éster aromático repetitivo, com poucos sítios capazes de interagir com a água. No quadro comparativo, a polaridade e a absorção de água de cada tecido, características que podem ser alta ou baixa, estão representadas por (I), (II), (III) e (IV): Polaridade do Algodão=(I), Polaridade do Dry fit=(II); Absorção de água do Algodão=(III), Absorção de água do Dry fit=(IV). Quanto ao suor, o algodão retém e o Dry fit espalha.\n\nAssinale a alternativa que corresponde corretamente às características (I), (II), (III) e (IV).',
+ alts:['(I) alta; (II) alta; (III) baixa; (IV) baixa.','(I) alta; (II) baixa; (III) alta; (IV) baixa.','(I) baixa; (II) alta; (III) baixa; (IV) alta.','(I) baixa; (II) baixa; (III) alta; (IV) alta.','(I) alta; (II) alta; (III) alta; (IV) baixa.'],
+ r:1,
+ e:'O algodão (celulose), rico em grupos –OH, é bastante polar e faz ligações de hidrogênio com a água, absorvendo-a bem (retém o suor). Já o Dry fit (poliéster) é pouco polar e absorve pouca água, espalhando o suor para secagem rápida. Logo: (I) alta, (II) baixa, (III) alta, (IV) baixa.'},
+
+{c:'fatec', m:'Geografia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'A Sociedade Esportiva Palestra Itália, hoje mais conhecida como Palmeiras, foi fundada em 1914. A maioria dos palestrinos era de origem italiana. No entanto, pessoas que escapavam desse padrão também se apresentavam na torcida. É o caso da Maria das Dores, a emblemática \'Vovó do Pito\', mulher negra, ex-escravizada que se declarava profundamente Palestrina. Falecida aos 111 anos, em 1934, era considerada a \'maior palestrina do país\' e a torcedora mais inflamada do time.\n\nDurante a década de 1920, a progressiva introdução de atletas brasileiros na equipe palestrina de futebol também seria complementada pela presença de atletas negros em outras modalidades praticadas no interior da agremiação, como o atletismo.\n\nEsse relato evidencia que',
+ alts:['o clube foi fundado inteiramente por europeus, o que inviabilizava a presença de negros em seu quadro de atletas.','o Palestra Itália teve como primeira presidente uma mulher negra, mesmo sendo um clube fundado por maioria italiana.','o clube, por possuir origens italianas, rechaçava a presença de pessoas de outras nacionalidades em suas fileiras de torcedores.','a Itália, por ser um país africano, atraia a simpatia de muitos ex-escravizados que se viam representados pelo Palestra Itália.','o clube, ao invés de adotar uma postura de segregação, abraçava e aprofundava sua relação com a sociedade na qual se inseria.'],
+ r:4,
+ e:'O texto mostra que, apesar da maioria italiana, o clube acolhia torcedores e atletas negros, evidenciando uma postura de integração com a sociedade brasileira, e não de segregação. As demais alternativas contêm erros factuais (a Itália não é país africano; não há menção a uma presidente negra; o clube não rechaçava outras nacionalidades).'},
+
+{c:'fatec', m:'Geografia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'No dia 14 de outubro de 2014, as seleções da Sérvia e da Albânia disputaram em Belgrado uma partida das eliminatórias da Eurocopa de 2016. Aos 41 minutos de jogo, um drone que carregava a bandeira da Albânia com a palavra autonomia causou uma reação negativa entre os jogadores da Sérvia, que foram retirar a bandeira, causando uma briga generalizada.\n\nAs tensões entre Sérvia e Albânia têm raízes profundas, ligadas a questões históricas e étnicas na região dos Bálcãs. O conflito mais proeminente envolve a disputa territorial sobre',
+ alts:['a Palestina, de maioria albanesa, que luta pela sua independência da Sérvia.','o Kosovo, de maioria albanesa, que declarou independência da Sérvia.','a Cachemira, de maioria sérvia, que luta por sua independência da Albânia.','a Catalunha, de maioria sérvia, que luta pela anexação de seu território à Albânia.','o Nagorno-Karabakh, de maioria albanesa, que declarou sua independência da Sérvia.'],
+ r:1,
+ e:'O conflito histórico entre sérvios e albaneses está centrado no Kosovo, território de maioria étnica albanesa que declarou unilateralmente independência da Sérvia em 2008, não sendo reconhecida por esta. As demais opções citam disputas territoriais sem relação com o conflito Sérvia-Albânia.'},
+
+{c:'fatec', m:'Geografia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'No estado de São Paulo, muitos times de futebol nasceram da união de funcionários das companhias de estradas de ferro, como o Noroeste de Bauru, fundado em 1910; o Nacional da capital, fundado em 1919; o Bragantino, em 1928, entre outros.\n\nEssa ligação entre o estado de São Paulo e o desenvolvimento ferroviário do final do século XIX e início do século XX ocorreu devido à',
+ alts:['interiorização da indústria ferroviária, que construiu fábricas nas cidades médias do interior paulista.','utilização do território paulista para o escoamento da soja plantada no Centro-Oeste pelos portos do estado.','introdução do cultivo da cana de açúcar no interior de São Paulo, incentivado por benefícios fiscais do programa Proálcool.','expansão, no estado, da cultura do café, que fez surgir diversas ferrovias ligando as áreas produtoras ao porto de Santos.','existência de campos de futebol, construídos pelo governo estadual, como opção de lazer aos moradores das cidades interioranas.'],
+ r:3,
+ e:'A expansão da economia cafeeira no interior paulista impulsionou a construção de diversas ferrovias para escoar a produção até o porto de Santos, gerando empregos ferroviários que, por sua vez, originaram diversos clubes de futebol ao longo dessas linhas.'},
+
+{c:'fatec', m:'Geografia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'No final do século XIX e início do XX, enquanto a elite jogava em clubes fechados, as classes populares ocupavam os terrenos abertos e planos nas margens dos rios para jogar futebol. Por serem áreas de várzea, o esporte praticado ali passou a ser chamado de \'futebol de várzea\'. Esses espaços eram públicos ou de difícil uso para construção civil imediata, servindo como campos improvisados onde trabalhadores e comunidades periféricas podiam praticar o esporte sem as restrições dos clubes de elite. Nos dias atuais, muitas dessas áreas foram impermeabilizadas.\n\nUma das consequências desse processo, para o meio urbano, é',
+ alts:['aumento da infiltração das águas pluviais no solo.','aumento do volume de água dos lençóis freáticos.','aumento na frequência das enchentes e das inundações.','diminuição da quantidade de chuvas nas margens dos rios.','diminuição da velocidade de escoamento das águas pluviais.'],
+ r:2,
+ e:'A impermeabilização das áreas de várzea (naturalmente destinadas a absorver o excesso de água dos rios) reduz a infiltração da água no solo e acelera o escoamento superficial, aumentando a frequência de enchentes e inundações nas cidades.'},
+
+{c:'fatec', m:'Geografia', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O Estádio Estadual Milton de Souza Corrêa, em Macapá (AP), conhecido como \'Zerão\', possui a fama de coincidir a linha de meio de campo do gramado com a linha imaginária do Equador. Porém, com o advento de tecnologias de satélite mais precisas, verificou-se que a linha imaginária do Equador está, na verdade, deslocada alguns metros ao sul do centro do gramado. Apesar dessa diferença, o governo do Amapá e os órgãos de turismo mantêm o valor simbólico do estádio como o único no mundo onde cada time defende um hemisfério.\n\nOs hemisférios a que o texto se refere são corretamente denominados',
+ alts:['Setentrional e Meridional.','Greenwich e Equador.','Austral e Ocidental.','Boreal e Oriental.','Oeste e Leste.'],
+ r:0,
+ e:'Como o gramado é dividido (aproximadamente) pela Linha do Equador, os dois hemisférios corretamente nomeados são o Setentrional (Norte) e o Meridional (Sul). As demais opções combinam termos que não formam pares Norte-Sul coerentes.'},
+
+{c:'fatec', m:'Inglês', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Zayu™ the Jaguar\n\nZayu the Jaguar, from the jungles of southern Mexico, embodies the rich heritage and vibrant spirit of the country. With a name inspired by unity, strength and joy, Zayu transforms on the pitch as a striker, showcasing exceptional ingenuity and agility that intimidates defenders. Off the pitch, Zayu embraces Mexican culture through dance, food and tradition, uniting people across borders with passion and pride. More than an athlete, Zayu is a symbol of cultural celebration and connection, carrying the heart of Mexico with pride.\n\nZayu é um dos mascotes da Copa do Mundo de Futebol 2026. Representando o México, o jaguar Zayu retrata',
+ alts:['ingenuidade, pureza e paixão.','força, agilidade e criatividade.','vibração, inspiração e inocência.','união, regionalismo e exceção.','espírito, religião e fraternidade.'],
+ r:1,
+ e:'O texto descreve Zayu como inspirado por \'unity, strength and joy\' e mostrando \'exceptional ingenuity and agility\' — características que se aproximam de força, agilidade e criatividade (ingenuity).'},
+
+{c:'fatec', m:'Inglês', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'A palavra "like", na sentença "You play like a girl", indica',
+ alts:['afeto.','oposição.','comparação.','exemplificação.','distanciamento.'],
+ r:2,
+ e:'Nessa frase, \'like\' é usado como preposição de comparação (\'como\'/\'igual a\'), comparando o modo de jogar de alguém ao de uma garota.'},
+
+{c:'fatec', m:'Inglês', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Leia a charge: uma torcida em um estádio de Copa do Mundo segura um grande cartaz que diz \'YOU PLAY LIKE A GIRL!\' (\'Você joga como uma garota!\'), enquanto comemora animadamente, com bandeiras dos EUA. Ao lado, um balão de fala de outro torcedor diz: \'REMEMBER WHEN THAT WAS AN INSULT?\' (\'Lembra quando isso era um insulto?\').\n\nA partir da charge, conclui-se corretamente que',
+ alts:['as mulheres não são tão boas jogadoras quanto os homens.','a fala do personagem na torcida insulta as jogadoras de futebol.','a torcida hostiliza os jogadores de futebol estadunidenses, comparando-os a crianças.','a torcida mostra-se orgulhosa pela maneira como jogadoras de futebol estadunidenses jogam.','o cartaz na torcida ridiculariza as jogadoras de futebol estadunidenses.'],
+ r:3,
+ e:'A charge ironiza o fato de que a expressão \'you play like a girl\', antes usada como insulto, hoje é motivo de orgulho, celebrando o alto nível técnico das jogadoras de futebol estadunidenses.'},
+
+{c:'fatec', m:'Inglês', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'The Sociology of Football\n\nThe Sociology of Football is the study of the social dynamics, cultural significance, and institutional structures surrounding football (soccer) as a global phenomenon. It examines how football influences and reflects social identities, community relations, and power dynamics, as well as its role in shaping societal values and norms.\n\nDe acordo com o texto, a Sociologia do Futebol estuda',
+ alts:['o poder envolvido no esporte e as desigualdades geradas por ele.','os desequilíbrios sociais e os fenômenos globalizados.','a influência do jogo na violência e nos valores sociais.','as relações sociais e culturais em torno do futebol.','as relações políticas na classificação esportiva.'],
+ r:3,
+ e:'O texto define a Sociologia do Futebol como o estudo das dinâmicas sociais, do significado cultural e das estruturas institucionais em torno do futebol, síntese mais abrangente e fiel ao texto na alternativa D.'},
+
+{c:'fatec', m:'Inglês', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'The Sociology of Football is the study of the social dynamics, cultural significance, and institutional structures surrounding football (soccer) as a global phenomenon. It examines how football influences and reflects social identities, community relations, and power dynamics, as well as its role in shaping societal values and norms.\n\nAs palavras em destaque, "it" e "its", referem-se, respectivamente, a',
+ alts:['"football" e "football".','"a global phenomenon" e "power dynamics".','"institutional structures" e "social identities".','"cultural significance" e "community relations".','"the Sociology of Football" e "football".'],
+ r:4,
+ e:'\'It examines...\' retoma o sujeito da frase anterior, \'The Sociology of Football\', que é quem realiza o exame. Já \'its role\' refere-se a \'football\', pois é o futebol que desempenha um papel na formação dos valores sociais.'},
+
+{c:'fatec', m:'História', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O hábito de se divertir usando bolas feitas à mão existe há pelo menos 4,5 mil anos: no Egito Antigo, as mais comuns eram de linho, mas, como mostra o túmulo de uma criança egípcia de 2,5 mil anos a.C., também havia versões feitas com trapos e lã. Na China, foram descobertas bolas feitas de couro e de pele de carneiro, com idade estimada entre 2,9 mil e 3,2 mil anos. Sendo atividades coletivas, os jogos com bola exigem o desenvolvimento de regras compartilhadas, a capacidade de antecipar movimentos alheios e a cooperação entre os membros de um grupo, habilidades que também foram úteis na caça e na defesa de territórios.\n\nA partir das informações apresentadas no texto, conclui-se corretamente que os jogos de bola',
+ alts:['substituíram as atividades de caça e de coleta, permitindo que os grupos se fixassem em aldeias permanentes.','surgiram após a invenção da escrita, pois as regras precisavam ser registradas para serem transmitidas.','eram praticados individualmente, sem interação ou cooperação entre os membros do grupo.','contribuíram para o desenvolvimento de habilidades sociais e cognitivas úteis para a vida em sociedade.','eram praticados por adultos, com bolas confeccionadas pelas crianças a partir de diferentes matérias-primas.'],
+ r:3,
+ e:'O texto afirma que os jogos com bola exigiam regras compartilhadas, antecipação de movimentos e cooperação — habilidades sociais e cognitivas que também eram úteis na caça e na defesa de territórios, ou seja, contribuíram para a vida em sociedade.'},
+
+{c:'fatec', m:'História', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Os fundadores da Associação de Futebol Inglesa consideravam o epískyros, um jogo com bola praticado na Grécia Antiga, como um precursor do futebol moderno. O epískyros era um jogo coletivo que exigia agilidade, precisão e resistência. Era apreciado por melhorar o condicionamento físico e fortalecer o espírito de equipe, mas não era considerado adequado para competições atléticas sérias. Inspirados pelo jogo grego, os romanos desenvolveram o harpastum, descrito como um exercício violento, com imobilizações no pescoço, golpes de luta livre, empurrões e puxões. A versão mais enérgica do harpastum era considerada benéfica para o treinamento militar por promover o condicionamento físico e mental, exercitar o corpo todo e poder ser praticado em diferentes intensidades.\n\nComparando as informações presentes no texto, é correto afirmar que a diferença entre o epískyros gregos e o harpastum romano revela',
+ alts:['o desprezo dos romanos pela cultura grega, o que os levou a criar uma modalidade inédita, sem semelhança com o epískyros.','que o epískyros preparava os gregos para guerras, enquanto o harpastum era um espetáculo público sem função militar.','a inferioridade cultural dos gregos, que não atribuíam utilidade aos seus jogos, ao contrário dos romanos, que buscavam eficiência militar.','que o epískyros era um jogo exclusivamente feminino, enquanto o harpastum era praticado apenas por homens que não podiam mais servir ao exército.','a distinção entre os gregos, que valorizavam movimento e cooperação, e os romanos, que enfatizavam utilidade militar e competição violenta.'],
+ r:4,
+ e:'O texto mostra que o epískyros grego valorizava agilidade, precisão, resistência e espírito de equipe, enquanto o harpastum romano era um exercício violento voltado à eficiência no treinamento militar — evidenciando essa distinção de valores entre as duas culturas.'},
+
+{c:'fatec', m:'História', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O jogo de bola (pok-ta-pok entre maias, ullamaliztli entre astecas) foi um esporte ritualístico das antigas civilizações da Mesoamérica. Bolas de borracha datadas de 1600–1400 a.C. foram encontradas junto a oferendas religiosas, indicando conotações rituais. O jogo era disputado em campos em formato de \'I\', com uma bola de borracha de 3 a 4 kg, sendo proibido usar mãos e pés. Após as partidas, sacrifícios humanos eram comuns: crônicas astecas indicam que os vencedores eram sacrificados em honra ao Sol. Para os astecas, o jogo representava a batalha entre as forças noturnas (Lua e estrelas) e o Sol, personificado pelo deus Huitzilopochtli, e os sacrifícios tinham a função de manter o Sol iluminando a Terra. Na fundação de uma cidade, os astecas primeiro construíam o templo ao deus e, logo em seguida, o campo do jogo de bola.\n\nA partir do texto, é correto afirmar que o caráter sagrado dessa prática, para os astecas, se evidenciava pelo fato de que',
+ alts:['as bolas de borracha eram oferendas religiosas, e os campos tinham formato de \'I\' para imitar a forma dos templos.','os sacrifícios humanos visavam manter o Sol iluminando a Terra, e o jogo representava a batalha entre o Sol e as forças noturnas.','os campos eram construídos antes do templo na fundação das cidades, e os perdedores eram sacrificados como oferenda à Lua.','o jogo representava a batalha entre o Sol e as forças noturnas, e os perdedores eram sacrificados para o Sol descansar durante a noite.','as bolas pesavam de 3 a 4 kg e eram tocadas com quadris, braços e pernas para imitar os movimentos dos deuses durante a criação do mundo.'],
+ r:1,
+ e:'O texto afirma que o jogo representava a batalha entre o Sol e as forças noturnas, e que os sacrifícios tinham a função de manter o Sol iluminando a Terra — exatamente o que descreve a alternativa B. As demais invertem informações do texto.'},
+
+{c:'fatec', m:'História', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Reinaldo, ídolo do Atlético Mineiro, também se tornou símbolo de resistência em um momento político da história do Brasil. Quando ele fez o primeiro gol da seleção brasileira contra a Suécia, na Copa do Mundo de 1978, comemorou com o punho cerrado, e depois disso quase não jogou mais pela seleção. Ele afirmou que foi retaliado pelo técnico Cláudio Coutinho, capitão do Exército, que recebia ordens diretas do regime para não o escalar.\n\nAssinale a alternativa que identifica, corretamente, o regime ao qual o relato se refere.',
+ alts:['Era Vargas','Pacto Colonial','Ditadura civil-militar','República Velha','Primeiro Reinado'],
+ r:2,
+ e:'Em 1978, o Brasil vivia sob a Ditadura civil-militar (1964-1985), período em que o técnico da seleção, um capitão do Exército, recebia ordens do regime — contexto coerente apenas com essa alternativa.'},
+
+{c:'fatec', m:'História', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Antes da viagem da seleção brasileira para a França a fim de disputar a Copa do Mundo de 1938, Getúlio Vargas recebeu os atletas, destacou a importância do título para o futuro do país e deu uma declaração prometendo \'casa própria para os craques\'. Durante o torneio, Vargas associou o desempenho da seleção à grandeza do regime do Estado Novo e o sociólogo Gilberto Freyre, à ideia de \'democracia racial\'. Entretanto, jogadores negros e de origem pobre, como Leônidas da Silva, enfrentaram racismo explícito na imprensa. Após o que foi considerado uma falha da arbitragem e a consequente derrota brasileira por 2 a 1 na final contra a Itália, os craques foram recepcionados como heróis em Recife, Salvador e Rio de Janeiro e, mesmo assim, muitos dos jogadores negros retornaram ao anonimato e a subempregos.\n\nSegundo o texto,',
+ alts:['a ideia de \'democracia racial\' correspondia à realidade brasileira da época, pois jogadores negros eram tratados como heróis nacionais.','a derrota na Copa de 1938 provocou uma crise que levou o presidente Vargas a abandonar o incentivo ao esporte.','a derrota na final de 1938 prejudicou a imagem internacional do Brasil e levou à proibição do futebol no país.','a propaganda política do Estado Novo contrastava com o racismo e com a situação social de jogadores negros.','Vargas ignorou a Copa do Mundo de 1938 e concentrou os esforços de propaganda em outros eventos, como as corridas de automóvel.'],
+ r:3,
+ e:'O texto evidencia um contraste: enquanto Vargas explorava politicamente o sucesso da seleção associando-o à \'grandeza\' do Estado Novo e à \'democracia racial\', jogadores negros sofriam racismo explícito e, mesmo recebidos como heróis, retornavam ao anonimato e a subempregos.'},
+
+{c:'fatec', m:'Raciocínio Lógico', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O grito \'OLÉ!\', que embala partidas de futebol, chegou às torcidas com Mané Garrincha em um amistoso entre Botafogo e River Plate no México, em 1958. Contudo sua consagração veio em 1985, com a música \'Anderlecht Champion\'! O refrão na versão original diz \'ALLEZ, ALLEZ, ALLEZ!\' (vamos lá, em francês).\n\nConsiderando que o termo em negrito (\'ALLEZ\') possa ser repetido sucessivamente, sem espaços e indefinidamente, então o símbolo que ocupa a posição de número 1985 nessa sequência é',
+ alts:['A','L','E','Z','!'],
+ r:3,
+ e:'A palavra \'ALLEZ\' tem 5 letras. Dividindo 1985 por 5, obtemos exatamente 397 (397×5=1985), sem resto, o que significa que a posição 1985 corresponde à última letra de uma repetição completa da palavra, ou seja, o \'Z\'.'},
+
+{c:'fatec', m:'Raciocínio Lógico', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Se SURFE se relaciona com PRANCHA, então FUTEBOL se relaciona com',
+ alts:['ÁREA.','BOLA.','CAMPO.','DRIBLE.','ESTÁDIO.'],
+ r:1,
+ e:'A relação estabelecida é entre um esporte e seu principal equipamento de jogo: assim como a prancha é o equipamento essencial do surfe, a bola é o equipamento essencial do futebol.'},
+
+{c:'fatec', m:'Raciocínio Lógico', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'As regras do futebol de campo são as mesmas em todo o planeta. Entre elas, temos:\n1. as duas equipes devem usar cores que as distingam uma da outra e da equipe de arbitragem;\n2. cada goleiro deve usar cores que os distingam dos outros jogadores e da equipe de arbitragem;\n3. se as camisetas dos dois goleiros forem da mesma cor e nenhum deles tiver outra camiseta, o árbitro permitirá que o jogo seja disputado;\n4. as camisas interiores (também conhecidas como segunda pele) devem ter uma única cor, que será a mesma que a cor principal da manga da camiseta; e\n5. os jogadores de uma mesma equipe devem usar calções interiores de mesma cor.\n\nConsidere que, em uma partida oficial entre um Time A e um Time B, percebe-se que:\n- o Time A usa camiseta azul com mangas azuis;\n- o Time B usa camiseta verde com mangas brancas;\n- a arbitragem usa preto;\n- ambos os goleiros usam amarelo e não possuem outro uniforme;\n- um jogador do Time B usa camisa interior verde;\n- dois jogadores do Time A usam calções interiores, um usa azul e outro usa branco.\n\nCom base nas regras apresentadas, quantas infrações foram cometidas na situação descrita?',
+ alts:['Nenhuma','Uma','Duas','Três','Quatro'],
+ r:2,
+ e:'Não há infração nas regras 1 e 2, nem na 3 (goleiros com a mesma cor é permitido quando não têm outro uniforme). Há infração na regra 4: o Time B tem mangas brancas, mas um jogador usa camisa interior verde. Há infração na regra 5: os dois jogadores do Time A usam calções interiores de cores diferentes (azul e branco). Total: duas infrações.'},
+
+{c:'fatec', m:'Raciocínio Lógico', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Andrea, Elias e Iara são torcedores de um mesmo time de futebol, mas, como são supersticiosos, seguem certas regras quando se trata de vestir a camisa de seu time para ir torcer:\n- Ou Elias ou Iara devem usar a camisa do time (exclusivamente um dos dois);\n- Andrea usa a camisa do time se, e somente se, Elias usar; e\n- Se Iara usar a camisa do time, então Andrea também usa.\n\nQuando os três forem torcer pelo seu time, de acordo com as regras expostas, conclui-se corretamente que',
+ alts:['Iara nunca usa a camisa do time; Andrea e Elias sempre a usam.','Elias nunca usa a camisa do time; Andrea e Iara sempre a usam.','Andrea sempre usa a camisa do time; Elias e Iara nunca a usam.','Iara sempre usa a camisa do time; Andrea e Elias nunca a usam.','Elias sempre usa a camisa do time; Andrea e Iara nunca a usam.'],
+ r:0,
+ e:'Se Iara usasse a camisa, pela 3ª regra Andrea usaria; mas pela 2ª regra (Andrea usa se, e somente se, Elias usar), Elias também teria que usar — porém a 1ª regra permite apenas um entre Elias e Iara, contradição. Logo, Iara nunca usa. Pela 1ª regra, Elias usa; pela 2ª regra, Andrea usa junto com Elias.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O café da manhã de um jogador de futebol foi composto, entre outros itens, pela seguinte tabela nutricional:\nOvos mexidos: 30g proteínas, 4g carboidratos, 17g lipídios\nAbacate: 2g proteínas, 9g carboidratos, 15g lipídios\nIogurte Grego: 30g proteínas, 10g carboidratos, 14g lipídios\nGranola: 3g proteínas, 20g carboidratos, 3g lipídios\nSuco de laranja: 1,5g proteínas, 21g carboidratos, 0,2g lipídios\n\nConsiderando as proteínas e os carboidratos, que têm o mesmo valor energético (4 kcal/g), assinale a alternativa que apresenta corretamente o item mais energético do café da manhã.',
+ alts:['Ovos','Abacate','Iogurte','Granola','Suco de laranja'],
+ r:2,
+ e:'Considerando apenas proteínas+carboidratos (×4 kcal/g): Ovos=(30+4)×4=136 kcal; Abacate=(2+9)×4=44 kcal; Iogurte=(30+10)×4=160 kcal; Granola=(3+20)×4=92 kcal; Suco=(1,5+21)×4=90 kcal. O Iogurte Grego é o mais energético (160 kcal) nesse critério.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Nas Américas, a transmissão endêmica de sarampo foi interrompida em 2002. Considerando o risco de importação desse vírus, diante da realização da Copa do Mundo de 2014 no Brasil, a Organização Pan-Americana em Saúde publicou, antes do evento, suas recomendações à população.\n\nO sarampo é uma doença causada por ___(I)___, altamente contagiosa, que pode provocar surtos e exigir rápida ação de vigilância epidemiológica e vacinação massiva. No caso de vacinação massiva, o limiar de imunidade de rebanho é calculado usando a seguinte fórmula: p = (1 – 1/R0) · 100%, em que p é a proporção da população que deve ser vacinada para interromper a transmissão da doença e R0 é o número médio de novos casos gerados a partir de um caso inicial de sarampo em uma população totalmente suscetível (estimado entre 12 e 18).\n\nLogo, no caso de uma epidemia de sarampo, a proporção mínima da população que deve ser vacinada para interromper a transmissão da doença é ___(II)___.\n\nAssinale a alternativa que completa corretamente as lacunas.',
+ alts:['(I) uma bactéria; (II) 94,4%','(I) um vírus; (II) 94,4%','(I) um protozoário; (II) 93,3%','(I) um vírus; (II) 91,7%','(I) uma bactéria; (II) 91,7%'],
+ r:3,
+ e:'O sarampo é causado por um vírus. Para a proporção MÍNIMA de vacinação necessária, usa-se o menor valor de R0 (12): p=(1-1/12)×100%=(1-0,0833)×100%≈91,7%.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'No dia 19 de fevereiro de 2026, no estádio Arena da Floresta, em Rio Branco, no estado do Acre, foi realizada uma partida de futebol entre a equipe local do Vasco e o Velo Clube, da cidade de Rio Claro, do estado de São Paulo. Essa partida ocorreu às 19 horas, no horário local.\n\nSabendo que o estado do Acre está no fuso horário UTC–5 e que o estado de São Paulo está no fuso horário UTC–3, os torcedores do Velo Clube, no estado de São Paulo, acompanharam o início da partida',
+ alts:['às 11 horas.','às 17 horas.','às 19 horas.','às 21 horas.','à 1 hora.'],
+ r:3,
+ e:'São Paulo (UTC-3) está 2 horas à frente do Acre (UTC-5). Assim, quando são 19h no Acre, em São Paulo já são 21h.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'A primeira parada técnica para hidratação na história das Copas do Mundo masculinas da FIFA ocorreu durante a Copa do Mundo de 2014, no jogo entre Holanda e México. No momento da partida, em Fortaleza, a temperatura estava em torno de 32°C e a umidade relativa do ar estava próxima de 70%. Essas condições foram determinantes para a ocorrência dessas pausas durante os dois tempos do jogo.\n\nDo ponto de vista fisiológico, sabe-se que o corpo humano regula sua temperatura principalmente por meio da sudorese. No entanto, em ambientes úmidos, esse mecanismo pode se tornar menos eficiente, pois',
+ alts:['a alta umidade relativa do ar promove a desnaturação de diversas enzimas responsáveis pela sudorese, dificultando a redução da temperatura corporal.','o calor específico da água diminui em ambientes úmidos, reduzindo a capacidade de absorção de energia do suor.','a elevada pressão parcial de vapor de água no ar dificulta a evaporação do suor, reduzindo a perda de calor da pele.','a pressão atmosférica aumenta com a diminuição da umidade, impedindo a perda de calor do corpo para o ambiente.','o suor passa diretamente do estado sólido para o gasoso, sem absorver energia, reduzindo o resfriamento corporal.'],
+ r:2,
+ e:'Em ambientes muito úmidos, o ar já está próximo da saturação de vapor de água, o que dificulta a evaporação do suor na pele — e é justamente a evaporação que retira calor do corpo, resfriando-o. Com menos evaporação, o resfriamento é menos eficiente.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'The English Game Review\nHannah Parker\n\nPeriod dramas aren\'t to everyone\'s taste, and the story of class wars in Britain has been told over and over again. Sometimes, it\'s been told extremely well, but often the theme can be repetitive, insensitive and glamorised. Perhaps the same could be said about the FA Cup — some love it, but nowadays more seem to dislike it. Bringing the two together could be a disaster.\n\nThe new drama series about the early days of the FA Cup in the late 1800\'s however, is an example of this theme being done well. The show is a perfect example of telling a class war story in a sensitive and realistic manner.\n\n(Glossário: FA – Football Association)\n\nA resenha a respeito da série \'The English Game\' é',
+ alts:['positiva e dá destaque à sensibilidade na abordagem do tema a respeito da luta de classes.','positiva e mostra romantismo em tempos dramáticos de uma forma bastante glamourizada.','negativa, pois são poucas as pessoas que se interessam por acompanhar histórias de época.','negativa, pois essa série é repetitiva, insensível e excessivamente romantizada.','negativa, pois a combinação dos temas futebol e drama de época mostrou-se desastrosa.'],
+ r:0,
+ e:'A autora afirma que a nova série \'is an example of this theme being done well\' e é \'a perfect example of telling a class war story in a sensitive and realistic manner\' — ou seja, a resenha é positiva, destacando a sensibilidade no tratamento do tema da luta de classes.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Speed, angle and confidence: science behind Chloe Kelly\'s powerful penalty\n\nLioness\'s penalty against Nigeria makes Women\'s World Cup record and beats fastest strike of Premier League last season. According to data from the official match ball, the shot reached 110.79 km/h (≈31 m/s).\n\nMultiple factors contribute to the power of a kick, for example, the speed of the ball is determined by the speed of the kicking foot when it makes contact with the ball and how efficient the foot-ball collision is in transferring the energy.\n\nO texto destaca que a técnica empregada pela atleta determina \'quão eficiente é a colisão de pé-bola na transferência de energia\', em outras palavras, o trabalho executado pela força aplicada pelo pé na bola.\n\nConsiderando a massa da bola aproximadamente 0,42 kg e que a bola estava parada antes do chute, podemos afirmar corretamente que o valor aproximado do trabalho da força resultante aplicada por Chloe Kelly, em joules, é de',
+ alts:['2 580.','202.','23.','13.','7.'],
+ r:1,
+ e:'Pelo teorema trabalho-energia cinética, W=ΔEc=(1/2)mv²-0=(1/2)×0,42×31²=0,21×961≈202 J.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Jogadores de origem africana nascidos ou formados nas antigas metrópoles europeias vivem um paradoxo: defendem seleções africanas por questões familiares ou identitárias, mas o dinheiro de suas transferências não beneficia os clubes do continente. Segundo relatório da FIFA de 2021, jogadores africanos são a segunda mão de obra estrangeira mais procurada por clubes europeus e também a que custa menos. Uma exceção é o egípcio Mohamed Salah, formado no El Mokawloon, que rendeu US$ 5 milhões ao seu time de origem, o mesmo valor que todos os clubes do Egito arrecadaram juntos em 2021.\n\nConsiderando o texto e os conceitos de globalização e divisão internacional do trabalho, assinale a alternativa correta.',
+ alts:['O movimento de jogadores entre países reproduz padrões históricos semelhantes aos das migrações em outras áreas da economia global.','A migração de jogadores reverteu a lógica histórica da divisão internacional do trabalho, com atletas europeus indo, em maior número, à África.','A migração de jogadores ocorre entre países ricos do hemisfério Norte, não havendo registro histórico de atletas africanos atuando na Europa.','A migração de jogadores não encontra paralelos com outras formas de migração, pois o futebol não se insere no capitalismo globalizado.','Os países africanos proíbem a saída de seus jogadores, retendo os atletas em ligas nacionais para fortalecer o futebol local.'],
+ r:0,
+ e:'O texto descreve um fluxo de mão de obra barata saindo de países periféricos (África) para países centrais (Europa), com pouco retorno econômico para o local de origem — um padrão semelhante ao observado em outras formas de migração de trabalho dentro da divisão internacional do trabalho globalizada.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'No mapa da Copa do Mundo de 2026 nos Estados Unidos, estão indicados os estádios onde o Brasil jogará: o MetLife Stadium, na região metropolitana de Nova York (Nordeste dos EUA); o Lincoln Financial Field, em Filadélfia, a sul-sudoeste de Nova York; e o Hard Rock Stadium, em Miami, no extremo sul da Flórida, bem mais ao sul e a oeste de Filadélfia.\n\nSabendo que, durante esse evento esportivo, o time do Brasil deve jogar contra:\n- o Marrocos no dia 13 de junho, no MetLife Stadium;\n- o Haiti no dia 19 de junho, no Lincoln Financial Field; e\n- a Escócia no dia 24 de junho, no Hard Rock Stadium, em Miami.\n\nEntão, na ordem dos eventos descritos, os deslocamentos entre os estádios onde ocorrerão os jogos do time do Brasil devem se dar nos sentidos',
+ alts:['Norte e Norte-noroeste.','Noroeste e Norte-nordeste.','Sul e Sul-sudeste.','Sul-sudeste e Leste-sudeste.','Sudoeste e Sul-sudoeste.'],
+ r:4,
+ e:'De Nova York (MetLife) até Filadélfia (Lincoln Financial), o deslocamento é predominantemente para Sudoeste. De Filadélfia até Miami (Hard Rock), o deslocamento é para Sul com leve componente a oeste, ou seja, Sul-sudoeste.'},
+
+{c:'fatec', m:'Interdisciplinar', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'O Mal da Montanha é causado pela subida rápida a grandes altitudes, onde a pressão atmosférica é menor e, por isso, menos oxigênio passa dos pulmões para o sangue. Essa redução de oxigênio no organismo pode levar ao surgimento de sintomas como dor de cabeça, tontura, náusea, cansaço e falta de ar.\n\nImagine que, na final de um campeonato de futebol, o Always Ready, time da Bolívia, sai de El Alto para enfrentar o São Paulo FC, da cidade de São Paulo. A cidade de El Alto fica a 4150 metros de altitude em relação ao nível do mar, enquanto a cidade de São Paulo se localiza a 760 metros. Os dois se enfrentarão no Estádio Daniel Alcides Carrión, em Cerro de Pasco, no Peru, que fica a 4338 metros de altitude.\n\nDiante desse cenário, é correto afirmar que',
+ alts:['o time do São Paulo não sentirá os efeitos do Mal da Montanha, pois está, originalmente, mais próximo ao nível do mar.','o time do Always Ready sentirá menos os efeitos do Mal da Montanha se passar alguns dias, antes do jogo, na cidade de São Paulo.','os times do São Paulo e do Always Ready sentirão os efeitos do Mal da Montanha igualmente por terem atletas de alto desempenho.','o time do São Paulo tende a sentir mais os efeitos do Mal da Montanha devido à maior diferença de altitude entre sua cidade e o local do jogo.','o time do Always Ready tende a sentir mais os efeitos do Mal da Montanha, pois seus jogadores estão aclimatados a regiões mais altas.'],
+ r:3,
+ e:'A diferença de altitude entre São Paulo (760m) e Cerro de Pasco (4338m) é de 3578m, muito maior que a diferença entre El Alto (4150m) e Cerro de Pasco (4338m), de apenas 188m. Quanto maior a subida súbita de altitude, maior a chance de sentir o Mal da Montanha — por isso o time de São Paulo tende a sofrer mais.'},
+
+{c:'fatec', m:'Língua Portuguesa', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Bola murcha, bola fora, com a bola toda, bola pra frente, trocar as bolas, comer bola... Expressões tão comuns do povo brasileiro que foram criadas espontaneamente para expressar significados que não constavam nos dicionários, o futebolês foi pouco a pouco se incorporando na nossa linguagem coloquial. \'E nenhum outro grupo de linguagem conseguiu influenciar tanto nossa cultura quanto o futebol\', atesta o professor Ermínio Rodrigues, estudioso da língua portuguesa.\n\nA criatividade da torcida, dos técnicos, dos jogadores e dos narradores de futebol extrapola os limites da imaginação. Nada melhor do que a palavra frangueiro para mostrar que o goleiro tem um mau desempenho.\n\nA linguagem do futebol também recebeu um tempero da culinária. O termo cozinhar, por exemplo, cai como uma luva para mostrar que o time está retardando deliberadamente o jogo.\n\nÀs vezes, a palavra criada no meio futebolístico parece ter sido tirada da boca do povo. É o caso da expressão deu zebra, usada para qualificar um resultado imprevisto de um jogo, \'Provavelmente, o técnico foi buscar inspiração no jogo do bicho que utiliza quase todos os animais, menos a zebra\', comenta Rodrigues.\n\nOs termos destacados (\'pouco a pouco\', \'extrapola\', \'deliberadamente\' e \'Provavelmente\') podem ser substituídos, correta e respectivamente, por',
+ alts:['calmamente, limita-se a, propositalmente, decerto.','brevemente, combate, de propósito, seguramente.','paulatinamente, submete-se a, repentinamente, quiçá.','tardiamente, excede, involuntariamente, seguramente.','progressivamente, supera, intencionalmente, talvez.'],
+ r:4,
+ e:'\'Pouco a pouco\' = progressivamente; \'extrapola\' (ultrapassa os limites) = supera; \'deliberadamente\' = intencionalmente; \'Provavelmente\' = talvez. Os sinônimos da alternativa E mantêm o sentido original das expressões destacadas.'},
+
+{c:'fatec', m:'Língua Portuguesa', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Bola murcha, bola fora, com a bola toda, bola pra frente, trocar as bolas, comer bola... Expressões tão comuns do povo brasileiro que foram criadas espontaneamente para expressar significados que não constavam nos dicionários, o futebolês foi pouco a pouco se incorporando na nossa linguagem coloquial. \'E nenhum outro grupo de linguagem conseguiu influenciar tanto nossa cultura quanto o futebol\', atesta o professor Ermínio Rodrigues, estudioso da língua portuguesa.\n\nA criatividade da torcida, dos técnicos, dos jogadores e dos narradores de futebol extrapola os limites da imaginação. Nada melhor do que a palavra frangueiro para mostrar que o goleiro tem um mau desempenho.\n\nA linguagem do futebol também recebeu um tempero da culinária. O termo cozinhar, por exemplo, cai como uma luva para mostrar que o time está retardando deliberadamente o jogo.\n\nÀs vezes, a palavra criada no meio futebolístico parece ter sido tirada da boca do povo. É o caso da expressão deu zebra, usada para qualificar um resultado imprevisto de um jogo, \'Provavelmente, o técnico foi buscar inspiração no jogo do bicho que utiliza quase todos os animais, menos a zebra\', comenta Rodrigues.\n\nDe acordo com o texto, o \'futebolês\'',
+ alts:['dialoga com diferentes áreas da sociedade e incorpora-se à linguagem cotidiana.','influenciou a elite intelectual da sociedade mundial e, por isso, foi dicionarizado.','representa um dialeto específico do mundo do futebol restrito a profissionais da área.','limita-se a palavras e expressões que remetem a \'bola\', principal símbolo do esporte.','origina-se da linguagem culinária e do jogo do bicho, alcançando os campos de futebol.'],
+ r:0,
+ e:'O texto mostra que o futebolês incorpora elementos de diversas áreas (culinária, jogo do bicho) e se popularizou na linguagem coloquial cotidiana do povo brasileiro, e não ficou restrito a profissionais do futebol nem apenas a palavras relacionadas à \'bola\'.'},
+
+{c:'fatec', m:'Língua Portuguesa', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Bola murcha, bola fora, com a bola toda, bola pra frente, trocar as bolas, comer bola... Expressões tão comuns do povo brasileiro que foram criadas espontaneamente para expressar significados que não constavam nos dicionários, o futebolês foi pouco a pouco se incorporando na nossa linguagem coloquial.\n\nAssinale a alternativa cujo provérbio dialoga com o sentido da expressão \'bola pra frente\' (que significa seguir em frente, não se prender ao passado).',
+ alts:['A cavalo dado não se olham os dentes.','Antes só do que mal acompanhado.','Águas passadas não movem moinhos.','Dai a César o que é de César.','Quem semeia vento colhe tempestade.'],
+ r:2,
+ e:'\'Bola pra frente\' expressa a ideia de seguir em frente sem se prender ao passado. O provérbio \'Águas passadas não movem moinhos\' tem sentido equivalente: o que já passou não deve mais influenciar o presente.'},
+
+{c:'fatec', m:'Língua Portuguesa', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Analise a charge: um jogador de futebol, caído no chão, segura um objeto com a inscrição \'MACHISMO MISOGINIA\'; à frente, vê-se o braço e a mão de uma árbitra (identificada por uma pulseira), cujo rosto não aparece, mostrando ao jogador um cartão vermelho. Ao redor, confetes e uma bola no chão completam a cena.\n\nNa charge, o cartão apresentado é vermelho.\n\nSobre a linguagem verbal e não verbal utilizada na construção da charge, é correto afirmar que',
+ alts:['o cartão vermelho expressa a recusa em aceitar a reprodução de preconceitos sociais dentro do campo.','a representação da mulher, embora em posição de poder, é marcada pela invisibilização de seu papel.','a bola parada representa a necessidade de rever as regras do jogo para garantir igualdade entre homens e mulheres.','o taco, segurado pelo jogador, ameniza a atitude preconceituosa do atleta ao associá-la a um traço comportamental primitivo.','o saco, que cobre a identidade do agressor, assim como a ausência do rosto da árbitra, igualam vítima e criminoso na imagem.'],
+ r:0,
+ e:'O cartão vermelho é o símbolo máximo de punição no futebol (expulsão). Na charge, ele simboliza a expulsão/recusa do machismo e da misoginia dentro do campo (e da sociedade), representando a rejeição a esse tipo de comportamento preconceituoso.'},
+
+{c:'fatec', m:'Língua Portuguesa', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Leia o poema \'O Anjo das Pernas Tortas\', de Vinicius de Moraes:\n\nA um passe de Didi, Garrincha avança\nColado o couro aos pés, o olhar atento\nDribla um, dribla dois, depois descansa\nComo a medir o lance do momento.\n\nVem-lhe o pressentimento; ele se lança\nMais rápido que o próprio pensamento\nDribla mais um, mais dois; a bola trança\nFeliz, entre seus pés — um pé de vento!\n\nNum só transporte, a multidão contrita\nEm ato de morte se levanta e grita\nSeu uníssono canto de esperança.\n\nGarrincha, o anjo, escuta e atende: — Goooool!\nÉ pura imagem: um G que chuta um o\nDentro da meta, um l. É pura dança!\n\nApós a leitura atenta do poema, é correto afirmar que',
+ alts:['o termo \'couro\', na primeira estrofe, representa a resistência do jogador durante a difícil partida.','a expressão \'um pé de vento\', na segunda estrofe, expressa a perda da bola pelo jogador rival.','\'a multidão contrita em ato de morte\', na terceira estrofe, constrói a imagem de tensão dos torcedores.','\'anjo\' e \'G\' representam, na quarta estrofe, o jogador Garrincha e a bola jogada ao gol respectivamente.','as expressões \'pura imagem\' e \'pura dança\', na quarta estrofe, retratam o futebol como uma arte impopular.'],
+ r:2,
+ e:'A expressão \'a multidão contrita em ato de morte se levanta e grita\' constrói, por meio de linguagem figurada intensa, a imagem da tensão extrema vivida pelos torcedores no momento decisivo do lance. \'Couro\' refere-se à bola (não à resistência do jogador); \'pé de vento\' expressa a velocidade do próprio Garrincha; \'G\' faz parte da soletração visual de \'GOL\'.'},
+
+{c:'fatec', m:'Língua Portuguesa', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Leia o poema \'O Anjo das Pernas Tortas\', de Vinicius de Moraes:\n\nA um passe de Didi, Garrincha avança\nColado o couro aos pés, o olhar atento\nDribla um, dribla dois, depois descansa\nComo a medir o lance do momento.\n\nVem-lhe o pressentimento; ele se lança\nMais rápido que o próprio pensamento\nDribla mais um, mais dois; a bola trança\nFeliz, entre seus pés — um pé de vento!\n\nNum só transporte, a multidão contrita\nEm ato de morte se levanta e grita\nSeu uníssono canto de esperança.\n\nGarrincha, o anjo, escuta e atende: — Goooool!\nÉ pura imagem: um G que chuta um o\nDentro da meta, um l. É pura dança!\n\nOs verbos, no poema (avança, dribla, descansa, lança, escuta, atende), estão conjugados',
+ alts:['no presente contínuo para dar a sensação de ações que se desenrolam lentamente.','no presente para aproximar as ações do leitor, semelhante a uma narração esportiva.','no passado, para indicar que os feitos do jogador realizaram-se rapidamente no jogo.','no passado distante, para marcar a importância histórica do jogador referido no texto.','no presente atemporal, para expressar ações realizáveis a qualquer momento por todos.'],
+ r:1,
+ e:'Os verbos estão no presente do indicativo, recurso que aproxima o leitor da ação, dando a sensação de que os fatos estão acontecendo no momento da leitura — efeito semelhante ao de uma narração esportiva ao vivo.'},
+
+{c:'fatec', m:'Língua Portuguesa', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Leia os textos:\n\nTexto I:\nDECLARAÇÕES MISÓGINAS DE ZAGUEIRO CONTRA ÁRBITRA MARCAM ELIMINAÇÃO DO BRAGANTINO\n\'Não adianta a gente jogar contra São Paulo, Palmeiras, Corinthians e eles colocarem uma mulher para apitar\', diz Gustavo Marques\nFolha de São Paulo, 21 de fevereiro de 2026\n\nTexto II:\nJOGADOR DO BRAGANTINO PEGA 12 JOGOS DE SUSPENSÃO POR FALAS SEXISTAS CONTRA ARBITRAGEM\nZagueiro Gustavo Marques é punido pelo Tribunal de Justiça Desportiva de São Paulo\nFolha de São Paulo, 5 de março de 2026\n\nAo se compararem os dois textos, conclui-se corretamente que',
+ alts:['o texto II, ao colocar a expressão \'por falas sexistas\' no final da manchete, enfatiza a ação do jogador.','a identificação do atleta, em I e II, ocorre na última posição da linha fina para disfarçar o agente das falas.','o texto I destaca o preconceito cometido pelo jogador, enquanto o II destaca o jogador punido.','o termo \'misóginas\', em I, ameniza o crime que é, em II, caracterizado corretamente como \'sexista\'.','o nome dos times, em I e II, serve ao propósito de contrapor a qualidade técnica dos jogadores às falhas da arbitragem.'],
+ r:2,
+ e:'O Texto I foca no ato preconceituoso do jogador (\'Declarações misóginas... marcam eliminação\'), enquanto o Texto II foca na consequência/punição recebida por ele (\'pega 12 jogos de suspensão\'). Essa é a diferença central entre as duas manchetes.'},
+
+{c:'fatec', m:'Língua Portuguesa', f:'Fundação FAT 2026 · Vestibular FATEC',
+ q:'Leia os textos:\n\nTexto I:\nDECLARAÇÕES MISÓGINAS DE ZAGUEIRO CONTRA ÁRBITRA MARCAM ELIMINAÇÃO DO BRAGANTINO\n\'Não adianta a gente jogar contra São Paulo, Palmeiras, Corinthians e eles colocarem uma mulher para apitar\', diz Gustavo Marques\nFolha de São Paulo, 21 de fevereiro de 2026\n\nTexto II:\nJOGADOR DO BRAGANTINO PEGA 12 JOGOS DE SUSPENSÃO POR FALAS SEXISTAS CONTRA ARBITRAGEM\nZagueiro Gustavo Marques é punido pelo Tribunal de Justiça Desportiva de São Paulo\nFolha de São Paulo, 5 de março de 2026\n\nAssinale a alternativa que apresenta a reescrita correta de uma das manchetes.',
+ alts:['Eliminação do Bragantino é marcada por declarações misóginas da árbitra contra zagueiro.','Devido a falas sexistas contra a arbitragem, jogador do Bragantino é suspenso por 12 jogos.','Arbitragem suspende 12 jogos do Bragantino por falas sexistas de seu jogador.','Árbitra elimina Bragantino por declarações de zagueiro contra a misoginia.','Zagueiro elimina Bragantino por se declarar misógino para a arbitragem.'],
+ r:1,
+ e:'A reescrita mantém corretamente as relações de sujeito e causa do Texto II: o jogador (agente das falas sexistas) é quem é suspenso por 12 jogos. As demais alternativas invertem os papéis de agente/vítima (atribuindo declarações misóginas à árbitra, ou fazendo o zagueiro \'eliminar\' o próprio time).'},
+
+/* ---------------- ENEM 2025 · 1º dia (Linguagens + Ciências Humanas) ---------------- */
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'Glory Ames, from the White Earth reservation, is frustrated that despite the presence of several indigenous reservations near Moorhead, local Halloween stores still feature a western section with costumes such as “pow wow princess”.\nEven worse, despite a long-running debate about racism and cultural appropriation, often prompted by backlash against celebrities and politicians for donning offensive costumes, people continue to wear such costumes.\nLast Halloween, Ames spotted a photo on Instagram of a girl dressed as a Native American with a bullet in her forehead. She immediately reported it to the social media platform and had it removed.\n“They blatantly take certain aspects of our culture, race, religion, and use it for their advantage and ignore the people living it”, said Ames.\n(LIU, M. C. M. Disponível em: www.washingtonpost.com. Acesso em: 12 maio 2024, adaptado.)\n\nAo abordar um aspecto da celebração do Halloween, esse texto tem por objetivo',
+ alts:['denunciar a violência contra crianças indígenas.','descrever costumes tradicionais em celebrações indígenas.','valorizar as vestimentas características dos povos originários.','criticar a exploração indevida de elementos da identidade indígena.','sugerir ações de combate ao preconceito contra os povos originários.'],
+ r:3,
+ e:'O texto relata a permanência de fantasias que estereotipam indígenas e o incômodo de Ames com isso, criticando a exploração indevida de elementos da identidade indígena (D). Não há denúncia de violência infantil (A), nem descrição neutra (B) ou valorização (C) dos costumes, e o texto não propõe ações de combate ao preconceito (E), apenas critica o problema.'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'My idea of philosophy is that if it is not relevant to human problems, if it does not tell us how we can go about eradicating some of the misery in this world, then it is not worth the name of philosophy. I think Socrates made a very profound statement when he asserted that philosophy is to teach us proper living. In this day and age “proper living” means liberation from the urgent problems of poverty, economic necessity and indoctrination, mental oppression.\n(DAVIS, A. Lectures on Liberation. Washington: Smithsonian Libraries, 1971, adaptado.)\n\nNesse texto, ao discorrer sobre a relevância da filosofia, a escritora Angela Davis tem por objetivo',
+ alts:['criticá-la pela restrição temática.','vinculá-la ao universo acadêmico.','afastá-la da abordagem socrática.','aproximá-la dos problemas sociais.','responsabilizá-la pela pobreza humana.'],
+ r:3,
+ e:'Davis defende que a filosofia só vale a pena se ajudar a "erradicar a miséria do mundo", ligando-a à libertação da pobreza e da opressão, ou seja, aproximando-a dos problemas sociais (D). Ela não critica a filosofia (A), não a restringe ao meio acadêmico (B), reforça (não afasta) a visão socrática (C) e não a responsabiliza pela pobreza (E).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'It is true that all children are special, simply because they are children. But most adults are not special, and children end up as adults pretty quickly. Life then can be difficult and even disappointing. The shock of this may account for the emergence of the “snowflake generation” of university students, who are so delicate they can’t handle controversial ideas being put forward in their lectures. The roots of this fragility run deep in modern culture. So, an approach of the world that states: “Life is wonderful, you’re special and, if you are a good boy/girl, life will be amazing forever” is not a message designed to aid bouncing back from failure or confronting catastrophe. Resilience is not about feeding ego — telling your children how wonderful they are — but strengthening it.\n(LOTT, T. Disponível em: www.theguardian.com. Acesso em: 10 dez. 2017, adaptado.)\n\nNesse texto, a expressão “snowflake generation” é usada para',
+ alts:['abordar obstáculos impostos a universitários.','destacar mensagens de incentivo a estudantes.','estimular ações proativas em situações de emergência.','retratar relações conflituosas em ambiente universitário.','apontar posturas de uma juventude avessa a contrariedades.'],
+ r:4,
+ e:'A expressão descreve universitários "tão delicados" que não suportam ideias controversas, ou seja, uma juventude avessa a contrariedades (E), resultado de terem sido criados ouvindo que "a vida é maravilhosa" sem preparo para o fracasso.'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'De próprio punho\nA escrita e suas tecnologias sofrem interessantes metamorfoses, numa ciranda que vai do simples bilhete aos originais de um livro.\n\nEstranhei muito na primeira vez que escutei a expressão “de próprio punho”. Parecia que eu ia bater em alguém. Não era bem o caso. Foi numa situação bancária, dessas bem burocráticas, e eu devia escrever algo bem breve, mas com minhas mãos. Na verdade, o que importava era a autenticidade da minha caligrafia, que à época ainda era mais fluente e firme. Depois dos teclados de computador, ela rateia bastante. Minha letra, hoje, tem uma espécie de alternância: dia sim, dia não, trêmula e firme, forte e fraca, mais rotunda e mais cheia de arestas.\nÉ claro que já escrevi muito mais de próprio punho ou, numa palavra mais bonita, manuscrevi (prefiro a mão ao punho, embora ele também seja usado na tarefa). Mas isso não é um feito individual. Em larga medida, é social. Muita gente sente o mesmo que eu, isto é, escreve bem menos usando as mãos, ou melhor, empregando algum tipo de tecnologia (lápis, caneta etc.) para escrever com grafite ou tinta ou giz ou carvão ou sangue e o que mais. É importante lembrar que ainda há gente que não sabe escrever neste país, neste planeta, mas muita gente sabe e tem um combo de tecnologias mais ou menos à disposição para isso. Sou dessas pessoas privilegiadas que têm várias possibilidades, e uma delas nunca deixou de ser o uso das minhas mãos. Ainda hoje, são elas que batucam meu teclado de computador ou que tocam suavemente duas ou três telas sensíveis. Mas não expressam mais a minha letra. No lugar, aparecem Times New Roman, Arial, Calibri e mais uma centena de “letras” à minha escolha. Eu e Deus e o mundo.\nA despeito desse rol de chances e ferramentas para escrever, o manuscrito nunca deixou de pintar aqui e ali, muitas vezes como obrigação. Na escola, por exemplo, até hoje ele é soberano. No Enem também. Curioso, não? Fico pensando em que espaços e ocasiões ainda uso minha letra. Olhando ao redor, na minha casa, minha letra está em espaços muito delimitados e específicos: bilhetes. Eles estão principalmente na cozinha, em especial na porta da geladeira, a fim de manter a comunicação com meus coabitantes, sempre muito esquecidos ou relapsos. Mas também há bilhetes em post its na minha mesa do escritório, textinhos em garranchos por meio dos quais me comunico comigo mesma, a evitar um comportamento esquecido e relapso.\nNo escritório, costumo ser mais suave comigo mesma, mas também muito mais lacônica, a ponto de nem eu me entender, se passar o tempo. Em todos os casos vai minha letra, menos e mais redonda, a lápis e a tinta azul, em post its rosa-choque, colados precariamente, e todos com destino à lixeira, em breve. Justo porque eles funcionam como lembretes de tarefas e coisas que devem ser vencidas e, claro, substituídas por outras, num fluxo infinito, às vezes ansiogênico, com que a maioria dos adultos (e mais ainda as adultas) precisa conviver.\nAs formas de escrever mudam, as necessidades também, e o resultado é um elenco complexo, em que nada dispensa nada, a depender da tarefa ou da importância das coisas ou de suas funções, claro. A escrita e suas tecnologias incríveis vão se reposicionando, mudando de status, numa ciranda interessante e importante que pode ser vista à luz de certa diversidade que encontra suas oportunidades e seus efeitos, aqui e ali. Não adianta muito pensar sempre como se tudo fosse excludente. Estão aí minha farta comunicação por bilhetes, minha gaveta alegre de post its de toda cor, esperando para serem usados, e o cheque do cartório, em que quase tudo já é digital. “Do punho ao pixel” não é uma frase filosoficamente correta. O negócio é mais “o punho e o pixel”.\n(RIBEIRO, A. E. Disponível em: https://rascunho.com.br. Acesso em: 16 jan. 2024, adaptado.)\n\nNo que diz respeito ao gênero bilhete, a autora dessa crônica',
+ alts:['ressalta a formalidade na comunicação com as pessoas de sua convivência.','critica a ansiedade causada pela velocidade da comunicação.','expressa a obrigatoriedade de concisão nas anotações.','questiona a prática da escrita de próprio punho.','apresenta a diversidade de usos no cotidiano.'],
+ r:4,
+ e:'A autora relata vários usos cotidianos do bilhete manuscrito (na porta da geladeira, em post-its no escritório, com cores e suportes diferentes), evidenciando a diversidade de usos no cotidiano (E), sem questionar a escrita manual (D) nem tratar a comunicação como formal (A).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'— Vejo, disse ele com algum acanhamento, que o doutor não é nenhum pé-rapado, mas nunca é bom facilitar... Minha filha Nocência fez 18 anos pelo Natal, e é rapariga que pela feição parece moça de cidade, muito ariscazinha de modos, mas bonita e boa deveras... Coitada, foi criada sem mãe, e aqui nestes fundões. [...]\n— Ora muito que bem, continuou Pereira caindo aos poucos na habitual garrulice, quando vi a menina tomar corpo, tratei logo de casá-la.\n— Ah! é casada? perguntou Cirino.\n— Isto é, é e não é. A coisa está apalavrada. Por aqui costuma labutar no costeio do gado para São Paulo um homem de mão-cheia, que talvez o sr. conheça... o Manecão Doca...\n— Não, respondeu Cirino abanando a cabeça.\n— Pois isso é um homem às direitas, desempenado e trabucador como ele só... fura estes sertões todos e vem tangendo pontes de gado que metem pasmo. Também dizem que tem bichado muito e ajuntado cobre grosso, o que é possível, porque não é gastador nem dado a mulheres. Uma feita que estava aqui de pousada... olhe, mesmo neste lugar onde estava mecê inda agorinha, falei-lhe em casamento... isto é, dei-lhe uns toques... porque os pais devem tomar isso a si para bem de suas famílias; não acha?\n— Boa dúvida, aprovou Cirino, dou-lhe toda a razão; era do seu dever.\n(TAUNAY, A. d’E. Inocência. Disponível em: www.dominiopublico.gov.br. Acesso em: 29 fev. 2024.)\n\nNesse trecho, ao se referir à sua filha, o pai de Inocência reproduz os ideais românticos, presentes na',
+ alts:['valorização do ambiente rural na formação moral da mulher.','figura decorativa da mulher ante o protagonismo masculino.','equivalência de origem social para a harmonia do casal.','importância do dote como condição para o casamento.','aura de mistério sobre a identidade da jovem.'],
+ r:1,
+ e:'O pai negocia o casamento da filha com outro homem sem consultá-la, decidindo por ela seu destino, o que reproduz o ideal romântico da mulher como figura decorativa, subordinada ao protagonismo masculino nas decisões (B).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'O Ministério do Esporte no Brasil lançou o programa Maré Inclusiva, em 2024, ano dos Jogos Paralímpicos de Paris. Esse programa visa ampliar as oportunidades para pessoas com deficiência que desejam praticar o surf. O parasurf é a prática do surf adaptada para permitir que pessoas com deficiência pratiquem o esporte em todas as suas categorias, modalidades e manifestações. Para a Secretaria Nacional do Paradesporto, a iniciativa é mais do que um programa de esporte, é uma iniciativa que busca transformar vidas e promover a inclusão por meio do parasurf, criando um legado de igualdade e respeito.\n(Disponível em: www.gov.br/esporte. Acesso em: 6 set. 2024, adaptado.)\n\nDe acordo com esse texto, o programa voltado ao estímulo da prática do parasurf evidencia a',
+ alts:['adesão de diferentes países a programas inclusivos.','preocupação política em atender a demandas paralímpicas.','importância de uma política pública esportiva para a inclusão.','eficiência das iniciativas de inclusão em megaeventos esportivos.','escassez de investimento em práticas corporais de aventura na natureza.'],
+ r:2,
+ e:'O texto descreve um programa governamental (política pública) criado para ampliar a inclusão de pessoas com deficiência no esporte, evidenciando a importância de uma política pública esportiva para a inclusão (C).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'Art. 26-A. Nos estabelecimentos de ensino fundamental e médio, oficiais e particulares, torna-se obrigatório o ensino sobre História e Cultura Afro-Brasileira.\n§ 1º O conteúdo programático a que se refere o caput deste artigo incluirá o estudo da História da África e dos Africanos, a luta dos negros no Brasil, a cultura negra brasileira e o negro na formação da sociedade nacional, resgatando a contribuição do povo negro nas áreas social, econômica e política pertinentes à História do Brasil.\n§ 2º Os conteúdos referentes à História e Cultura Afro-Brasileira serão ministrados no âmbito de todo o currículo escolar, em especial nas áreas de Educação Artística e de Literatura e História Brasileiras.\n(BRASIL. Lei n. 10.639/2003. Disponível em: www.gov.br/planalto. Acesso em: 5 maio 2024.)\n\nO emprego da norma-padrão é justificado nesse texto',
+ alts:['pela especialização de seu público-alvo.','pela relevância cultural de seu conteúdo.','pelos contextos pedagógicos em que circula.','pela importância para os grupos étnico-raciais.','pelas características do gênero a que pertence.'],
+ r:4,
+ e:'O texto é um artigo de lei; textos legislativos exigem a norma-padrão em razão das características do gênero jurídico a que pertencem (E), independentemente da relevância do tema tratado.'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'Símbolos\nEu e tu, ante a noite e o amplo desdobramento\ndo mar, fero, a estourar de encontro à rocha nua...\nUm símbolo descubro aqui, neste momento\nesta rocha, este mar... a minha vida e a tua.\nO mar vem, o mar vai, nele há o gesto violento\nde quem maltrata e, após, se arrepende e recua.\nComo compreendo bem da rocha o sentimento!\nSão muito iguais, por certo, a minha mágoa e a sua.\nContemplo neste quadro a nossa triste vida;\ntu és dúbio mar que, na sua inconsciência,\ntem carinhos de amor e fúrias de demência!\nEu sou a dor estanque, a dor empedernida,\nsou rocha a emergir de um côncavo de areia,\nimóvel, muda, isenta e alheia ao mar, alheia.\n(MACHADO, G. Poesia completa. Rio de Janeiro: Cátedra/MEC, 1978.)\n\nNesse soneto, os traços da estética simbolista são resgatados pelo eu lírico ao',
+ alts:['rejeitar as emoções de “amor” e “mágoa”.','expressar a dubiedade do olhar sobre o outro.','representar o “eu” e o “tu” como sujeitos volúveis.','associar a sua inconsciência a elementos da natureza.','metaforizar o conflito amoroso nas imagens de “mar” e “rocha”.'],
+ r:4,
+ e:'O eu lírico compara sua relação amorosa turbulenta às imagens do mar violento e inconstante e da rocha imóvel e dolorida, metaforizando o conflito amoroso por meio de "mar" e "rocha" (E), procedimento típico da linguagem simbolista.'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'Antes do inverno chegar.\nEla tinha olhinhos brilhantes. Os mesmos de antes. Antes da fome. Antes das 17 mudanças de cidade. Dos sete filhos e dos muitos anos de trabalho dentro e fora de casa.\nEla fazia ambrosia, bolo de fubá e pedacinhos de queijo. Antes do inverno, ela plantava flores novas e diferentes para nos esperar nas próximas férias de verão.\nEla tinha o jeito de menina. Menina sapeca, correndo na grama seca do cerrado. O mesmo jeito de antes. Antes do marido (e mesmo com o marido). Antes do cansaço dos anos. Antes da dureza do trato com a terra.\nEla tinha histórias. Compridas, curtas, divertidas e verdadeiras. Mas isso foi antes. Antes das lembranças se bagunçarem feito bolas coloridas de Natal esperando para serem montadas na árvore.\nEu era sua neta. Antes do Alzheimer chegar, eu era sua neta. Mas ela é e sempre será minha avó.\n(PERSON, C. R. Borboletas no estômago: porque às vezes o título precisa ser adolescente e clichê, já que a vida exige sermos tão adultos. São Paulo: Ed. das Autoras, 2021.)\n\nA narradora, ao resgatar memórias da história de vida da avó, faz uso recorrente da locução “antes de”. Esse termo colabora para a progressão temática na medida em que',
+ alts:['relaciona eventos ocorridos simultaneamente.','estabelece uma comparação entre as lembranças.','ressalta fatos que ressignificam o momento presente.','sinaliza uma sequência que denota ações consecutivas.','apresenta uma explicação para as memórias resgatadas.'],
+ r:2,
+ e:'A repetição de "antes de" contrapõe a avó saudável do passado à avó com Alzheimer no presente, ressaltando fatos que dão novo sentido ao momento presente da narradora (C).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'No predomínio das mulheres pretas brasileiras nos Jogos Olímpicos de 2024, uma coisa chamou a atenção no pódio: elas valorizam a parte psicológica. As duas medalhistas de ouro, a judoca Beatriz Souza e a ginasta Rebeca Andrade, ressaltam, em várias entrevistas, a importância da saúde mental. Em uma dessas entrevistas, Rebeca sinaliza: “Acho que não é só sobre vencer a Simone, é sobre vencer a mim mesma. A minha briga está na minha cabeça, não está com outras pessoas. Para conseguir fazer as minhas apresentações, preciso controlar a minha cabeça, o meu corpo, e essa é a briga”. Na mesma linha, a skatista Rayssa Leal exalta a necessidade da terapia, e a Seleção Brasileira de Futebol de Mulheres tem o suporte psicológico como reforço no treinamento.\n(Disponível em: https://iclnoticias.com.br. Acesso em: 18 set. 2024, adaptado.)\n\nNesse texto, as atletas brasileiras defendem o(a)',
+ alts:['investimento na modernização de equipamentos.','subordinação do treinamento físico ao mental.','estímulo à competição entre adversárias.','aprimoramento da expressão corporal.','importância da saúde emocional.'],
+ r:4,
+ e:'As falas das atletas citadas giram em torno do cuidado psicológico e da terapia, evidenciando a importância da saúde emocional no esporte de alto rendimento (E).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'A característica fundamental no aprendizado das práticas rituais nos candomblés é o processo iniciático e participante. Durante o período de reclusão em terreiros ou rocas, o iniciado passa por uma série de ritos esotéricos (banhos rituais, raspagem da cabeça etc.), ao mesmo tempo em que começa a adquirir um complexo código de símbolos materiais (substâncias, folhas, frutos, raízes etc.) e de gestos associados a um repertório linguístico específico das cerimônias que se desenrolam nos contextos sagrados em geral e em cada terreiro em particular.\nEsse repertório linguístico, genericamente chamado de “língua de santo” na Bahia, compreende uma terminologia religiosa operacional, de caráter mágico-semântico e de aparente forma portuguesa, mas que repousa sobre sistemas lexicais de diferentes línguas africanas que provavelmente foram faladas no Brasil escravocrata, vindo a constituir uma língua ritual, que se acredita pertencer à nação do vodum, do orixá ou do inquice, e não a determinada nação africana política atual.\n(Disponível em: https://periodicos.ufba.br. Acesso em: 21 jan. 2024, adaptado.)\n\nA “língua de santo” tem sua importância para o patrimônio linguístico brasileiro por',
+ alts:['apresentar uma carga semântica mítica.','conservar elementos dos falares dos escravizados.','resgatar expressões portuguesas do período colonial.','decodificar o ritual religioso dos nossos antepassados.','favorecer a compreensão do léxico africano contemporâneo.'],
+ r:1,
+ e:'O texto explica que essa terminologia religiosa repousa sobre sistemas lexicais de línguas africanas faladas por pessoas escravizadas no Brasil, ou seja, conserva elementos desses falares (B).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'Pequenino morto\nTange o sino, tange, numa voz de choro,\nNuma voz de choro... tão desconsolado...\nNo caixão dourado, como em berço de ouro,\nPequenino, levam-te dormindo... Acorda!\nOlha que te levam para o mesmo lado\nDe onde o sino tange numa voz de choro...\nPequenino, acorda!\nQue caminho triste, e que viagem! Alas\nDe ciprestes negros a gemer no vento;\nTanta boca aberta de famintas valas\nA pedir que as fartem, a esperar que as encham...\nPequenino, acorda! Recupera o alento,\nFoge da cobiça dessas fundas valas\nA pedir que as encham.\n(CARVALHO, V. Poemas e canções. Rio de Janeiro: Saraiva, 1962, fragmento.)\n\nNesse fragmento do poema, o sentimento de luto adquire contornos expressivos e é intensificado pela',
+ alts:['descrição da paisagem de um cemitério.','recusa do eu lírico à irreversibilidade da morte.','sonoridade dos versos produzida pela pontuação.','religiosidade evocada como forma de fortalecimento.','impressão de sonho na construção da estrutura poética.'],
+ r:1,
+ e:'O eu lírico repete o pedido "Acorda!", como se recusasse aceitar que a morte da criança é definitiva, intensificando o luto pela recusa à irreversibilidade da morte (B).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'Uruku\nUrucum\nRocou\n(Bixa orellana)\nMoju, dono da água, não gosta do cheiro de urucum. Mani’ojarã, dono da mandioca, e os donos das outras plantas cultivadas também não. Eles não suportam. Por isso, os Wajãpi se untam de urucum, deixam o rosto vermelho e se perfumam com seu aroma agradável. Além disso, os seres agressores, os jarã (donos) e os espíritos terrestres, gostam do cheiro dos fluidos humanos, do sangue, do suor. Então, o urucum os dissimula, protegendo as pessoas que vão caçar, caminhar pela floresta, que estão sendo perturbadas por espíritos em sonhos ou que estão em resguardo, como os doentes. O seu uso é tão cotidiano que os Wajãpi o plantam na aldeia, para ter sempre pertinho. Como o urucum não tem jarã, não tem problema nenhum em arrancar e usar para pintar.\n(STRAPPAZZON, A. I.; SIGOLO, R. P. Jardins da história: medicinas indígenas. Recife: ObservaPICS, 2022.)\n\nEsse verbete contribui para a preservação do patrimônio linguístico nacional, pois apresenta uma',
+ alts:['explicação de um rito medicinal do povo Wajãpi.','definição de um termo na perspectiva ancestral indígena.','relação de equivalência entre vocábulos de diferentes línguas indígenas.','atualização de saberes tradicionais dos povos indígenas brasileiros.','descrição das propriedades científicas de plantas silvestres.'],
+ r:1,
+ e:'O verbete define o urucum a partir da cosmovisão Wajãpi (donos/jarã, espíritos), ou seja, apresenta a definição de um termo pela perspectiva ancestral indígena (B), e não uma descrição científica ocidental (E).'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'I: o nome do filme é roupa suja... eu assisti na minha casa... com minha mãe... tinha um... o filme era sobre um homem que colocaram... trocaram as bolsas... daí o homem levou uma bolsa cheia de dinheiro sem ele saber que na mala dele... pensando que era dele mas era errada... quando ele chegou onde ele ia trabalhar... tinha uma moça tentando abrir a porta pra fazer entrevista com uns cantores lá que tinham... daí ele perguntou... “você tá tentando abrir a porta?”... daí ele... “não... não”... daí ele disse... “ah... tá... sim”... daí ela... “é... e quero fazer uma entrevista”... daí ele disse... “você quer entrar... então pode entrar”... daí entraram... daí ficaram lá... quando ela entrou e queria fazer a entrevista um homem num deixou... daí a mulher pegou... subiu onde o homem tava trabalhando... rapaz né... onde ele tava trabalhando e ficou lá e dando o show...\n(CUNHA, M. A. F. Corpus discurso & gramática: a língua falada e escrita na cidade de Natal. Disponível em: https://deg.uff.br. Acesso em: 4 dez. 2024, adaptado.)\n\nNesse texto, a repetição da forma “daí” revela',
+ alts:['a necessidade de adequação ao interlocutor.','a origem regional do locutor.','a escolaridade do falante.','uma estratégia presente na linguagem oral.','uma ênfase em determinadas partes do discurso.'],
+ r:3,
+ e:'A repetição de "daí" para encadear os eventos narrados é típica da fala espontânea, funcionando como marcador de progressão textual próprio da linguagem oral (D), não relacionado à escolaridade ou origem regional do falante.'},
+
+{c:'enem', m:'Linguagens', f:'ENEM 2025 · 1º dia',
+ q:'TRADUZINDO O JURIDIQUÊS\n“Denego a liminar pleiteada na exordial, inobstante após a oitiva da parte adversa e da dilação probatória possa lograr alcançar um outro epílogo para o deslinde da quaestio sub examine.”\nTRADUÇÃO: Não atendo, por ora, a liminar requerida na petição inicial, ainda que possa chegar a uma outra conclusão após ouvir a outra parte e avaliar as provas produzidas.\n\n“Proposta de emenda à Constituição 269 de 2013. Aplica-se aos Governadores e Prefeitos o Regime Geral de Previdência Social, vedada a concessão graciosa, após o término do mandato, de vantagem pecuniária, verba de representação, pensão ou subsídio.”\nTRADUÇÃO: Torna-se proibido pagar benefícios vitalícios para ex-prefeitos e ex-governadores.\n(Superinteressante, n. 322, ago. 2013, adaptado.)\n\nNesse texto, contribui para a construção da ironia a tradução das passagens escritas em “juridiquês” para uma variedade',
+ alts:['padrão, que alcança o público em geral.','histórica, que registra a evolução das leis.','coloquial, que reproduz as relações sociais cotidianas.','erudita, que resgata a origem latina da língua portuguesa.','técnica, que facilita a circulação de informações no sistema judiciário.'],
+ r:0,
+ e:'A ironia surge do contraste entre o "juridiquês" hermético e sua tradução em linguagem-padrão simples e acessível ao público em geral (A), revelando como o texto original era desnecessariamente complicado para dizer algo simples.'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Macedônia do Norte\nAcordo entra em vigor e país muda oficialmente de nome\nEntrou em vigor, em 2019, o acordo que determina a mudança de nome da Macedônia para Macedônia do Norte. A troca põe fim — ao menos por enquanto — no impasse entre essa antiga república da Iugoslávia e a vizinha Grécia. O governo grego se opunha ao uso do nome Macedônia pelo novo país vizinho porque a Grécia tem uma província no norte com o mesmo nome. Por causa desse impasse, a Grécia bloqueou as negociações de adesão de seu vizinho à União Europeia. Depois de negociações, as duas partes chegaram a um acordo.\n(Disponível em: https://g1.globo.com. Acesso em: 7 nov. 2021, adaptado.)\n\nPara o país originado da antiga Iugoslávia, a mudança de nome é uma estratégia política para',
+ alts:['criar a moeda própria.','proteger a cultura local.','subjugar a minoria étnica.','expandir o território nacional.','intensificar a integração regional.'],
+ r:4,
+ e:'A mudança de nome resolveu o impasse com a Grécia que bloqueava a adesão do país à União Europeia, mostrando que o objetivo era intensificar a integração regional (E), não expandir território ou proteger cultura.'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'A credulidade dos ouvintes aumenta o descaramento do narrador, e o descaramento deste conquista-lhes a credulidade. A eloquência, quando levada a seu patamar mais alto, deixa pouco lugar à razão ou à reflexão, mas, dirigindo-se inteiramente à imaginação e aos afetos, cativa os ouvintes condescendentes e subjuga-lhes o entendimento.\n(HUME, D. Uma investigação sobre o entendimento humano e sobre os princípios da moral. São Paulo: Edunesp, 2003.)\n\nNo contexto do século XVIII, o autor propõe uma reflexão radical acerca da arte da eloquência, restringindo-a ao',
+ alts:['sistema de crenças, conforme a proposta kantiana de objetividade do conhecimento.','campo dos absolutos, semelhante ao entendimento medieval dos Universais.','domínio da lógica, consoante a compreensão aristotélica nos Analíticos.','paradigma da racionalidade, alinhado ao modelo cartesiano de método.','âmbito da persuasão, análogo às críticas platônicas aos sofistas.'],
+ r:4,
+ e:'Hume descreve a eloquência como algo que se dirige à imaginação e aos afetos, não à razão, cativando e subjugando o entendimento — isso a restringe ao âmbito da persuasão, semelhante à crítica de Platão aos sofistas, que usavam a retórica para convencer sem compromisso com a verdade (E).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'O direito não é a justiça. O direito é o elemento do cálculo, é justo que haja um direito, mas a justiça é incalculável, ela exige que se calcule o incalculável; e as experiências aporéticas são experiências tão improváveis quanto necessárias da justiça, isto é, são momentos em que a decisão entre o justo e o injusto nunca é garantida por uma regra.\n(DERRIDA, J. Força de lei. São Paulo: Martins Fontes, 2010, adaptado.)\n\nDe acordo com o texto, ainda que estejam em desconformidade com o ordenamento jurídico, são exemplos de ação justa:',
+ alts:['Casos de desobediência civil.','Repressões do aparato estatal.','Conflitos de natureza intercontinental.','Manifestações do movimento sindical.','Mobilizações de agremiações estudantis.'],
+ r:0,
+ e:'Para Derrida, a justiça pode exigir decisões que vão além (ou contra) as regras do direito positivo. A desobediência civil é o exemplo clássico de ação justa realizada fora do ordenamento jurídico vigente (A).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Sinal fechado\nOlá, como vai?\nEu vou indo e você, tudo bem?\nTudo bem, eu vou indo, correndo\nPegar meu lugar no futuro, e você?\nTudo bem, eu vou indo em busca\nDe um sono tranquilo, quem sabe?\nQuanto tempo...\nPois é, quanto tempo...\nMe perdoe a pressa\nÉ a alma dos nossos negócios...\nOh, não tem de que\nEu também só ando a cem\nQuando é que você telefona?\nPrecisamos nos ver por aí\nPra semana, prometo,\nTalvez nos vejamos, quem sabe?\nQuanto tempo...\nPois é, quanto tempo...\nTanta coisa que eu tinha a dizer\nMas eu sumi na poeira das ruas\nEu também tenho algo a dizer\nMas me foge a lembrança\nPor favor, telefone, eu preciso beber\nAlguma coisa rapidamente\nPra semana...\nO sinal...\nEu procuro você...\nVai abrir! Vai abrir!\nPrometo, não esqueço\nPor favor, não esqueça\nNão esqueço, não esqueço\nAdeus...\n(PAULINHO DA VIOLA. Foi um rio que passou em minha vida. Rio de Janeiro: Odeon, 1970.)\n\nA letra da canção apresenta a permanência de uma situação da vida cotidiana ao destacar a',
+ alts:['diminuição do comportamento competitivo.','importância da memória coletiva.','redução da mobilidade urbana.','efemeridade dos vínculos de afetividade.','obsolescência dos meios de comunicação.'],
+ r:3,
+ e:'A canção retrata promessas vazias ("prometo", "pra semana") entre pessoas apressadas que nunca voltam a se encontrar, evidenciando a efemeridade dos vínculos afetivos na correria da vida urbana (D).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Não há consenso em torno do nome dado à pandemia, tendo, desde o seu início, sido chamada de gripe espanhola provavelmente por causa da desinformação em torno da notícia sobre sua origem. Uma das hipóteses deriva da neutralidade espanhola na Primeira Guerra Mundial e a consequente liberdade de imprensa naquele país, maior do que nos demais países envolvidos no conflito. Hoje existe o consenso entre virologistas e epidemiologistas de que o vírus da gripe não se originou na Espanha. Entretanto, dificilmente essa pandemia deixará de ser conhecida como gripe espanhola.\n(KLAJMAN, C. A gripe sob a ótica da história ecológica. História Revista, n. 3, set.-dez. 2015, adaptado.)\n\nDe acordo com o texto, a denominação recebida pela pandemia do começo do século XX foi determinada pelo(a)',
+ alts:['precariedade dos conhecimentos da medicina militar.','retaliação da tríplice aliança aos soldados desertores.','controle dos relatos oriundos de campos de batalha.','emprego de armas biológicas em confrontos transnacionais.','circulação de refugiados contaminados em áreas conflagradas.'],
+ r:2,
+ e:'Como a Espanha era neutra na Primeira Guerra Mundial, sua imprensa era livre, enquanto os países em guerra controlavam/censuravam os relatos vindos dos campos de batalha (C), fazendo parecer que a doença surgira apenas na Espanha.'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Por séculos, o Rio Reno tem sido uma rota de navegação confiável, ajudando a criar gigantes fabris ao longo de suas margens. No entanto, esses dias parecem estar no fim, pois o nível da água tem diminuído regularmente, o que impede a navegação fluvial do final do verão até o outono. Isso mostra como a crise climática atinge as economias dos países ricos.\n(Disponível em: www.estadao.com.br. Acesso em: 10 ago. 2023, adaptado.)\n\nQual é o efeito econômico do problema ambiental apresentado no texto?',
+ alts:['Supressão da extração de minério.','Intensificação da atividade de pesca.','Encarecimento da logística de transporte.','Inviabilização da agricultura de subsistência.','Sucateamento da indústria de transformação.'],
+ r:2,
+ e:'A redução do nível do rio impede a navegação fluvial, obrigando a busca por meios de transporte alternativos e mais caros, o que encarece a logística de transporte de mercadorias (C).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Em 1872, havia mais de 1 milhão de votantes, correspondentes a 13% da população livre. Em 1886, votaram nas eleições parlamentares pouco mais de 100 mil eleitores, ou 0,8% da população total. Houve um corte de quase 90% do eleitorado. O dado é chocante, sobretudo se lembrarmos que a tendência de todos os países europeus da época era na direção de ampliar os direitos políticos. O mais grave é que esse retrocesso foi duradouro. A Proclamação da República não alterou o quadro.\n(CARVALHO, J. M. Cidadania no Brasil. Rio de Janeiro: Civilização Brasileira, 2002, adaptado.)\n\nDe acordo com o texto, a participação no processo eleitoral brasileiro após a Reforma de 1881 sofreu uma variação que se explica pela',
+ alts:['restrição de gênero.','exclusão de imigrantes.','comprovação de domicílio.','exigência da alfabetização.','obrigatoriedade do sufrágio.'],
+ r:3,
+ e:'A Reforma Saraiva de 1881 excluiu do voto os analfabetos, o que explica a drástica redução do eleitorado brasileiro entre 1872 e 1886 (D).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'O corpo de cidadãos é o poder supremo dos Estados. A supremacia pode residir ou num homem, ou na minoria, ou em todos. Sempre que o Um, ou a Minoria, ou Todos governam, tendo em vista o bem-estar comum, essas constituições são justas; mas se procuram apenas o benefício de uma das partes, seja ela o Um, a Minoria ou Todos, estabelece-se um desvio.\n(ARISTÓTELES. Política. São Paulo: Nova Cultural, 2000.)\n\nNo excerto encontra-se a base da teoria clássica das três formas de governo representadas pela',
+ alts:['tirania, oligarquia e república.','burocracia, autarquia e império.','ditadura, autocracia e anarquia.','plutocracia, tecnocracia e demagogia.','monarquia, aristocracia e democracia.'],
+ r:4,
+ e:'Aristóteles classifica como justos os governos exercidos por um, por poucos ou por todos visando o bem comum: monarquia, aristocracia e democracia, respectivamente (E).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Em toda a sua carreira política, Getúlio Vargas sempre contara com o seu talento pessoal de persuasão e poder de manipulação. Agora, porém, seus amigos começavam a perceber que ele parecia envelhecido e cansado. A principal figura da oposição, concordavam eles, era o belicoso jornalista Carlos Lacerda. Se ao menos pudessem “removê-lo” do cenário político, talvez Vargas se salvasse da situação. Esses seguidores decidiram tomar o assunto em suas próprias mãos com o atentado da Rua Tonelero.\n(SKIDMORE, T. Brasil: de Getúlio a Castelo. Rio de Janeiro: Paz e Terra, 2003, adaptado.)\n\nNesse contexto, a ação dos aliados de Getúlio Vargas teve como consequência imediata o(a)',
+ alts:['intensificação dos ataques do grupo udenista.','intervenção dos sindicatos no conflito partidário.','mobilização da sociedade na defesa do governo.','abandono da censura aos meios de comunicação.','apoio dos parlamentares aos candidatos oposicionistas.'],
+ r:0,
+ e:'O atentado da Rua Tonelero, que feriu Lacerda e matou o major Rubens Vaz, teve efeito contrário ao pretendido: intensificou os ataques da oposição udenista contra Vargas, precipitando a crise que culminou em seu suicídio (A).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'TEXTO I\nEm conjunto: todo e não todo, unido e separado, em consonância e em dissonância. De todos um e de um todos. (Fragmento B10)\n\nTEXTO II\nDeus é dia-noite, inverno-verão, guerra-paz, saciedade-fome. (Fragmento B67)\n(Pré-socráticos. São Paulo: Nova Cultural, 1996.)\n\nA característica do pensamento do filósofo Heráclito, registrada nos fragmentos mencionados, é a ênfase na',
+ alts:['qualidade imperecível do mundo.','degradação material da natureza.','imobilidade imanente do universo.','distribuição dicotômica do cosmos.','desordem incontornável das coisas.'],
+ r:3,
+ e:'Os fragmentos apresentam pares de opostos complementares (dia-noite, inverno-verão, guerra-paz), evidenciando a ênfase de Heráclito na distribuição dicotômica do cosmos, em que os contrários se equilibram (D).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Entre esses preconceitos estava o canibalismo. A prática não era, porém, uma mentira, uma invenção europeia, mas um ritual controlado por regras. Entre os tupis, por exemplo, os guerreiros se sentiam honrados quando morriam em um banquete canibal. Para os europeus, no entanto, comer carne humana era abominável, pois nem mesmo os leões ingeriam seus semelhantes. Portanto, para os conquistadores, o canibalismo era sinônimo de barbarismo e da incapacidade de se autogovernar.\n(RAMINELLI, R. Canibalismo para alemão ver. In: FIGUEIREDO, L. (Org.). História do Brasil para ocupados. Rio de Janeiro: Casa da Palavra, 2013, adaptado.)\n\nNo texto, europeus e ameríndios atribuíram à prática relatada, respectivamente, o significado de',
+ alts:['selvageria — empoderamento.','impetuosidade — resistência.','fanatismo — humilhação.','intolerância — violência.','repressão — justiça.'],
+ r:0,
+ e:'Para os europeus, o canibalismo era prova de selvageria/barbárie; para os tupis, morrer em um banquete canibal era motivo de honra guerreira, uma forma de empoderamento (A).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Fragmentada em pequenos grupos, fragilizada pela ausência de algum tipo de organização ampla, tendo que carregar o peso do preconceito racial que se transfere do negro para a cultura negra, a religião dos orixás tem poucas chances de se sair melhor na competição — desigual — com outras religiões. Silenciosamente, assistimos hoje a um verdadeiro massacre das religiões afro-brasileiras.\n(PRANDI, R. O Brasil com axé. Estudos Avançados, n. 52, dez. 2004.)\n\nNo processo de invisibilização dos cultos afro-brasileiros, o texto associa os seguintes elementos essenciais:',
+ alts:['Ausência de soluções partidárias e rejeição da laicidade.','Precariedade de coesão representativa e recusa da alteridade.','Insuficiência de estruturas decisórias e exclusão da dialogicidade.','Inexistência de direitos constitucionais e negação do ecumenismo.','Efemeridade das relações políticas e debilidade do pertencimento étnico.'],
+ r:1,
+ e:'O texto associa a fragmentação em pequenos grupos (falta de coesão representativa) ao preconceito racial transferido à cultura negra (recusa da alteridade), respectivamente (B).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Em decorrência da naturalização da inferioridade social da mulher e da concepção de justiça do Estado, baseada na igualdade abstratamente concebida, torna-se possível convencer o Estado burguês a conceber e implementar políticas públicas cujo conteúdo se define pela discriminação positiva de mulheres, embora isso aparentemente seja paradoxal.\n(SAFFIOTI, H.; ALMEIDA, S. S. Violência de gênero, poder e impotência. Rio de Janeiro: Revinter, 1995, adaptado.)\n\nNo contexto atual, qual medida atende ao tipo de política pública abordada no texto?',
+ alts:['Ampliação do sufrágio universal.','Diminuição da jornada de trabalho.','Extinção do crime de feminicídio.','Redução da licença-maternidade.','Criação de delegacia especializada.'],
+ r:4,
+ e:'A "discriminação positiva" mencionada por Saffioti se traduz em medidas específicas voltadas às mulheres, como a criação de delegacias especializadas de atendimento à mulher (E).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Durante a realeza, e nos primeiros anos republicanos, as leis eram transmitidas oralmente de uma geração para outra. A ausência de uma legislação escrita permitia aos patrícios manipular a justiça conforme seus interesses.\n(COULANGES, F. A cidade antiga. São Paulo: Martins Fontes, 2000.)\n\nA conjuntura sociopolítica da Roma Antiga, conforme apresentada no texto, foi contestada pelos',
+ alts:['monarcas, que queriam expandir o código jurídico.','plebeus, que almejavam participar da vida política.','nobres, que desejavam superar a relação de dependência.','camponeses, que aspiravam diminuir a jornada de trabalho.','estrangeiros, que ambicionavam acessar os espaços públicos.'],
+ r:1,
+ e:'A manipulação das leis orais pelos patrícios foi contestada pelos plebeus, que reivindicavam leis escritas e maior participação política, movimento que culminaria na Lei das XII Tábuas (B).'},
+
+{c:'enem', m:'Ciências Humanas', f:'ENEM 2025 · 1º dia',
+ q:'Pela falta de chuvas, a geração de energia eólica, solar e térmica atingiu níveis recordes em agosto de 2021, quando as hidrelétricas ficaram com cerca de 50% do total. Para um professor da Universidade Federal da Bahia, essa queda não é uma surpresa. “Não aconteceu de uma hora para outra. Se olharmos o mapa do Brasil, um dos grandes provedores de água é a Floresta Amazônica. Se você diminui a floresta, diminui a quantidade de água que vai para a atmosfera”, explica.\n(BORGES, T. O fantasma do apagão. Disponível em: www.correio24horas.com.br. Acesso em: 9 out. 2021, adaptado.)\n\nDe acordo com o texto, a dificuldade na produção de energia é causada pela alteração da(s)',
+ alts:['variável em pesquisas meteorológicas.','paisagem em locais estratégicos.','demandas em regiões industriais.','metas em acordos climáticos.','geologia em áreas naturais.'],
+ r:1,
+ e:'O desmatamento altera a paisagem da Floresta Amazônica, região estratégica para o regime de chuvas do país, reduzindo a umidade que abastece os rios e, consequentemente, as hidrelétricas (B).'},
+
+/* ---------------- ENEM 2025 · 2º dia (Ciências da Natureza + Matemática) ---------------- */
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'O fruto do cajueiro é um aquênio repleto de um líquido escuro, quase preto, cáustico e inflamável. Esse líquido da casca da castanha do caju (LCC) representa aproximadamente 25% da massa da castanha e é um subproduto do agronegócio do caju. Quando submetido a altas temperaturas, o ácido anacárdico presente no LCC é convertido a cardanol, que recebe a denominação de LCC técnico (a reação envolve a perda de CO2 do grupo carboxila do ácido anacárdico, formando o cardanol).\n\nO LCC técnico é produzido por meio de uma reação orgânica do tipo',
+ alts:['hidrólise.','fenilação.','esterificação.','hidrogenação.','descarboxilação.'],
+ r:4,
+ e:'O ácido anacárdico possui um grupo carboxila (-COOH) que, sob aquecimento, perde CO2 (descarboxilação), formando o cardanol. Não há adição de água (hidrólise), de hidrogênio (hidrogenação) nem formação de éster (esterificação), tampouco introdução de um grupo fenila (fenilação).'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'A química nuclear é uma importante ferramenta na produção de substâncias utilizadas na área da saúde humana. A radiação emitida pelo cobalto-60 é utilizada na medicina como ferramenta de diagnóstico e no tratamento do câncer. No entanto, esse radioisótopo tem um tempo de armazenamento limitado, pois seu tempo de meia-vida é de 5,3 anos. Considere um frasco com uma amostra contendo 2,00 mg de cobalto-60, armazenado durante um período de 26,5 anos.\n\nA massa de cobalto-60, em miligrama, que restará ao final desse tempo é mais próxima de',
+ alts:['2,00 mg.','1,00 mg.','0,40 mg.','0,13 mg.','0,06 mg.'],
+ r:4,
+ e:'26,5 anos correspondem a 26,5/5,3 = 5 meias-vidas. A massa restante é 2,00 mg × (1/2)^5 = 2,00/32 ≈ 0,06 mg.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'Golden Rice, ou arroz dourado, é uma variedade de arroz enriquecida em betacaroteno, precursor da vitamina A. Foi desenvolvida para ajudar a combater a doença decorrente da deficiência dessa vitamina. Para a obtenção dessa variedade de arroz, foram utilizados métodos de engenharia genética.\n\nEsse alimento contribui para diminuir a carência associada a qual doença?',
+ alts:['Hemofilia.','Escorbuto.','Raquitismo.','Cegueira noturna.','Anemia perniciosa.'],
+ r:3,
+ e:'A vitamina A é essencial para a formação dos pigmentos visuais dos bastonetes da retina; sua deficiência causa cegueira noturna (hemeralopia). Hemofilia é genética, escorbuto decorre da falta de vitamina C, raquitismo da falta de vitamina D, e anemia perniciosa da falta de vitamina B12.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'A maioria dos seres vivos tem um relógio biológico (ciclo circadiano), que regula as mudanças metabólicas e comportamentais de acordo com o ciclo de 24 horas de rotação da Terra. Em 2015, um artigo científico mostrou ser possível a transferência dos genes do relógio circadiano da cianobactéria Synechococcus elongatus para o genoma da bactéria Escherichia coli, um organismo não circadiano.\n\nEstarão presentes no organismo geneticamente modificado os genes do',
+ alts:['metabolismo de E. coli, apenas.','ciclo circadiano de E. coli, apenas.','metabolismo de S. elongatus e do ciclo circadiano de E. coli.','ciclo circadiano de S. elongatus e do metabolismo de E. coli.','ciclo circadiano de S. elongatus e do ciclo circadiano de E. coli.'],
+ r:3,
+ e:'A engenharia genética inseriu apenas os genes do relógio circadiano de S. elongatus no genoma de E. coli, que manteve os próprios genes de metabolismo (E. coli não tinha ciclo circadiano próprio para perder).'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'Os funcionários de um zoológico observaram um aumento na taxa de mortalidade de aves aquáticas por afogamento. Um grupo de biólogos analisou o comportamento das aves por várias semanas e observou que elas apresentavam dificuldade de flutuação, por causa do encharcamento das penas com água.\n\nO aumento na taxa de mortalidade dessas aves estava associado a uma redução na',
+ alts:['dilatação do papo.','reposição de penas das asas.','secreção da glândula uropigial.','formação da membrana natatória.','largura das cavidades de ossos pneumáticos.'],
+ r:2,
+ e:'A glândula uropigial produz óleo que as aves aquáticas espalham nas penas para impermeabilizá-las. A redução dessa secreção faz as penas encharcarem, prejudicando a flutuação.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'Réguas elétricas são dispositivos que permitem a ligação segura e simultânea de dois ou mais aparelhos eletroeletrônicos à rede elétrica. Uma estudante comprou uma régua com seis tomadas. Essa régua suporta uma intensidade máxima de corrente elétrica igual a 20 A. Acima desse valor, o fusível de segurança da régua se rompe, inutilizando-a até que um novo fusível seja instalado. As potências nominais de alguns aparelhos são:\nLuminária de LED: 5 W\nComputador: 250 W\nImpressora a laser: 660 W\nSecador de cabelos: 750 W\nCafeteira: 900 W\nCondicionador de ar portátil: 1 100 W\n\nEm um dia quente, a estudante mantém o computador e o condicionador de ar portátil ligados à régua permanentemente. Nessa situação, ela tenta realizar algumas atividades, uma de cada vez, na seguinte ordem:\n1º – imprimir um trabalho escolar;\n2º – fazer um café com a cafeteira;\n3º – ligar a luminária;\n4º – secar os cabelos.\nA régua foi ligada à tensão elétrica de 110 V.\n\nConsiderando a ordem das tentativas, quantas atividades a estudante conseguiu realizar sem queimar o fusível?',
+ alts:['4','3','2','1','0'],
+ r:3,
+ e:'A corrente base (computador + ar-condicionado) é (250+1100)/110 ≈ 12,3 A. Ao ligar a impressora, sobe para (1350+660)/110 ≈ 18,3 A, abaixo de 20 A — a impressão é concluída. Ao tentar ligar a cafeteira em seguida, a corrente seria (1350+900)/110 ≈ 20,5 A, acima de 20 A, queimando o fusível. A régua fica inutilizada e as demais atividades não são realizadas: apenas 1 atividade foi concluída.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'TEXTO I\n"As mariposas\nAs mariposa, quando chega o frio\nFica dando volta em volta da lâmpida pra se esquentá." [sic]\n(Adoniran Barbosa, fragmento de canção.)\n\nTEXTO II\nAs mariposas se aproximam das lâmpadas atraídas pela luz, pois, sendo basicamente criaturas noturnas, estão adaptadas a seguir o brilho da lua, em um processo conhecido como orientação transversal. Assim, o que o sambista Adoniran Barbosa, no Texto I, descreve não é a causa, mas sim uma das consequências possíveis dessa aproximação. De fato, o calor gerado pelas lâmpadas, sobretudo as incandescentes, pode aquecer as mariposas.\n\nNesse contexto, o processo de transferência de calor para as mariposas que independe da presença de fluidos é a',
+ alts:['reflexão.','refração.','irradiação.','dispersão.','convecção.'],
+ r:2,
+ e:'A irradiação (radiação térmica) transfere calor por meio de ondas eletromagnéticas, não necessitando de um meio material (fluido) para se propagar, ao contrário da convecção, que depende de fluidos.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'Os sapinhos-ponta-de-flecha constituem um grupo de espécies encontradas na América Central e do Sul. Seus venenos são obtidos por meio do consumo de algumas formigas e cupins que se alimentam de plantas que contêm esses venenos. Esses anfíbios são usados para envenenar as flechas das zarabatanas dos caçadores nativos. Quando capturados e criados em condições artificiais, ou quando nascidos em cativeiro, não são tóxicos.\n\nA perda da capacidade de se obter a toxina nos nascidos em cativeiro é causada pela',
+ alts:['diferença de umidade entre os ambientes.','ausência de alimentação natural.','adaptação ao novo ambiente.','mudança de comportamento.','variabilidade genética.'],
+ r:1,
+ e:'O veneno não é produzido pelo próprio sapo, mas obtido indiretamente da dieta (formigas e cupins que consomem plantas tóxicas). Em cativeiro, essa alimentação natural não está disponível, por isso os sapos não acumulam a toxina.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'O bioma Cerrado é caracterizado por apresentar ampla e natural diversidade de espécies vegetais. Nos últimos tempos, o homem vem modificando esse cenário pela inserção de plantas exóticas nesse ambiente. Exemplo disso é o cultivo do capim-gordura, nativo do continente africano e utilizado nesse tipo de ecossistema como forma de pastagem. É importante ressaltar que essa espécie vegetal é capaz de se espalhar por grandes áreas, devido à sua agressividade e poder competitivo.\n\nEm longo prazo, essa ação do homem pode gerar qual consequência?',
+ alts:['Diversificar nichos ecológicos.','Assorear as nascentes do bioma.','Dificultar a infiltração de água na terra.','Diminuir as espécies nativas do bioma.','Contribuir com a redução das queimadas.'],
+ r:3,
+ e:'Uma espécie exótica agressiva e competitiva tende a dominar o ambiente, competindo por recursos (luz, água, nutrientes) e deslocando as espécies nativas, reduzindo a biodiversidade original do bioma.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'As usinas termonucleares produzem energia elétrica a partir da geração de energia térmica proveniente das reações nucleares. Essas usinas funcionam por meio de dois circuitos — o circuito primário (vaso de pressão, pressurizador e bomba) e o circuito secundário (gerador de vapor, turbina, condensador, tanque de alimentação e bombas) — além de um sistema de água de refrigeração, formado por uma bomba ligada a uma fonte hídrica natural.\nDurante a operação da usina, se o sistema de água de refrigeração funcionar de forma ineficiente, pode causar poluição térmica, comprometendo a vida no ecossistema aquático.\n\nPara o ecossistema aquático, a ineficiência do sistema de água de refrigeração tem como consequência a',
+ alts:['diminuição do pH.','liberação de gases poluentes.','contaminação por combustíveis.','liberação de elementos radioativos.','diminuição da solubilidade do gás oxigênio.'],
+ r:4,
+ e:'A água de refrigeração ineficiente eleva a temperatura do corpo hídrico (poluição térmica). O aumento de temperatura reduz a solubilidade de gases em água, incluindo o oxigênio dissolvido, prejudicando a respiração dos organismos aquáticos.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'No início do século XX, as fórmulas das substâncias eram representadas de modo diferente do atual. Uma fotografia de 1909 registra uma aula de química em um colégio de Santos (SP), na qual é possível identificar como os compostos químicos eram representados: o nitrogênio era chamado de azoto e representado pelo símbolo Az. Na lousa, via-se a equação da adição do oxigênio atômico (O) ao monóxido de nitrogênio (AzO), formando o dióxido de nitrogênio (AzO2). Analogamente, o nitrato de sódio era representado por NaAzO3.\n\nEm 1909, as representações das substâncias ácido nítrico e cloreto de cálcio, tendo por base essas informações e seguindo a mesma lógica, seriam, respectivamente:',
+ alts:['HAzO3 e CaCl2','HAz3O e Ca2Cl','H3AzO4 e CaCl','HAz3O e KCl2','HAzO2 e KCl'],
+ r:0,
+ e:'Seguindo o padrão NaAzO3 (nitrato de sódio, NaNO3), o ácido nítrico (HNO3) seria escrito HAzO3, substituindo o hidrogênio no lugar do sódio. O cloreto de cálcio, CaCl2, não envolve nitrogênio, então mantém sua fórmula usual.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'O monstro de gila, um lagarto encontrado em um deserto dos Estados Unidos, apresenta adaptações à falta de alimento nesse ambiente. Esse lagarto possui um hormônio que controla os níveis de açúcar em seu próprio sangue. Foi observado que esse hormônio também controla os níveis de açúcar no sangue de pessoas diabéticas.\n\nConsiderando que animais de um mesmo grupo taxonômico podem apresentar características adaptativas semelhantes em ambientes similares, onde seria mais provável encontrar lagartos com essas características no território brasileiro?',
+ alts:['Cerrado.','Pampas.','Caatinga.','Restinga.','Pantanal.'],
+ r:2,
+ e:'O monstro de gila vive em ambiente desértico. No Brasil, o bioma com características mais semelhantes a um deserto (clima semiárido, escassez de água e alimento) é a Caatinga, favorecendo adaptações convergentes semelhantes.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'Existe um processo de purificação de água em que são removidos os sais dissolvidos. A água que passa por esse processo é muito utilizada em laboratórios de química, em indústrias (como solvente) e em baterias de carros, entre outros usos. Entretanto, esse tipo de água não é adequado para ingestão, pois pode causar problemas de saúde, como carência iônica e diarreia.\n\nEssa água é chamada de',
+ alts:['dura.','pesada.','sanitária.','destilada.','oxigenada.'],
+ r:3,
+ e:'A água destilada é obtida por destilação, processo que remove os sais e demais solutos dissolvidos, sendo por isso amplamente usada em laboratórios e indústrias, mas inadequada para consumo por não conter os íons minerais necessários ao organismo.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'Por que os olhos ficam vermelhos em algumas fotografias?\nEm fotos tiradas com câmeras fotográficas antigas, por vezes as pessoas aparecem com os olhos vermelhos. Isso ocorre porque a luz do flash da câmera incide diretamente no globo ocular, sendo refletida por uma região repleta de vasos sanguíneos.\n\nEsse efeito é mais comum à noite ou em lugares pouco iluminados porque, com a pupila',
+ alts:['dilatada, chega mais luz à retina.','retraída, chega mais luz vermelha à retina.','retraída, chega mais luz vermelha aos bastonetes.','retraída, chegam menos luzes azul e verde aos cones.','dilatada, chegam menos luzes azul e verde aos bastonetes.'],
+ r:0,
+ e:'Em ambientes escuros, a pupila se dilata para captar mais luz. Isso permite que mais luz do flash entre no olho e seja refletida pelos vasos sanguíneos da retina, intensificando o efeito de olhos vermelhos na fotografia.'},
+
+{c:'enem', m:'Ciências da Natureza', f:'ENEM 2025 · 2º dia',
+ q:'O sashimi (filé de peixe cru) de baiacu é uma iguaria muito apreciada no Japão. Entretanto, sua ingestão pode causar a morte por parada respiratória, pois esse peixe contém uma potente neurotoxina termoestável, a tetrodotoxina, que é produzida e armazenada nas gônadas e vísceras.\n\nQue ação poderia evitar essa intoxicação?',
+ alts:['Criar os peixes em cativeiro.','Realizar a pesca com redes.','Consumir peixes cozidos ou fritos.','Preparar o peixe em condições adequadas de higiene.','Manusear o peixe sem provocar o rompimento dos órgãos internos.'],
+ r:4,
+ e:'Como a toxina é termoestável (não é destruída pelo cozimento) e está concentrada nas gônadas e vísceras, o risco de intoxicação é evitado manuseando o peixe com cuidado, sem romper esses órgãos internos durante o preparo.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Uma fábrica de tijolos ecológicos com 3 funcionários, cada um trabalhando 6 horas diárias, produz 720 unidades por dia. Para atender ao crescimento da demanda por esse tipo de tijolo, essa fábrica passou a ter 5 funcionários, cada um trabalhando 9 horas por dia, aumentando, assim, sua capacidade de produção. Todos os funcionários produzem igual quantidade de tijolos a cada hora, independentemente de trabalharem 6 ou 9 horas diárias.\n\nO número de tijolos fabricados diariamente após o aumento da capacidade de produção é',
+ alts:['800.','1 080.','1 200.','1 800.','2 520.'],
+ r:3,
+ e:'A produção por hora-funcionário é 720/(3×6) = 40 tijolos. Com 5 funcionários trabalhando 9 horas, a produção total-hora é 5×9=45 horas-funcionário, gerando 45×40 = 1 800 tijolos por dia.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Quatro candidatos se apresentaram para realizar a prova de um concurso. Antes de iniciar a prova, os celulares dos quatro candidatos foram recolhidos pelo aplicador, que os guardou, cada um, dentro de um envelope preto. Ao término da prova, o aplicador devolveu os quatro envelopes com os celulares aos quatro candidatos, de maneira aleatória, já que não havia feito a identificação dos envelopes.\n\nA probabilidade de que todos os candidatos tenham recebido de volta os envelopes com os seus respectivos celulares é',
+ alts:['1/2','1/10','1/16','1/24','1/256'],
+ r:3,
+ e:'Há 4! = 24 formas de distribuir os 4 envelopes entre os 4 candidatos. Apenas uma dessas distribuições faz cada um receber exatamente o próprio celular. Logo, a probabilidade é 1/24.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Uma pessoa pretende instalar um kit de gás natural veicular (GNV) em seu carro. Na loja escolhida para a compra e instalação desse kit, havia cinco modelos de cilindro para armazenamento do gás, cujas capacidades, em metro cúbico, eram, respectivamente: 10, 14, 17, 21 e 25. O preço do cilindro é proporcional à sua capacidade. Esse carro rodará 30 km diariamente, 7 dias por semana, e o consumo do GNV é de 1 m³ a cada 13 km rodados. A pessoa escolherá o modelo de cilindro de menor preço que garanta apenas um abastecimento semanal.\n\nNessas condições, qual será a capacidade, em metro cúbico, do cilindro escolhido por essa pessoa?',
+ alts:['10','14','17','21','25'],
+ r:2,
+ e:'O consumo semanal é 30 km × 7 dias = 210 km, o que equivale a 210/13 ≈ 16,15 m³ de gás. Como o preço é proporcional à capacidade, deve-se escolher o menor cilindro capaz de armazenar pelo menos essa quantidade: o de 17 m³ (o de 14 m³ seria insuficiente).'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'No atletismo, um grande desafio da prova de 100 metros rasos é a sua conclusão em um tempo abaixo da marca de referência dos 10,00 segundos. Vários atletas já alcançaram esse feito. Em 2009, o jamaicano Usain Bolt estabeleceu o recorde mundial masculino dessa prova, com o tempo de 9,58 segundos.\n\nQual é a diferença, em segundo, entre a marca de referência e a marca estabelecida por Usain Bolt em 2009?',
+ alts:['0,02','0,42','0,52','1,02','1,42'],
+ r:1,
+ e:'A diferença é 10,00 − 9,58 = 0,42 segundo.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'No entorno de uma lagoa circular, cujo raio mede 1 km, há uma ciclovia. Devido aos frequentes roubos de bicicleta, a prefeitura planeja alocar policiais em posições estratégicas para patrulhar essa ciclovia, de forma a torná-la totalmente protegida. Um ponto da ciclovia é considerado protegido se houver pelo menos um policial a, no máximo, 200 m de distância daquele ponto, medidos ao longo da própria ciclovia.\n\nDesconsidere a largura da pista da ciclovia e utilize 3 como aproximação para π.\n\nNessas condições, a quantidade mínima necessária de policiais a serem alocados ao longo dessa ciclovia para torná-la protegida é',
+ alts:['4.','8.','15.','30.','60.'],
+ r:2,
+ e:'O comprimento da ciclovia é a circunferência 2πr = 2×3×1000 = 6000 m. Cada policial protege um trecho de até 200 m para cada lado, ou seja, 400 m de ciclovia. O número mínimo de policiais é 6000/400 = 15.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Em um laboratório, um recipiente contém 10 litros de uma solução composta apenas pelas substâncias S1 e S2. Dessa solução, 99,95% é de S1. Uma quantidade de S1 será retirada dessa solução, mantendo a quantidade inicial de S2, de modo que 99,90% da nova solução seja de S1.\n\nQual é a quantidade de S1, em litro, que será retirada?',
+ alts:['0,0050','0,0100','0,5000','4,9775','5,0000'],
+ r:4,
+ e:'Inicialmente há 9,995 L de S1 e 0,005 L de S2. Retirando x litros de S1, a nova solução tem (10−x) litros totais e (9,995−x) litros de S1. Da condição (9,995−x)/(10−x) = 0,9990, obtém-se 9,995−x = 9,990−0,999x, logo 0,005 = 0,001x, ou seja, x = 5,0000 L.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Uma distribuidora de combustível possui caminhões-tanque com capacidade de 30 000 litros cada. Em qualquer transporte realizado por esses caminhões, um mesmo volume de combustível é descartado, pois fica com muitas impurezas. Esse volume descartado independe da quantidade transportada.\nUm posto de combustível encomendou 10 000 litros de gasolina dessa distribuidora, que enviou 10 200 litros, considerando o volume descartado no transporte. Mesmo assim, a quantidade de gasolina entregue ao posto foi de 9 900 litros.\nEm um novo pedido, esse posto solicitou que fosse entregue exatamente o dobro do volume de gasolina encomendado no pedido anterior.\n\nUtilizando o mesmo caminhão da entrega anterior, qual é o volume mínimo de gasolina, em litro, que a distribuidora deverá enviar para garantir a entrega da quantidade encomendada nesse novo pedido?',
+ alts:['20 100','20 200','20 300','20 400','20 600'],
+ r:2,
+ e:'O volume descartado é fixo: 10 200 − 9 900 = 300 litros. Para entregar 2×10 000 = 20 000 litros, a distribuidora deve enviar 20 000 + 300 = 20 300 litros.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Uma empresa de tecnologia vai padronizar a velocidade de conexão de internet que oferece a seus clientes em dez cidades. A direção da empresa decide que seu novo padrão de velocidade de referência será a mediana dos valores das velocidades de referência de conexões nessas dez cidades. Esses valores, em megabyte por segundo (MB/s), são:\nC1: 390, C2: 380, C3: 320, C4: 390, C5: 340, C6: 380, C7: 390, C8: 400, C9: 350, C10: 360\n\nA velocidade de referência, em megabyte por segundo, a ser adotada por essa empresa é',
+ alts:['360.','370.','380.','390.','400.'],
+ r:2,
+ e:'Ordenando os 10 valores: 320, 340, 350, 360, 380, 380, 390, 390, 390, 400. Com número par de valores, a mediana é a média dos dois centrais (5º e 6º): (380+380)/2 = 380.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Dez casais fundaram um grupo de dança e decidiram constituir uma diretoria com três cargos: presidente, secretário e tesoureiro. Para maior representatividade, decidiu-se que no máximo uma pessoa por casal poderá ocupar um cargo nessa diretoria.\n\nQuantas diretorias diferentes podem ser constituídas por esses 10 casais?',
+ alts:['10 × 9 × 8','20 × 18 × 16','20 × 19 × 18','10 × 9 × 8 × 2','20 × 18 × 16 × 2'],
+ r:1,
+ e:'Há 20 pessoas ao todo. Para presidente, há 20 opções. Para secretário, excluem-se o presidente e seu cônjuge, restando 18 opções. Para tesoureiro, excluem-se as duas pessoas já escolhidas e seus cônjuges, restando 16 opções. Total: 20 × 18 × 16.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Um estacionamento possui 120 vagas para veículos, e todas essas vagas estão ocupadas. Cada cliente paga uma mensalidade para utilizar uma vaga, calculada com base nas despesas mensais do estacionamento e no lucro pretendido. As despesas mensais são: R$ 14 240,00 com manutenção mais R$ 36,00 de seguro por veículo. O lucro é a diferença entre o valor arrecadado com as mensalidades e as despesas. A partir do mês seguinte, o valor do seguro por veículo aumentará em 20%, e as despesas com manutenção permanecerão sem alterações. Com isso, o dono do estacionamento reajustará as mensalidades para obter um lucro mensal de R$ 10 000,00. Apesar do reajuste, todas as vagas continuarão ocupadas.\n\nO valor, em real, da mensalidade reajustada será',
+ alts:['185,60.','226,09.','245,20.','268,93.','285,60.'],
+ r:2,
+ e:'O novo seguro por veículo é 36×1,20 = R$ 43,20, totalizando 43,20×120 = R$ 5 184,00. Somando à manutenção: 14 240 + 5 184 = R$ 19 424,00 de despesas. Para lucro de R$ 10 000,00, a arrecadação total deve ser 19 424 + 10 000 = R$ 29 424,00, dividida por 120 vagas: 29 424/120 = R$ 245,20.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Uma empresa produziu, em um determinado mês, 110 toneladas de plástico a partir de derivados de petróleo e 80 toneladas a partir de plásticos reciclados. O custo para reciclar uma tonelada de plástico é de R$ 500,00, que equivale a 5% do custo para produzir a mesma quantidade de plástico a partir de derivados de petróleo. Para o mês seguinte, a meta dessa empresa é produzir a mesma quantidade total de plástico que foi produzida nesse mês, mas com redução de, pelo menos, 50% no custo de produção.\n\nPara que no mês seguinte a empresa atinja a meta, a quantidade mínima de toneladas de plástico que devem ser produzidas a partir de reciclagem deverá ser',
+ alts:['135.','140.','155.','160.','175.'],
+ r:1,
+ e:'O custo por tonelada via petróleo é 500/0,05 = R$ 10 000,00. O custo atual total é 110×10000 + 80×500 = R$ 1 140 000,00; a meta é gastar no máximo R$ 570 000,00 produzindo as mesmas 190 toneladas. Sendo r a quantidade reciclada: (190−r)×10000 + r×500 ≤ 570000 leva a 1 900 000 − 9 500r ≤ 570 000, ou seja, r ≥ 140.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Um pai comprou oito presentes diferentes (dentre os quais, uma bicicleta e um celular) para dar a seus três filhos. Ele pretende distribuir os presentes de modo que o filho mais velho e o mais novo recebam três presentes cada um, e o do meio receba os dois presentes restantes. O mais velho ganhará, entre seus presentes, ou uma bicicleta ou um celular, mas não ambos.\n\nDe quantas maneiras distintas a distribuição dos presentes pode ser feita?',
+ alts:['36','53','300','360','560'],
+ r:2,
+ e:'Para o filho mais velho, escolhe-se qual dos dois itens especiais ele recebe (2 formas) e mais 2 presentes entre os 6 restantes comuns (C(6,2)=15 formas), totalizando 2×15=30 formas de montar seu conjunto de 3 presentes. Dos 5 presentes restantes, escolhem-se 3 para o filho mais novo (C(5,3)=10 formas), e os 2 últimos vão automaticamente para o filho do meio. Total: 30×10 = 300.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Três dados cúbicos, com faces numeradas de 1 a 6, foram utilizados em um jogo. Artur escolheu dois dados, e João ficou com o terceiro. O jogo consiste em ambos lançarem seus dados, observarem os números nas faces voltadas para cima e compararem o maior número obtido por Artur (entre os dois dados dele) com o número obtido por João. Vence o jogador que obtiver o maior número. Em caso de empate, a vitória é de João.\n\nO jogador que tem a maior probabilidade de vitória é',
+ alts:['Artur, com probabilidade de 2/3.','João, com probabilidade de 4/9.','Artur, com probabilidade de 91/216.','João, com probabilidade de 91/216.','Artur, com probabilidade de 125/216.'],
+ r:4,
+ e:'Seja M o maior valor entre os dois dados de Artur; P(M=k) = (2k−1)/36. A probabilidade de Artur vencer é P(M > J) = Σk P(M=k)·(k−1)/6 = (3·1+5·2+7·3+9·4+11·5)/216 = 125/216, maior que 1/2, favorecendo Artur.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Quatro amigos, cada um com 100 moedas, criaram um jogo no qual cada um assume uma das quatro posições, 1, 2, 3 ou 4, e nela permanece até o final. O jogo se desenvolve em rodadas e, em todas elas, cada jogador transfere e recebe uma quantidade de moedas, da seguinte maneira:\n- o jogador na posição 1 transfere 1 moeda para o jogador na posição 2;\n- o jogador na posição 2 transfere 2 moedas para o jogador na posição 3;\n- o jogador na posição 3 transfere 3 moedas para o jogador na posição 4;\n- o jogador na posição 4 transfere 4 moedas para o jogador na posição 1, completando a rodada.\n\nAo final da rodada n, qual é a expressão algébrica que representa o número de moedas do jogador na posição 1?',
+ alts:['103 + 4n','103 + 3n','100 + 4n','100 + 3n','99 + 4n'],
+ r:3,
+ e:'A cada rodada, o jogador da posição 1 perde 1 moeda (que transfere) e ganha 4 moedas (recebidas do jogador 4), com saldo líquido de +3 moedas por rodada. Partindo de 100 moedas, após n rodadas ele terá 100 + 3n moedas.'},
+
+{c:'enem', m:'Matemática', f:'ENEM 2025 · 2º dia',
+ q:'Um empresário utiliza máquinas cuja pressão interna P, em atmosfera, depende do tempo contínuo de utilização t, em hora, e de um parâmetro positivo K, que define o modelo da máquina, segundo a expressão:\nP = 4 · log[−K · (t + 1) · (t − 19)]\nO fabricante dessas máquinas recomenda que a pressão interna não ultrapasse 10 atmosferas durante o funcionamento.\nO empresário pretende comprar novas máquinas desse tipo, que deverão funcionar diariamente por um período contínuo de 10 horas. Para isso, precisa definir o modelo de máquina a ser adquirida, escolhendo o maior valor possível do parâmetro K, atendendo à recomendação do fabricante.\n\nO maior valor a ser escolhido para K é',
+ alts:['10^0,5','10^8','10^(2,5/84)','10^(2,5/99)','25 × 10⁻²'],
+ r:0,
+ e:'A máquina funciona para t entre 0 e 10 horas. Defina f(t) = (t+1)(19−t) = −t²+18t+19; seu máximo em [0,10] ocorre em t=9 (vértice da parábola), com f(9) = 10×10 = 100. A condição P ≤ 10 equivale a log[K·f(t)] ≤ 2,5, ou seja, K·f(t) ≤ 10^2,5. No pior caso (t=9): K·100 ≤ 10^2,5, logo K ≤ 10^2,5/10² = 10^0,5. O maior valor possível é K = 10^0,5.'},
+
+
 ];
 
 /* =====================================================================
@@ -2600,7 +3311,7 @@ function telaSetup(cid){
         Prova real · ${totalProva} questões
       </button>
       <p style="font-size:12.5px; color:var(--tinta-2); text-align:center; margin:0 0 20px;">
-        Mesma distribuição da prova oficial · nota de corte: ${c.corte} acertos
+        Mesma distribuição da prova oficial${c.corte ? ` · nota de corte: ${c.corte} acertos` : ''}
       </p>` : ''}
       ${c.prova && anosDisponiveis.length ? `
       <p class="eyebrow" style="margin-top:6px;">Ou treine com provas reais de anos anteriores</p>
@@ -2764,7 +3475,7 @@ function telaResultado(){
   });
 
   let selo;
-  if(S.oficial){
+  if(S.oficial && S.corte){
     selo = acertos>=S.corte ? ['ok',`Acima do corte (${S.corte}) — aprovado! 🎯`] : ['ruim',`Abaixo do corte de ${S.corte} acertos`];
   } else {
     selo = pct>=70 ? ['ok','Mandou bem! 🎯'] : pct>=50 ? ['quase','No caminho certo'] : ['ruim','Bora revisar os erros'];
